@@ -12,6 +12,7 @@
 #section-1 img {
     max-width: 50%;
     height: auto;
+    max-height: auto;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -79,6 +80,11 @@
     align-self: center;
 }
 
+    #section-1 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    }
 }
 
 #section-2 {
