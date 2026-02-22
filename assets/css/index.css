@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.image-container {
+    display: flex;
+}
+
 /* Image */
 #section-1 img {
     max-width: 50%;
