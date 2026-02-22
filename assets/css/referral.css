@@ -1,0 +1,176 @@
+/* ================= REFERRAL SECTION ================= */
+
+#referral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+    padding: 5em 6em;
+    text-align: center;
+    color: #12609d;
+}
+
+#referral p {
+    max-width: 60ch;
+    margin: -2.2em;
+}
+
+/* Form container */
+#referral form {
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6em;
+}
+
+/* Same row system as other forms */
+#referral .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em;
+}
+
+/* Field layout */
+#referral .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    text-align: center;
+}
+
+/* Inputs */
+#referral input {
+    width: 100%;
+    padding: 0.6em;
+    border-radius: 8px;
+    border: 1px solid #d9e3f0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: #12609d;
+}
+
+#referral input:focus {
+    outline: none;
+    border-color: #4f94cd;
+    box-shadow: 0 0 0 3px rgba(79,148,205,0.15);
+}
+
+::placeholder {
+    color: #4f94cd;
+    opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Checkbox (same structure as your other pages) */
+#referral .checkbox {
+
+    gap: 0.6em;
+    align-items: start;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+#referral .checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-top: 0.2em;
+}
+
+#referral .checkbox a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+#referral .checkbox a:hover {
+    opacity: 0.8;
+}
+
+/* Submit button matches your yellow secondary buttons */
+#referral button {
+    background: #fad02c;
+    color: white;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: fit-content;
+    align-self: center;
+}
+
+#referral button:hover {
+    background: #e8bb0a;
+    transform: translateY(-1px);
+}
+
+/* ================= DISCLAIMER (MATCH APPLY-CV) ================= */
+
+#disclaimer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 6em;
+    gap: 4em;
+    text-align: center;
+    background-color: #12609d;
+    color: white;
+}
+
+/* Image */
+#disclaimer img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.column-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.8em;
+    text-align: left;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    #referral,
+    #disclaimer {
+    padding: 2em 3em;
+}
+
+    #referral p {
+    max-width: 80%;
+    }
+
+
+    #referral .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    }
+
+    #disclaimer {
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+    }
+
+    #disclaimer .column-1 {
+    text-align: center;
+    }
+
+    #disclaimer img {
+    max-width: 80%;
+    }
+
+    #referral .checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    }
+}

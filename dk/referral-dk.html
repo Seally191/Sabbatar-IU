@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henvis en ven</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/referral.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('./header-dk.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+<!-- Referral Section -->
+<section id="referral">
+    <h1>Anbefal En Ven</h1>
+    <p>Kender du nogen, der søger job i udlandet? <br>
+        Anbefal dem til os og hjælp dem med at finde deres næste eventyr. <br>
+        Udfyld formularen nedenfor for at komme i gang.</p>
+
+    <!-- Netlify Referral Form -->
+    <form name="referral" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="referral">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="referrer-name">Dit navn:</label>
+                <input type="text" id="referrer-name" name="referrer-name" required placeholder="Dit navn">
+            </div>
+
+            <div class="form-group">
+                <label for="referrer-phone">Dit telefonnummer:</label>
+                <input type="tel" id="referrer-phone" name="referrer-phone" required placeholder="Dit telefonnummer">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="friend-name">Din vens fornavn:</label>
+                <input type="text" id="friend-name" name="friend-name" required placeholder="Din vens navn">
+            </div>
+
+            <div class="form-group">
+                <label for="friend-phone">Din vens telefonnummer:</label>
+                <input type="tel" id="friend-phone" name="friend-phone" required placeholder="Din vens telefonnummer">
+            </div>
+        </div>
+
+        <label class="checkbox">
+    <input type="checkbox" name="consent" required>
+    Jeg bekræfter, at jeg har fået tilladelse fra min ven til at dele deres oplysninger,
+    og at de er informeret om <a href="/privacy-dk.html" target="_blank">privatlivspolitikken</a>.
+        </label>
+
+        <button type="submit">Send anbefaling</button>
+    </form>
+</section>
+
+<!-- Disclaimer Section -->
+<section id="disclaimer">
+        <div class="column-1">
+            <h1>Sammen Eller Hver For Sig?</h1>
+            <p>Kandidater opfordres til at ansøge sammen med deres venner og kan anbefale så mange personer, de ønsker! <br><br>
+
+                I har fleksibiliteten til enten at ansøge sammen eller komme hver for sig, alt efter hvad der passer jer bedst.
+                Selvom I måske arbejder på forskellige projekter, vil oplevelsen stadig være et fælles eventyr fyldt med muligheder
+                for at lære og udvikle jer sammen. Selvom hver af jer følger jeres egen professionelle vej, vil rejsen forbinde jer
+                gennem fælles oplevelser, nye relationer og spændingen ved denne fantastiske mulighed.</p>
+        </div>
+        <img class="column-2" src="../assets/img/18.png" alt="venner på stranden">
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./footer-dk.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+.footer {
+    background: #4f94cd;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    transition: top 0.2s ease;
+    flex-wrap: nowrap; 
+    text-decoration: none;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0px;
+}
+
+/* Footer Logo */
+.footer-logo {
+    max-width: 70px; 
+    height: auto;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Remove underline from social media links */
+.svg-icon {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Optional: Remove extra space between inline-block elements */
+.svg-icon img {
+    width: 15px; /* Default size */
+    height: 15px;
+    margin: 0;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+    font-size: 0; /* Remove space around the image */
+}
+
+/* Hover Effect for Social Media Icons */
+.svg-icon:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px;
+    gap: 60px;
+}
+
+/* Right Column */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-right a {
+    color: white;  /* Set text color to white */
+    text-decoration: none;  /* Remove underline */
+    font-weight: normal;  /* Optional: Prevent bolding */
+}
+
+/* Optional: Add hover effect */
+.footer-right a:hover {
+    text-decoration: underline; /* Subtle underline effect on hover */
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        gap: 15px;
+    }
+}

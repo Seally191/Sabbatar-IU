@@ -1,0 +1,70 @@
+/* ===== FONT LOAD ===== */
+@font-face {
+    font-family: 'Tan Ashford';
+    src: url('../fonts/ashford-bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===== BASE TEXT ===== */
+body {
+    margin: 0;
+    padding: 60px 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3 {
+    font-family: 'Tan Ashford', serif;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+}
+
+/* HERO / MAIN TITLE */
+h1 {
+    font-size: clamp(1.9em, 5vw, 2.7em); 
+    line-height: 0.7;
+    margin: 0;
+}
+
+/* SECTION TITLE */
+h2 {
+    font-size: clamp(1.4em, 3.5vw, 2.3em); 
+    line-height: 0.7;
+    margin: 0;
+}
+
+/* SMALL TITLE */
+h3 {
+    font-size: clamp(1.1em, 2.5vw, 1.7em); 
+    line-height: 0.9;
+    margin: 0;
+}
+
+
+/* ===== SUBHEADINGS / LABELS ===== */
+.subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: 0.0em;
+    font-size: 0.98em;
+    margin: 0;
+}
+
+/* ===== PARAGRAPHS ===== */
+p {
+    font-size: 0.98em;
+    line-height: 1.4;
+    max-width: 65ch;
+    margin: 0;
+}
+
+#header-container,
+#footer-container {
+    width: 100%;
+}
+

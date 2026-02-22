@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/cv-builder.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('./header-dk.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+
+<!-- ================= CV UPLOAD ================= -->
+
+<section id="apply-CV">
+    <div class="apply-container">
+
+        <img class="about-image" src="../assets/img/17.png" alt="working woman">
+
+        <div class="apply-text">
+            <h1>Upload Dit CV</h1>
+
+            <form name="cv-upload" method="POST" data-netlify="true" enctype="multipart/form-data">
+                <input type="hidden" name="form-name" value="cv-upload">
+
+                <label class="file-upload">
+                    <input type="file" name="files" id="fileInput" multiple required>
+
+                    <div class="file-upload-box">
+                        <p class="upload-main">Drag & drop filer her<br>eller klik for at vælge</p>
+                        <p class="upload-info">Du kan uploade op til 2 filer</p>
+                        <p class="file-name" id="fileName"></p>
+                    </div>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="terms" required>
+                    Dine oplysninger bruges til at kontakte dig og deles med vores partnere for at sætte gang i rekrutteringen.
+                    Tjek vores <a href="/privacy-dk.html" target="_blank">privatlivspolitik</a> for at se, hvordan vi passer på dine data.
+                </label>
+
+                <button type="submit" class="btn-primary">Ansøg</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ================= QUICK APPLICATION ================= -->
+
+<section id="quick-application">
+    <div class="apply-form-container">
+
+        <h1>Hurtig Ansøgning</h1>
+
+        <form name="quick-application" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="quick-application">
+
+            <div class="rows">
+
+                <!-- ROW 1 -->
+                <div class="form-row">
+                    <div class="field">
+                        <label>Navn *</label>
+                        <input type="text" name="name" placeholder="Dit fulde navn" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Telefonnummer *</label>
+                        <input type="tel" name="phone" placeholder="Fx: 30123456" required>
+                    </div>
+
+                    <div class="field">
+                        <label>E-mail *</label>
+                        <input type="email" name="email" placeholder="Fx: din.email@eksempel.dk" required>
+                    </div>
+                </div>
+
+                <!-- ROW 2 -->
+                <div class="form-row">
+                    <div class="field">
+                        <label>Højeste uddannelse *</label>
+                        <textarea name="highest-education" rows="2"
+                        placeholder="Fx: Bachelor i Marketing, Københavns Universitet, afsluttet 2024" required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label>Seneste arbejde *</label>
+                        <textarea name="last-job" rows="2"
+                        placeholder="Fx: Barista hos Espresso House, januar–juni 2025, Aalborg" required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label>Sprog du taler *</label>
+                        <textarea name="languages" rows="2"
+                        placeholder="Fx: Dansk, Engelsk, Tysk" required></textarea>
+                    </div>
+                </div>
+
+                <!-- ROW 3 -->
+                <div class="form-row last-row">
+                    <div class="field message-field">
+                        <label>Besked *</label>
+                        <textarea name="message" rows="5" required>
+Hej Jobsun holdet,
+
+Jeg er interesseret i jeres jobmuligheder i udlandet og vil gerne vide, om der er nogle ledige stillinger, der matcher min profil.
+
+Jeg ser frem til at høre fra jer!
+                        </textarea>
+                    </div>
+
+                    <label class="side-checkbox">
+                        <input type="checkbox" name="terms" required>
+                        Dine oplysninger bruges til at kontakte dig og deles med vores partnere for at sætte gang i rekrutteringen.
+                        Tjek vores <a href="/privacy-dk.html" target="_blank">privatlivspolitik</a> for at se, hvordan vi passer på dine data.
+                    </label>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn-secondary">Ansøg</button>
+
+        </form>
+
+    </div>
+</section>
+
+
+<script>
+const input = document.getElementById("fileInput");
+const fileName = document.getElementById("fileName");
+
+input.addEventListener("change", function() {
+    if (this.files.length === 1) fileName.textContent = this.files[0].name;
+    else if (this.files.length > 1) fileName.textContent = this.files.length + " filer valgt";
+    else fileName.textContent = "";
+});
+</script>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./footer-dk.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 6em;
+    gap: 3em;
+    text-align: center;
+    color: #12609d;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    width: 100%;
+    max-width: 700px; 
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 0.98em;
+    line-height: 1.4;
+    text-align: left;
+    width: 100%;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.8em 1em;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: 1px solid #d9e3f0;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    transition: all 0.2s ease;
+    font-family: "montserrat", sans-serif;
+    color: #12609d;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+::placeholder {
+    color: #4f94cd;
+    opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+    background: #fad02c;
+    color: white;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    align-self: center;
+    margin-top: 0em;
+}
+
+.btn-primary:hover {
+    background: #e8bb0a;
+    transform: translateY(-1px);
+} 
+
+/* Phone Contacts Section */
+#phone-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 6em;
+    gap: 1.2em;
+    text-align: center;
+    color: #12609d;
+    background-color: #f4f8fc;
+}
+
+#phone-contacts p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    color: #12609d;
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.contact-card h3 {
+    font-size: 0.95rem;
+    color: #12609d;
+    margin: 5px 0 15px 0; /* Reduced margin-top, consistent with the bottom margin of the call button */
+}
+
+.contact-card p {
+    font-size: 0.85rem;
+    color: #0b385e;
+    margin-bottom: 20px;
+}
+
+.call-btn {
+    font-size: 1rem;
+    color: #12609d;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #12609d;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px; /* Added space below the call button */
+}
+
+.call-btn:hover {
+    background-color: #12609d;
+    color: white;
+}
+
+/* =============================================
+   CONTACT PAGE — MOBILE & TABLET
+   ============================================= */
+
+@media (max-width: 900px) {
+
+    #contact {
+        padding: 2em 1.5em;
+    }
+
+    #contact form {
+    width: 80%;
+}
+
+form label {
+    width: auto;
+}
+
+form input,
+form textarea {
+    width: auto;
+}
+
+form textarea {
+    min-height: 175px;
+}
+
+    #phone-contacts {
+        padding: 2em 1.5em;
+    }
+
+    .contact-card {
+        max-width: auto;
+}

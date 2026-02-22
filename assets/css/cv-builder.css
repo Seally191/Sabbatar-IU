@@ -1,0 +1,325 @@
+/* =============================================
+   SECTION: CV UPLOAD AREA (#apply-CV)
+   ============================================= */
+
+#apply-CV {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 6em;
+    gap: 4em;
+    text-align: center;
+}
+
+.apply-container {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+/* Image */
+#apply-CV img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.apply-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.8em;
+    text-align: left;
+    color: #12609d;
+}
+
+/* ===== FILE UPLOAD MODERN ===== */
+
+.file-upload {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Hide default input */
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload-box {
+    border: 2px dashed #4f94cd;
+    border-radius: 12px;
+    padding: 0.7em 1.5em;
+    text-align: center;
+    background: #f7fbff;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+/* Hover effect */
+.file-upload:hover .file-upload-box {
+    border-color: #12609d;
+    background: #eef6fd;
+    transform: translateY(-2px);
+}
+
+/* Main text */
+.upload-main {
+    font-weight: 600;
+    color: #12609d;
+    margin-bottom: 0.2em;
+}
+
+/* Info text */
+.upload-info {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Selected file name */
+.file-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #12609d;
+}
+
+/* ===== FORM POLISH ===== */
+
+#apply-CV form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+/* Inputs */
+#apply input,
+#apply textarea {
+    width: 100%;
+    padding: 0.8em 1em;
+    border-radius: 8px;
+    border: 1px solid #d9e3f0;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+/* Focus effect */
+#apply input:focus,
+#apply textarea:focus {
+    outline: none;
+    border-color: #4f94cd;
+    box-shadow: 0 0 0 3px rgba(79,148,205,0.15);
+}
+
+/* Checkbox */
+.checkbox {
+    font-size: 0.85rem;
+    text-align: left;
+    width: 100%;
+}
+
+/* Submit button */
+.btn-primary {
+    background: #cc50bd;
+    color: white;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    align-self: flex-start;
+}
+
+.btn-primary:hover {
+    background: #b346a7;
+    transform: translateY(-1px);
+}
+
+#apply-CV .checkbox a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+#apply-CV .checkbox a:hover {
+    opacity: 0.8;
+}
+
+#apply-CV p,
+#apply-CV label {
+    max-width: none;
+}
+
+/* =============================================
+   SECTION: QUICK APPLICATION (#quick-application)
+   ============================================= */
+
+#quick-application {
+    display: flex;
+    justify-content: center;
+    padding: 5em 6em;
+    background-color: #12609d;
+    color: white;
+}
+
+.apply-form-container {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8em;
+}
+
+#quick-application h1 {
+    text-align: center;
+}
+
+/* Rows & fields */
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5em;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.last-row {
+    grid-template-columns: 2.05fr 0.95fr;
+    align-items: start;
+}
+
+.last-row .side-checkbox {
+    align-self: flex-end;
+    font-size: 0.85rem;
+    text-align: left;
+    width: 100%;
+}
+
+/* Links in side-checkbox */
+.side-checkbox a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.side-checkbox a:hover {
+    opacity: 0.8;
+}
+
+.message-field textarea {
+    height: 100%;
+    min-height: 120px;
+}
+
+.message-field textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Inputs & placeholders (quick application) */
+#quick-application input[type="text"],
+#quick-application input[type="tel"],
+#quick-application input[type="email"],
+#quick-application textarea {
+    padding: 0.4em;
+    font-size: 0.98rem;
+    color: #12609d;
+    font-family: 'Montserrat', sans-serif;
+}
+
+::placeholder {
+    color: #4f94cd;
+    opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Secondary button (quick application) */
+#quick-application .btn-secondary {
+    background: #fad02c;
+    color: white;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    align-self: center;
+    margin-top: 1.8em;
+}
+
+#quick-application .btn-secondary:hover {
+    background: #e8bb0a;
+    transform: translateY(-1px);
+}
+
+/* Form layout fix */
+#quick-application form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =============================================
+   MEDIA QUERIES – Mobile & Tablet Responsiveness
+   ============================================= */
+
+@media (max-width: 900px) {
+    #apply-CV,
+    #quick-application {
+        padding: 2em 2em;         
+    }
+
+    #apply-CV {
+        flex-direction: column;    
+        gap: 2.5em;
+    }
+
+    #apply-CV img {
+        max-width: 100%;        
+    }
+
+    .apply-container {
+        flex-direction: column;
+        gap: 2.5em;
+    }
+
+    .form-row,
+    .last-row {
+        grid-template-columns: 1fr;  
+        gap: 1.2em;               
+    }
+
+    .checkbox input[type="checkbox"],
+    .side-checkbox input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        flex-shrink: 0;
+        margin-top: 0.2em;      
+    }
+
+    .btn-primary,
+    #quick-application .btn-secondary {
+        padding: 0.9em 1em;
+        font-size: 1.1rem;
+        align-self: center;        
+    }
+
+    .upload-main {
+        font-size: 1rem;
+    }
+
+    .upload-info {
+        font-size: 0.75rem;
+    }
+}
+

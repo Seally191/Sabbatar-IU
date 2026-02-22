@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privatlivspolitik</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/privacy.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <script src="../assets/js/header.js"></script>
+    <script>
+        fetch('./header-dk.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // ── This is the only extra line you need ──
+                document.dispatchEvent(new Event('header-loaded'));
+            })
+            .catch(err => console.error("Header load failed:", err));
+    </script>
+
+<section id="privacy">
+    <div class="container">
+
+    <h1>Privacy Policy and Terms of Use</h1>
+    <p class="last-updated">Last updated: 2026/02/19</p>
+
+    <h3 class="subheading">1. Introduction</h3>
+    <p>This page explains how Jobsun ApS collects, uses, and protects personal data and the terms governing website use.</p>
+
+    <h3 class="subheading">2. Who we are</h3>
+    <p>
+    Jobsun ApS<br>
+    Hvorupvej 4, 9400 Nørresundby, Denmark<br>
+    Email: <a href="mailto:kontakt@jobsun.dk">kontakt@jobsun.dk</a><br>
+    Phone: +45 42523737
+    </p>
+
+    <h3 class="subheading">3. Data we collect</h3>
+    <ul>
+    <li>Name</li>
+    <li>Email address</li>
+    <li>Phone number</li>
+    <li>Information submitted through contact or applications</li>
+    <li>Job-related information and preferences</li>
+    </ul>
+
+    <h3 class="subheading">4. Purpose of processing</h3>
+    <ul>
+    <li>Respond to inquiries</li>
+    <li>Process job applications</li>
+    <li>Provide job opportunities</li>
+    <li>Communicate relevant offers</li>
+    <li>Improve our services</li>
+    </ul>
+
+    <h3 class="subheading">5. Data retention</h3>
+    <p>Personal data is stored only as long as necessary or required by law.</p>
+
+    <h3 class="subheading">6. Data sharing</h3>
+    <p>We do not sell personal data. Data is shared only when necessary to provide services or when legally required.</p>
+
+    <h3 class="subheading">7. Data security</h3>
+    <p>We protect data during transmission using secure internet connections (HTTPS). We take reasonable steps to prevent unauthorized access or misuse.</p>
+
+    <h3 class="subheading">8. Your rights</h3>
+    <ul>
+    <li>Access your data</li>
+    <li>Correct or delete data</li>
+    <li>Withdraw consent</li>
+    <li>Object to processing</li>
+    <li>Data portability</li>
+    <li>File a complaint with the Danish Data Protection Authority</li>
+    </ul>
+
+    <h3 class="subheading">9. Website use</h3>
+    <p>The website must be used lawfully. Content may not be reused without permission.</p>
+
+    <h3 class="subheading">10. Age requirement</h3>
+    <p>You must be at least 18 years old to apply for jobs or use our services.</p>
+
+    <h3 class="subheading">11. Referral terms</h3>
+    <p>If you refer a candidate to Jobsun, referral terms apply. Any referral fee is payable only if the candidate is successfully hired and completes at least 3 months of employment.</p>
+
+    <h3 class="subheading">12. Limitation of liability</h3>
+    <p>The website is provided “as is”. Jobsun ApS is not liable for indirect damages.</p>
+
+    <h3 class="subheading">13. External links</h3>
+    <p>We are not responsible for third-party websites.</p>
+
+    <h3 class="subheading">14. Changes</h3>
+    <p>We may update this policy when necessary. The latest version will always be available on the website.</p>
+
+    <h3 class="subheading">15. Contact</h3>
+    <p>If you have questions about this policy, contact us at 
+    <a href="mailto:kontakt@jobsun.dk">kontakt@jobsun.dk</a>.</p>
+
+    </div>
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./footer-dk.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+    
+</body>
+</html>

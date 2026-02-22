@@ -1,0 +1,140 @@
+header {
+    background: #4f94cd;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header img {
+    max-height: 40px;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.12s ease;
+}
+
+nav a:hover {
+    transform: scale(1.05);
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    background: #4f94cdad; 
+    backdrop-filter: blur(10px); 
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar-menu {
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* BUTTONS */
+button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu-button {
+    display: none;
+    margin-left: auto;
+}
+
+/* LANGUAGE DROPDOWN */
+.language-dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: white;
+    min-width: 120px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 12px;
+    color: #12609d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* Sidebar positioning fix */
+.sidebar .dropdown-content {
+    position: static;
+    margin-top: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hideOnMobile {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}

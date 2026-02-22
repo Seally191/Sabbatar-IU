@@ -1,0 +1,97 @@
+/* ===== PAGE LAYOUT (same spacing style as your sections) ===== */
+#privacy {
+    display: flex;
+    justify-content: center;
+    padding: 2em 6em;
+    background: #f5f7fa; 
+}
+
+/* ===== CARD CONTAINER ===== */
+#privacy .container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 10%;
+    background: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+}
+
+/* ===== TITLES ===== */
+#privacy h1 {
+    text-align: center;
+    color: #12609d;
+    margin-bottom: 0.4em;
+}
+
+#privacy h3.subheading {
+    color: #12609d;
+    border-bottom: 2px solid #12609d;
+    padding-bottom: 5px;
+    margin-top: 1.6em;
+    font-size: 1.25rem;
+}
+
+/* ===== TEXT ===== */
+#privacy p {
+    line-height: 1.7;
+    margin: 0.6em 0;
+    color: #4f94cd;
+    max-width: none;
+}
+
+/* ===== LISTS ===== */
+#privacy ul {
+    padding-left: 1.3em;
+    margin: 0.4em 0 1em;
+    color: #4f94cd;
+}
+
+#privacy li {
+    margin-bottom: 0.4em;
+    line-height: 1.6;
+}
+
+/* ===== LINKS ===== */
+#privacy a {
+    color: #12609d;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#privacy a:hover {
+    text-decoration: underline;
+}
+
+/* ===== META TEXT ===== */
+.last-updated {
+    text-align: left;
+    opacity: 0.4;
+    margin-bottom: 1em;
+}
+
+/* ===== DIVIDER BETWEEN DK / EN ===== */
+.divider {
+    margin: 3em 0;
+    border: none;
+    height: 1px;
+    background: #e3e3e3;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    #privacy {
+        padding: 2em 1.5em;
+    }
+
+    #privacy .container {
+        padding: 30px 1.6em;
+    }
+
+    #privacy h3.subheading {
+        font-size: 1.15rem;
+    }
+}

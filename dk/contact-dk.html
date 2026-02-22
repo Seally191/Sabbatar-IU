@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt os</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('./header-dk.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+<section id="contact">
+    <h1>Kontakt Os</h1>
+
+    <!-- Netlify Contact Form -->
+    <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+
+        <label for="email">Din e-mail:</label>
+        <input type="email" id="email" name="email" required placeholder="din.email@example.com">
+
+        <label for="message">Din besked:</label>
+        <textarea id="message" name="message">
+Hej Jobsun-team,
+
+Jeg er interesseret i at høre mere om jeres jobmuligheder i udlandet. I må meget gerne fortælle mig, hvordan jeg ansøger, og om der er ledige stillinger, der passer til min profil.
+
+Jeg ser frem til at høre fra jer!
+        </textarea>
+
+        <button class="btn-primary" type="submit">Send besked</button>
+    </form>
+</section>
+
+<!-- Phone Contact Section -->
+<section id="phone-contacts">
+    <h1>Vil Du Hellere Ringe?</h1>
+    <p>Vores team står klar til at hjælpe dig på flere sprog.</p>
+
+    <div class="contacts">
+
+        <div class="contact-card">
+            <h3 class="subheading">Alexander</h3>
+            <p>Taler: 🇩🇰🇬🇷🇬🇧</p>
+            <a href="tel:+4542523737" class="call-btn">📞 Ring +45 42 52 37 37</a>
+        </div>
+
+        <div class="contact-card">
+            <h3 class="subheading">Christoffer</h3>
+            <p>Taler: 🇩🇰🇳🇴🇬🇧</p>
+            <a href="tel:+4581988163" class="call-btn">📞 Ring +45 81 98 81 63</a>
+        </div>
+
+        <div class="contact-card">
+            <h3 class="subheading">Panagiotis</h3>
+            <p>Taler: 🇸🇪🇬🇷🇬🇧</p>
+            <a href="tel:+4581957047" class="call-btn">📞 Ring +45 81 95 70 47</a>
+        </div>
+
+    </div>
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('./footer-dk.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+
+</body>
+</html>
