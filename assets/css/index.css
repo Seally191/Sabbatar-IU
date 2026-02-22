@@ -15,6 +15,11 @@
     max-height: auto;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;     
+    min-width: 0;               
+    width: auto;              
+    object-fit: contain;          
+    display: block;
 }
 
 .column-1 {
@@ -81,9 +86,12 @@
 }
 
     #section-1 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    width: 100% !important;       /* fill container width */
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    display: block !important;
     }
 }
 
