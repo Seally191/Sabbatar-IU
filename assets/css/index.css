@@ -80,7 +80,8 @@
 }
 
     #section-1 img {
-        max-width: 100%;
+        max-width: 80%;
+        aspect-ratio: 16 / 9;
     }
 }
 
