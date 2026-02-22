@@ -81,7 +81,7 @@
 
     #section-1 img {
         max-width: 80%;
-        height: auto;
+        max-height: auto;
     }
 }
 
