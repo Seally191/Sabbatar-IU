@@ -78,7 +78,7 @@
     #section-1 .section-container {
         flex-direction: column;
         align-items: center;
-        gap: 3em;
+        gap: 2em;
     }
 
     #section-1 .column-1 {

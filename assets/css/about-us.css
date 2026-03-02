@@ -39,7 +39,7 @@
     align-items: center;
     justify-content: center;
     padding: 5em 6em;
-    gap: 2em;
+    gap: 4em;
     text-align: center;
     background-color: #f4f8fc;
     color: #12609d;
@@ -137,8 +137,13 @@
         flex-direction: column;
         text-align: center;
         padding: 2em 3em;
-        text-align: center;
         gap: 2.2em;
+    }
+
+    .section-container {
+        flex-direction: column; 
+        text-align: center;
+        gap: 2em;
     }
 
     .about-text {
@@ -147,6 +152,7 @@
 
     #about-us img {
         max-width: 80%;
+        aspect-ratio: 16 / 9;
     }
 
     #pillars {
@@ -165,7 +171,7 @@
         width: 100%;
         padding: 1.3em;
         font-size: 0.95em;
-        text-align: left;
+        text-align: center;
     }
 
     #team {
