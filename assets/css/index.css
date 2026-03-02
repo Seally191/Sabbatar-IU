@@ -35,33 +35,35 @@
 #section-1 .btn-1 {
     background: #fad02c;
     color: white;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 8px;
     font-size: 1.1rem;
-    padding: 0.4em 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    transition: all 0.25s ease;
     align-self: flex-start;
 }
 
 #section-1 .btn-1:hover {
     background: #e8bb0a;
-    transform: scale(1.05);
+    transform: translateY(-1px);
 }
 
 #section-1 .btn-2 {
     background: #cc50bd;
     color: white;
+    border: none;
+    padding: 0.7em 1.4em;
+    border-radius: 8px;
     font-size: 1.1rem;
-    padding: 0.4em 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    transition: all 0.25s ease;
     align-self: flex-start;
 }
 
 #section-1 .btn-2:hover {
     background: #b346a7;
-    transform: scale(1.05);
+    transform: translateY(-1px);
 }
 
 /* Responsive Design */
@@ -76,7 +78,7 @@
     #section-1 .section-container {
         flex-direction: column;
         align-items: center;
-        gap: 4em;
+        gap: 3em;
     }
 
     #section-1 .column-1 {

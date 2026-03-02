@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tak for din ansøgning</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/thank.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+fetch('./header-dk.html')
+.then(res => res.text())
+.then(data => {
+    document.getElementById('header-container').innerHTML = data;
+    document.dispatchEvent(new Event('header-loaded'));
+});
+</script>
+
+
+<section class="thank-you">
+    <div class="thank-container">
+        <h1>Tak for din ansøgning 🎉</h1>
+
+        <p>
+        Vi har modtaget dine oplysninger og vender tilbage til dig inden for 2 hverdage.
+        <br>Du er ét skridt tættere på dit eventyr i udlandet.
+        </p>
+
+        <button class="btn-secondary" onclick="goBack()">
+        ←  Tilbage til forrige side
+        </button>
+
+        <script>
+        function goBack() {
+            if (document.referrer && window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'sabbatar-i-udlandet-dk.html';
+            }
+        }
+        </script>
+    </div>
+</section>
+
+</body>
+</html>

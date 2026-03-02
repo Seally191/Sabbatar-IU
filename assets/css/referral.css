@@ -120,6 +120,12 @@
     color: white;
 }
 
+.section-container {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
 /* Image */
 #disclaimer img {
     max-width: 50%;
