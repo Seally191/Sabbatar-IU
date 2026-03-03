@@ -39,7 +39,7 @@
     align-items: center;
     justify-content: center;
     padding: 5em 6em;
-    gap: 4em;
+    gap: 2em;
     text-align: center;
     background-color: #f4f8fc;
     color: #12609d;
@@ -97,7 +97,7 @@
     align-items: center;
     justify-content: center;
     padding: 5em 6em;
-    gap: 4em;
+    gap: 2em;
     text-align: center;
     color: white;
     background-color: #12609d;
@@ -107,7 +107,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.7em;
-    max-width: 900px;
+    max-width: 800px;
     width: 100%;
 }
 
