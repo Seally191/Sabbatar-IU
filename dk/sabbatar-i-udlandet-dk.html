@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embrace your potential!</title>
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/index.css">
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/index.css">
+    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
 </head>
 <body>
 
 <div id="header-container"></div>
-<script src="../assets/js/header.js"></script>
+<script src="/Sabbatar-IU/assets/js/header.js"></script>
 <script>
-    fetch('./header-dk.html')
+    fetch('/Sabbatar-IU/dk/header-dk.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
@@ -34,11 +34,11 @@
             <p>Vi mener, at alle har et unikt potentiale, og vi er her for at hjælpe dig med at frigøre det. Uanset om du 
                 ønsker at tage det næste skridt i din karriere eller begive dig ud på et spændende eventyr i udlandet, 
                 er vi engagerede i at støtte dig hele vejen. Din fremtid er fuld af muligheder, og den begynder her.</p>
-            <button type="button" class="btn-1" onclick="window.location.href='offers-dk.html'">
+            <button type="button" class="btn-1" onclick="window.location.href='/Sabbatar-IU/dk/offers-dk.html'">
                 Udforsk Muligheder
             </button>        
         </div>
-        <img class="column-2" src="../assets/img/1.png" alt="happy woman at the beach">
+        <img class="column-2" src="/Sabbatar-IU/assets/img/1.png" alt="happy woman at the beach">
         </div>
     </section>
 
@@ -91,7 +91,7 @@
                         playsinline 
                         controls
                     >
-                        <source src="../assets/vid/Høre-det-fra-dem.mp4" type="video/mp4">
+                        <source src="/Sabbatar-IU/assets/vid/Høre-det-fra-dem.mp4" type="video/mp4">
                         Din browser understøtter ikke video.
                     </video>
                     </div>
@@ -102,13 +102,13 @@
         <!-- Hero Section -->
     <section id="section-1">
         <div class="section-container">
-        <img class="column-2" src="../assets/img/12.png" alt="happy friends laughing at the beach">
+        <img class="column-2" src="/Sabbatar-IU/assets/img/12.png" alt="happy friends laughing at the beach">
         <div class="column-1">
             <h1>Udfold Dit Potentiale!</h1>
             <p>Vi vil meget gerne høre mere om dine karrieremål og hjælpe dig med at finde det perfekte job i 
                 udlandet. Kontakt os nu for at høre mere om vores spændende muligheder, og fortæl os, hvornår 
                 du har mulighed for et møde!</p>
-            <button type="button" class="btn-2" onclick="window.location.href='contact-dk.html'">
+            <button type="button" class="btn-2" onclick="window.location.href='/Sabbatar-IU/dk/contact-dk.html'">
                 Tag Kontakt
             </button>
         </div>
@@ -118,7 +118,7 @@
     <div id="footer-container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('./footer-dk.html')
+            fetch('/Sabbatar-IU/dk/footer-dk.html')
                 .then(response => response.text())
                 .then(data => document.getElementById('footer-container').innerHTML = data)
                 .catch(error => console.log("Error loading footer:", error));
