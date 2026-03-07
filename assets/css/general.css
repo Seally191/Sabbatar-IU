@@ -1,3 +1,6 @@
+@import url("header.css");
+@import url("footer.css");
+
 /* ===== FONT LOAD ===== */
 @font-face {
     font-family: 'Tan Ashford';

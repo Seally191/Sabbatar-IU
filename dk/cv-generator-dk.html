@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-bygger</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/cv-generator.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+
+<script src="../assets/js/header.js"></script>
+<script>
+fetch('./header-dk.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        document.dispatchEvent(new Event('header-loaded'));
+    })
+    .catch(err => console.error("Header load failed:", err));
+</script>
+
+
+<section id="cv-generator">
+    <div class="generator-container">
+
+        <div class="progress-wrapper">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">1 / 5</p>
+        </div>
+
+        <form class="cv-form"
+              name="cv-generator"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="thank-dk.html">
+
+            <input type="hidden" name="form-name" value="cv-generator">
+
+            <p hidden>
+                <label>Do not fill this out if you're human: <input name="bot-field"></label>
+            </p>
+
+            <!-- STEP 1 -->
+            <div class="form-step active">
+                <label>👤 Navn</label>
+                <input type="text" name="navn" placeholder="Dit fulde navn" required>
+
+                <label>📱 Telefonnummer</label>
+                <input type="tel" name="telefon" placeholder="30123456" required>
+
+                <label>✉️ E-mail</label>
+                <input type="email" name="email" placeholder="din.email@example.dk" required>
+
+                <button type="button" class="btn-primary next-btn">Næste</button>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="form-step">
+                <div class="semi-question">
+                    <div class="Q1">
+                        <label>🎓 Højeste uddannelse</label>
+                        <input type="text" name="uddannelse" placeholder="fx Bachelor i IT, København Universitet" required>
+                    </div>
+                    <div class="Q2">
+                        <label>📅 År</label>
+                        <input type="text" name="uddannelse_aar" placeholder="fx 2023" required>
+                    </div>
+                </div>
+
+                <div class="semi-question">
+                    <div class="Q1">
+                        <label>💼 Seneste arbejde</label>
+                        <input type="text" name="arbejde" placeholder="fx Barista hos Espresso House, Aalborg" required>
+                    </div>
+                    <div class="Q2">
+                        <label>📅 År</label>
+                        <input type="text" name="arbejde_aar" placeholder="fx 2025" required>
+                    </div>
+                </div>
+
+                <p class="form-disclaimer">
+                Hvis det ikke er relevant for din profil, skriv det i feltet og 'N/A' i årsfeltet.
+                </p>
+
+                <button type="button" class="btn-primary next-btn">Næste</button>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="form-step">
+                <div class="mcq">
+                    <p>🇩🇰 Dansk sprogfærdighed</p>
+
+                    <label class="radio-option">
+                        <input type="radio" name="dansk" value="Grundlæggende" required>
+                        Grundlæggende
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="dansk" value="Middelgod">
+                        Middelgod
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="dansk" value="Flydende">
+                        Flydende
+                    </label>
+                </div>
+
+                <button type="button" class="btn-primary next-btn">Næste</button>
+            </div>
+
+            <!-- STEP 4 -->
+            <div class="form-step">
+                <div class="mcq">
+                    <p>🇬🇧 Engelsk sprogfærdighed</p>
+
+                    <label class="radio-option">
+                        <input type="radio" name="engelsk" value="Grundlæggende" required>
+                        Grundlæggende
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="engelsk" value="Middelgod">
+                        Middelgod
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="engelsk" value="Flydende">
+                        Flydende
+                    </label>
+                </div>
+
+                <button type="button" class="btn-primary next-btn">Næste</button>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="form-step">
+                <div class="mcq">
+                    <p>✈️ Hvornår kan du starte i et nyt job?</p>
+
+                    <label class="radio-option">
+                        <input type="radio" name="start" value="Straks" required>
+                        Straks
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="start" value="Om 1–3 måneder">
+                        Om 1–3 måneder
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="start" value="Om mere end 3 måneder">
+                        Om +3 måneder
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="gdpr-consent" required>
+                        <span>
+                            Ved at krydse af i denne boks accepterer du, at dine oplysninger indsamles af vores virksomhed og deles med relevante parter for at igangsætte rekrutteringsprocessen.
+                            Læs mere i vores <a href="privacy-dk.html" target="_blank">privatlivspolitik</a>.
+                        </span>
+                    </label>
+
+                <button type="submit" class="btn-primary next-btn">Opret CV</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<script src="../assets/js/cv-generator.js"></script>
+
+</body>
+</html>

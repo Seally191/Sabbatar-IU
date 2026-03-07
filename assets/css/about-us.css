@@ -150,6 +150,10 @@
         text-align: center;
     }
 
+    .about-text h1 {
+        align-self: center;
+    }
+
     #about-us img {
         max-width: 80%;
         aspect-ratio: 16 / 9;
@@ -167,11 +171,15 @@
     }
 
     .pillar {
-        max-width: 520px;
+        max-width: 420px;
         width: 100%;
         padding: 1.3em;
         font-size: 0.95em;
         text-align: center;
+    }
+
+    h1 {
+        max-width: 15ch;
     }
 
     #team {

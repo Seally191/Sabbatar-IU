@@ -148,22 +148,31 @@
 
     #referral,
     #disclaimer {
-    padding: 2em 3em;
+    padding: 2em 2em;
 }
 
     #referral p {
     max-width: 80%;
     }
 
-
     #referral .form-row {
     grid-template-columns: 1fr;
     gap: 1.5em;
     }
 
+    #referral input {
+    width: 90%;
+    }
+
     #disclaimer {
     flex-direction: column;
     text-align: center;
+    gap: 2.2em;
+    }
+
+    #disclaimer .section-container {
+    flex-direction: column;
+    align-items: center;
     gap: 2em;
     }
 
@@ -173,10 +182,15 @@
 
     #disclaimer img {
     max-width: 80%;
+    aspect-ratio: 16 / 9;
     }
 
     #referral .checkbox input[type="checkbox"] {
     width: 16px;
     height: 16px;
     }
+
+    h1, p {
+    text-wrap: balance;
+    }   
 }
