@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henvis en ven</title>
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/referral.css">
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/referral.css">
+    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
 </head>
 <body>
 
 <div id="header-container"></div>
-<script src="../assets/js/header.js"></script>
+<script src="/Sabbatar-IU/assets/js/header.js"></script>
 <script>
-    fetch('./header-dk.html')
+    fetch('/Sabbatar-IU/dk/header-dk.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
@@ -33,7 +33,7 @@
         Udfyld formularen nedenfor for at komme i gang.</p>
 
     <!-- Netlify Referral Form -->
-    <form name="referral" method="POST" data-netlify="true" action="thank-dk.html">
+    <form name="referral" method="POST" data-netlify="true" action="/Sabbatar-IU/dk/thank-dk.html">
         <input type="hidden" name="form-name" value="referral">
 
         <div class="form-row">
@@ -63,7 +63,7 @@
         <label class="checkbox">
     <input type="checkbox" name="consent" required>
     Jeg bekræfter, at jeg har fået tilladelse fra min ven til at dele deres oplysninger,
-    og at de er informeret om <a href="/privacy-dk.html" target="_blank">privatlivspolitikken</a>.
+    og at de er informeret om <a href="/Sabbatar-IU/dk/privacy-dk.html" target="_blank">privatlivspolitikken</a>.
         </label>
 
         <button type="submit">Send anbefaling</button>
@@ -82,14 +82,14 @@
                     for at lære og udvikle jer sammen. Selvom hver af jer følger jeres egen professionelle vej, vil rejsen forbinde jer
                     gennem fælles oplevelser, nye relationer og spændingen ved denne fantastiske mulighed.</p>
             </div>
-            <img class="column-2" src="../assets/img/18.png" alt="venner på stranden">
+            <img class="column-2" src="/Sabbatar-IU/assets/img/18.png" alt="venner på stranden">
         </div>
     </section>
 
     <div id="footer-container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('./footer-dk.html')
+            fetch('/Sabbatar-IU/dk/footer-dk.html')
                 .then(response => response.text())
                 .then(data => document.getElementById('footer-container').innerHTML = data)
                 .catch(error => console.log("Error loading footer:", error));

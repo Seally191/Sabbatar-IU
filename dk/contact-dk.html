@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt os</title>
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/contact.css">
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/contact.css">
+    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
 </head>
 <body>
 
 <div id="header-container"></div>
-<script src="../assets/js/header.js"></script>
+<script src="/Sabbatar-IU/assets/js/header.js"></script>
 <script>
-    fetch('./header-dk.html')
+    fetch('/Sabbatar-IU/dk/header-dk.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
@@ -29,7 +29,7 @@
     <h1>Kontakt Os</h1>
 
     <!-- Netlify Contact Form -->
-    <form name="contact" method="POST" data-netlify="true" action="thank-dk.html">
+    <form name="contact" method="POST" data-netlify="true" action="/Sabbatar-IU/dk/thank-dk.html">
         <input type="hidden" name="form-name" value="contact">
 
         <label for="email">Din e-mail:</label>
@@ -79,7 +79,7 @@ Jeg ser frem til at høre fra jer!
     <div id="footer-container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('./footer-dk.html')
+            fetch('/Sabbatar-IU/dk/footer-dk.html')
                 .then(response => response.text())
                 .then(data => document.getElementById('footer-container').innerHTML = data)
                 .catch(error => console.log("Error loading footer:", error));

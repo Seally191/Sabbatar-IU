@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ansøg nu</title>
 
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/apply-now.css">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css">
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/apply-now.css">
 
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
 </head>
 
 <body>
 
 <div id="header-container"></div>
-<script src="../assets/js/header.js"></script>
+<script src="/Sabbatar-IU/assets/js/header.js"></script>
 <script>
-    fetch('./header-dk.html')
+    fetch('/Sabbatar-IU/dk/header-dk.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
@@ -34,12 +34,12 @@
 <section id="apply-CV">
     <div class="apply-container">
 
-        <img class="about-image" src="../assets/img/17.png" alt="working woman">
+        <img class="about-image" src="/Sabbatar-IU/assets/img/17.png" alt="working woman">
 
         <div class="apply-text">
             <h1>Upload Dit CV</h1>
 
-            <form name="cv-upload" method="POST" data-netlify="true" enctype="multipart/form-data" action="thank-dk.html">
+            <form name="cv-upload" method="POST" data-netlify="true" enctype="multipart/form-data" action="/Sabbatar-IU/dk/thank-dk.html">
                 <input type="hidden" name="form-name" value="cv-upload">
 
                 <label class="file-upload">
@@ -55,7 +55,7 @@
                 <label class="checkbox">
                     <input type="checkbox" name="terms" required>
                     Dine oplysninger bruges til at kontakte dig og deles med vores partnere for at sætte gang i rekrutteringen.
-                    Tjek vores <a href="/privacy-dk.html" target="_blank">privatlivspolitik</a> for at se, hvordan vi passer på dine data.
+                    Tjek vores <a href="/Sabbatar-IU/dk/privacy-dk.html" target="_blank">privatlivspolitik</a> for at se, hvordan vi passer på dine data.
                 </label>
 
                 <button type="submit" class="btn-primary">Ansøg</button>
@@ -72,7 +72,7 @@
         <h1>Har du ikke et CV?</h1>
         <p>Brug vores CV-generator og få et skarpt, professionelt CV på kun 5 simple trin, der tager mindre end 3 minutter. Når du er færdig, sendes dit CV direkte til vores rekrutteringsteam: ingen ekstra upload, ingen e-mails, intet besvær.
 Vi tager over derfra og kontakter dig med de bedste muligheder i udlandet. <br><br>Nemt, hurtigt og effektivt.</p>
-        <button type="button" class="btn-secondary" onclick="window.location.href='cv-generator-dk.html'">
+        <button type="button" class="btn-secondary" onclick="window.location.href='/Sabbatar-IU/dk/cv-generator-dk.html'">
                 Opret CV
         </button>
 
@@ -82,7 +82,7 @@ Vi tager over derfra og kontakter dig med de bedste muligheder i udlandet. <br><
     <div id="footer-container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('./footer-dk.html')
+            fetch('/Sabbatar-IU/dk/footer-dk.html')
                 .then(response => response.text())
                 .then(data => document.getElementById('footer-container').innerHTML = data)
                 .catch(error => console.log("Error loading footer:", error));
