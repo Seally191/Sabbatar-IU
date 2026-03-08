@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <base href="/Sabbatar-IU/">
-
     <title>Bring en ven med dig | Bo og arbejde i udlandet</title>
 
     <meta
@@ -13,21 +11,21 @@
       content="Overvejer du at bo og arbejde i udlandet? Læs hvorfor det kan gøre oplevelsen endnu bedre at tage et sabbatår i udlandet sammen med en ven."
     />
 
-    <link rel="stylesheet" href="../../assets/css/general.css" />
-    <link rel="stylesheet" href="../../assets/css/article.css" />
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css" />
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/article.css" />
 
-    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../../assets/img/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
 
   </head>
 
   <body>
     <div id="header-container"></div>
 
-    <script src="../../assets/js/header.js"></script>
+    <script src="/Sabbatar-IU/assets/js/header.js"></script>
     <script>
-      fetch("../../dk/header-dk.html")
+      fetch("/Sabbatar-IU/articles/dk/header-dk.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-container").innerHTML = data;
@@ -43,7 +41,7 @@
 
     <section class="article-content">
                <img
-          src="../../assets/img/2.png"
+          src="/Sabbatar-IU/assets/img/2.png"
           alt="To piger holder om hinanden og griner på en strand"
           class="article-image-1"
         />
@@ -111,7 +109,7 @@
           </p>
 
           <img
-            src="../../assets/img/32.png"
+            src="/Sabbatar-IU/assets/img/32.png"
             alt="Et par ser solnedgangen fra Akropolis i Athen"
             class="article-image-2"
           />
@@ -161,7 +159,7 @@
             skabe minder, der varer i mange år.
           </p>
 
-            <button type="button" class="all-articles-btn" onclick="window.location.href='../blog-dk.html'">
+            <button type="button" class="all-articles-btn" onclick="window.location.href='/Sabbatar-IU/dk/blog-dk.html'">
             Se Alle Indlæg
             </button>
         </section>
@@ -172,7 +170,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("../../dk/footer-dk.html")
+        fetch("/Sabbatar-IU/dk/articles/footer-dk.html")
           .then((response) => response.text())
           .then((data) => (document.getElementById("footer-container").innerHTML = data))
           .catch((error) => console.log("Error loading footer:", error));

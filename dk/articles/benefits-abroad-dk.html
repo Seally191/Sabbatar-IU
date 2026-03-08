@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <base href="/Sabbatar-IU/">
-
     <title>Fordelene ved at bo i udlandet | Bo og arbejde i udlandet</title>
 
     <meta
@@ -13,20 +11,20 @@
       content="Læs om fordelene ved at bo i udlandet – fra sundhed og økonomi til personlig udvikling og international erhvervserfaring."
     />
 
-    <link rel="stylesheet" href="../../assets/css/general.css" />
-    <link rel="stylesheet" href="../../assets/css/article.css" />
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css" />
+    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/article.css" />
 
-    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../../assets/img/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
   </head>
 
   <body>
     <div id="header-container"></div>
 
-    <script src="../../assets/js/header.js"></script>
+    <script src="/Sabbatar-IU/assets/js/header.js"></script>
     <script>
-    fetch('../dk/articles/header-dk.html')
+    fetch('/Sabbatar-IU/dk/articles/header-dk.html')
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-container").innerHTML = data;
@@ -42,7 +40,7 @@
 
         <section class="article-content">
           <img
-            src="../../assets/img/38.png"
+            src="/Sabbatar-IU/assets/img/38.png"
             alt="En gruppe piger spiser på en terrasse med udsigt over havet ved en turkis pool"
             class="article-image-1"
           />
@@ -86,7 +84,7 @@
           </p>
 
             <img
-            src="../../assets/img/7.png"
+            src="/Sabbatar-IU/assets/img/7.png"
             alt="To mænd går gennem gaderne i en lille landsby"
             class="article-image-2"
             />
@@ -134,7 +132,7 @@
             For alle, der overvejer en oplevelse i udlandet, kan beslutningen om at tage af sted være utrolig givende. Det er ikke kun en chance for at opdage et nyt sted, men også for at opdage nye muligheder for din fremtid.
           </p>
 
-          <button type="button" class="all-articles-btn" onclick="window.location.href='../blog-dk.html'">
+          <button type="button" class="all-articles-btn" onclick="window.location.href='/Sabbatar-IU/dk/blog-dk.html'">
             Se Alle Indlæg
           </button>
         </section>
@@ -143,10 +141,9 @@
 
     <div id="footer-container"></div>
 
-   <script src="../../assets/js/footer.js"></script>    
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("../../dk/footer-dk.html")
+        fetch("/Sabbatar-IU/dk/articles/footer-dk.html")
           .then((response) => response.text())
           .then((data) => (document.getElementById("footer-container").innerHTML = data))
           .catch((error) => console.log("Error loading footer:", error));
