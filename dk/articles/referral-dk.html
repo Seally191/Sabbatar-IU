@@ -17,7 +17,6 @@
     <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
     <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
     <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
-
   </head>
 
   <body>
@@ -25,7 +24,7 @@
 
     <script src="/Sabbatar-IU/assets/js/header.js"></script>
     <script>
-      fetch("/Sabbatar-IU/articles/dk/header-dk.html")
+      fetch("/Sabbatar-IU/dk/articles/header-dk.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-container").innerHTML = data;
