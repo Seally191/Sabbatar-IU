@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privatlivspolitik</title>
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css">
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/privacy.css">
-    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/privacy.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
 </head>
 <body>
 
     <div id="header-container"></div>
-    <script src="/Sabbatar-IU/assets/js/header.js"></script>
+    <script src="../assets/js/header.js"></script>
     <script>
-        fetch('/Sabbatar-IU/dk/header-dk.html')
+        fetch('../dk/header-dk.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
@@ -108,7 +108,7 @@
     <div id="footer-container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('/Sabbatar-IU/dk/footer-dk.html')
+            fetch('../dk/footer-dk.html')
                 .then(response => response.text())
                 .then(data => document.getElementById('footer-container').innerHTML = data)
                 .catch(error => console.log("Error loading footer:", error));

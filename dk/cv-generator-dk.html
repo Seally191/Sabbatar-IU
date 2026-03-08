@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV-bygger</title>
 
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css">
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/cv-generator.css">
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/cv-generator.css">
 
-    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
 </head>
 
 <body>
 
 <div id="header-container"></div>
 
-<script src="/Sabbatar-IU/assets/js/header.js"></script>
+<script src="../assets/js/header.js"></script>
 <script>
-fetch('/Sabbatar-IU/dk/header-dk.html')
+fetch('../dk/header-dk.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;
@@ -44,7 +44,7 @@ fetch('/Sabbatar-IU/dk/header-dk.html')
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              action="/Sabbatar-IU/dk/thank-dk.html">
+              action="../dk/thank-dk.html">
 
             <input type="hidden" name="form-name" value="cv-generator">
 
@@ -169,7 +169,7 @@ fetch('/Sabbatar-IU/dk/header-dk.html')
                         <input type="checkbox" name="gdpr-consent" required>
                         <span>
                             Ved at krydse af i denne boks accepterer du, at dine oplysninger indsamles af vores virksomhed og deles med relevante parter for at igangsætte rekrutteringsprocessen.
-                            Læs mere i vores <a href="/Sabbatar-IU/dk/privacy-dk.html" target="_blank">privatlivspolitik</a>.
+                            Læs mere i vores <a href="../dk/privacy-dk.html" target="_blank">privatlivspolitik</a>.
                         </span>
                     </label>
 
@@ -180,7 +180,7 @@ fetch('/Sabbatar-IU/dk/header-dk.html')
     </div>
 </section>
 
-<script src="/Sabbatar-IU/assets/js/cv-generator.js"></script>
+<script src="../assets/js/cv-generator.js"></script>
 
 </body>
 </html>
