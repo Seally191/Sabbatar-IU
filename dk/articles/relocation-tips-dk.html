@@ -11,21 +11,21 @@
       content="Planlægger du at flytte til udlandet? Læs fem praktiske relocation tips der hjælper dig med at forberede din internationale flytning og starte dit eventyr i udlandet med selvtillid."
     />
 
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css" />
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/article.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <link rel="stylesheet" href="../../assets/css/article.css" />
 
-    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="/Sabbatar-IU/assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="/Sabbatar-IU/assets/img/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../../assets/img/favicon_io/site.webmanifest">
     
   </head>
 
   <body>
     <div id="header-container"></div>
 
-    <script src="/Sabbatar-IU/assets/js/header.js"></script>
+    <script src="../../assets/js/header.js"></script>
     <script>
-      fetch("/Sabbatar-IU/dk/articles/header-dk.html")
+      fetch("header-dk.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-container").innerHTML = data;
@@ -42,7 +42,7 @@
         <section class="article-content">
 
           <img
-            src="/Sabbatar-IU/assets/img/37.png"
+            src="../../assets/img/37.png"
             alt="En mand holder stolt sin kuffert på balkonen foran sin lejlighed med udsigt over havet"
             class="article-image-1"
           />
@@ -102,7 +102,7 @@
           </p>
 
           <img
-            src="/Sabbatar-IU/assets/img/16.png"
+            src="../../assets/img/16.png"
             alt="Tre kolleger smiler mod kameraet på deres arbejdsplads"
             class="article-image-2"
           />
@@ -134,7 +134,7 @@
           <button
             type="button"
             class="all-articles-btn"
-            onclick="window.location.href='/Sabbatar-IU/dk/blog-dk.html'"
+            onclick="window.location.href='../blog-dk.html'"
           >
             Se Alle Indlæg
           </button>
@@ -147,7 +147,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("/Sabbatar-IU/dk/articles/footer-dk.html")
+        fetch("footer-dk.html")
           .then((response) => response.text())
           .then((data) => (document.getElementById("footer-container").innerHTML = data))
           .catch((error) => console.log("Error loading footer:", error));
