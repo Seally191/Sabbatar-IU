@@ -79,10 +79,14 @@
     hyphens: auto;
 }
 
+#job-description1 .text {
+    flex: 2;
+}
+
 .photo {
     display: flex;
+    flex: 1;
     justify-content: center;
-    max-width: 30%;
 }
 
 .photo img {
