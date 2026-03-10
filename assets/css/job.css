@@ -1,0 +1,321 @@
+/* ==============================
+   HERO 
+============================== */
+
+#jobs-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4em;
+    padding: 5em 6em;
+    background: #12609d;
+    color: white;
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #fad02c;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: -2em;
+}
+
+.btn-primary:hover {
+    background: #e8bb0a;
+    transform: scale(1.05);
+}
+
+
+/* ==============================
+   HERO / BANNER IMAGE
+============================== */
+
+.job-detail-image img {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+@supports not (aspect-ratio: 4 / 1) {
+    .job-detail-image img {
+        height: 250px;
+    }
+}
+
+
+/* ==============================
+   SECTION 1 – VACANCY
+============================== */
+
+#job-description1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4em;
+    padding: 5em 10em;
+    background: #f4f8fc;
+}
+
+#job-description1 h1 {
+    color: #12609d;
+    margin-bottom: 0.7em;
+    text-align: center;
+}
+
+#job-description1 p {
+    color: #12609d;
+    line-height: 1.6;
+    max-width: none;
+    text-wrap: balance;
+    hyphens: auto;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    max-width: 30%;
+}
+
+.photo img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ==============================
+   SECTION 2 – COMPANY
+============================== */
+
+#job-description2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5em 6em;
+    gap: 4em;
+    background: #12609d;
+}
+
+#job-description2 h1 {
+    color: white;
+    margin-bottom: 0.7em;
+    text-align: center;
+}
+
+#job-description2 p {
+    color: white;
+    line-height: 1.6;
+    text-wrap: balance;
+    hyphens: auto;
+}
+
+.video1 iframe {
+    max-width: 600px;
+    height: 320px;
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   SECTION 3 – REQUIREMENTS
+============================== */
+
+#job-description3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5em 8em;
+    gap: 5em;
+    background: #f4f8fc;
+}
+
+#job-description3 h1 {
+    color: #12609d;
+    margin-bottom: 0.7em;
+    text-align: center;
+}
+
+#job-description3 p {
+    color: #12609d;
+    line-height: 1.6;
+    text-wrap: balance;
+    hyphens: auto;
+}
+
+
+/* ==============================
+   SECTION 4 – LOCATION
+============================== */
+
+#job-description4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5em 6em;
+    gap: 4em;
+    background: #4f94cd;
+}
+
+#job-description4 h1 {
+    color: white;
+    margin-bottom: 0.7em;
+    text-align: center;
+}
+
+#job-description4 p {
+    color: white;
+    line-height: 1.6;
+    text-wrap: balance;
+    hyphens: auto;
+}
+
+.video iframe {
+    max-width: 600px;
+    height: 320px;
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   SECTION 5 – RELATED ARTICLES
+============================== */
+
+#job-description5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 6em;
+    background: white;
+}
+
+#job-description5 h1 {
+    color: #12609d;
+    margin-bottom: 0.7em;
+    text-align: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+}
+
+.blog-card{
+background:#fff;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:transform 0.2s ease, box-shadow 0.2s ease;
+display:flex;
+flex-direction:column;
+}
+
+.blog-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+
+.blog-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+display:block;
+}
+
+.blog-content{
+padding:20px;
+display:flex;
+flex-direction:column;
+flex:1;
+}
+
+.blog-content h2{
+margin-bottom:10px;
+line-height:1.2;
+color:#12609d;
+}
+
+.blog-content p{
+font-size:15px;
+line-height:1.4;
+margin-bottom:15px;
+color:#12609d;
+}
+
+.read-more-btn{
+background:#fad02c;
+color:white;
+border:none;
+padding:0.7em 1.4em;
+border-radius:8px;
+font-size:1.1rem;
+cursor:pointer;
+transition:all 0.25s ease;
+margin-top:auto;
+align-self:center;
+}
+
+.read-more-btn:hover{
+background:#e8bb0a;
+transform:translateY(-1px);
+}
+
+/* ==============================
+   RESPONSIVE < 900px
+============================== */
+
+@media (max-width: 900px) {
+
+    /* HERO */
+    #jobs-hero {
+        padding: 4em 3em;
+        gap: 4em;
+    }
+
+    /* JOB SECTIONS STACK */
+    #job-description1,
+    #job-description2,
+    #job-description3,
+    #job-description4 {
+        flex-direction: column;
+        text-align: justify;
+        padding: 4em 3em;
+        gap: 2.5em;
+    }
+
+    /* JOB SECTIONS STACK */
+    #job-description1 p,
+    #job-description3 p {
+        text-align: left;
+    }
+
+    /* PHOTO */
+    .photo {
+        max-width: 80%;
+    }
+
+    /* VIDEOS */
+    .video iframe,
+    .video1 iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* BLOG SECTION */
+    #job-description5 {
+        padding: 4em 3em;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
