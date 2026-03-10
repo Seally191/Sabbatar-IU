@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tak for din ansøgning</title>
 
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/general.css">
-    <link rel="stylesheet" href="/Sabbatar-IU/assets/css/thank.css">
+    <link rel="stylesheet" href="../../assets/css/general.css">
+    <link rel="stylesheet" href="../../assets/css/thank.css">
 
-    <link rel="icon" type="image/x-icon" href="/Sabbatar-IU/assets/img/favicon_io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon_io/favicon.ico">
 </head>
 
 <body>
 
 <div id="header-container"></div>
-<script src="/Sabbatar-IU/assets/js/header.js"></script>
+<script src="../../assets/js/header.js"></script>
 <script>
-fetch('/Sabbatar-IU/dk/header-dk.html')
+fetch('header-dk.html')
 .then(res => res.text())
 .then(data => {
     document.getElementById('header-container').innerHTML = data;
@@ -43,7 +43,7 @@ fetch('/Sabbatar-IU/dk/header-dk.html')
             if (document.referrer && window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = '/Sabbatar-IU/dk/sabbatar-i-udlandet-dk.html';
+                window.location.href = 'sabbatar-i-udlandet-dk.html';
             }
         }
         </script>
