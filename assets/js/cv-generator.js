@@ -18,6 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function validateStep(step) {
 
+        /* Validate skill checkboxes (at least one) */
+        const skillBoxes = step.querySelectorAll('input[name="skills[]"]');
+
+        if (skillBoxes.length) {
+            const oneChecked = Array.from(skillBoxes).some(cb => cb.checked);
+            if (!oneChecked) {
+                return false;
+            }
+        }
+
+        /* Validate required inputs */
         const inputs = step.querySelectorAll("input[required]");
 
         for (let input of inputs) {
@@ -28,12 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 const checked = step.querySelector(`input[name="${name}"]:checked`);
 
                 if (!checked) {
-                    return false;
-                }
-
-            } else if (input.type === "checkbox") {
-
-                if (!input.checked) {
                     return false;
                 }
 
@@ -57,10 +62,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const currentFormStep = steps[currentStep];
 
             if (!validateStep(currentFormStep)) {
-                alert("Udfyld venligst alle felter før du fortsætter.");
+                alert("Ups! Der mangler lidt information i formularen.");
                 return;
             }
 
+            /* If it's the submit button, let the form submit */
             if (btn.type === "submit") {
                 return;
             }

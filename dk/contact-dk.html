@@ -32,8 +32,17 @@
     <form name="contact" method="POST" data-netlify="true" action="/dk/thank-dk.html">
         <input type="hidden" name="form-name" value="contact">
 
-        <label for="email">Din e-mail:</label>
-        <input type="email" id="email" name="email" required placeholder="din.email@example.com">
+        <div class="contact-row">
+            <div class="contact-field">
+                <label for="email">Din e-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="din.email@example.com">
+            </div>
+
+            <div class="contact-field">
+                <label for="phone">Dit telefonnummer:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="30123456">
+            </div>
+        </div>
 
         <label for="message">Din besked:</label>
         <textarea id="message" name="message">

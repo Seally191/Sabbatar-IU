@@ -20,15 +20,14 @@
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
             
-            // ── This is the only extra line you need ──
             document.dispatchEvent(new Event('header-loaded'));
         })
         .catch(err => console.error("Header load failed:", err));
 </script>
 
-    <!-- Hero Section -->
-    <section id="section-1">
-        <div class="section-container">
+<!-- Hero Section -->
+<section id="section-1">
+    <div class="section-container">
         <div class="column-1">
             <h1>Find Dit Næste Job i Udlandet</h1>
             <p>Vi mener, at alle har et unikt potentiale, og vi er her for at hjælpe dig med at frigøre det. Uanset om du 
@@ -39,69 +38,76 @@
             </button>        
         </div>
         <img class="column-2" src="../assets/img/1.png" alt="happy woman at the beach">
-        </div>
-    </section>
+    </div>
+</section>
 
-        <!-- Why Us Section -->
-    <section id="section-2">
-            <h1>Hvorfor Vælge Os?</h1>
-            <div class="columns">
-                <div class="column">
-                    <h3 class="subheading">🔍 Mere end et job</h3>
-                    <p>Det er et eventyr og en rigtig god mulighed for både faglig og 
-                        personlig udvikling. Det er en investering i din fremtid, der giver 
-                        dig langt mere end bare en lønseddel. Et nyt land åbner døren til 
-                        helt nye oplevelser, udfordringer der former dig, værdifulde 
-                        kompetencer du ikke får andre steder, og den unikke chance for 
-                        at starte på at bygge en stærk international karriere. Du vokser 
-                        både som menneske og professionel, mens du skaber et netværk 
-                        på tværs af grænser og kulturer.</p>
-                </div>
-                <div class="column">    
-                    <h3 class="subheading">🤝 Støtte hele vejen</h3>
-                    <p>Vi hjælper dig med at finde det rigtige job, der passer til dine 
-                        ambitioner og kompetencer. Vi assisterer med hele 
-                        flytteprocessen, fra praktiske ting som bolig, papirarbejde og 
-                        visum til de små detaljer, der gør forskellen. Når du er kommet 
-                        frem, står vi klar med løbende hjælp og råd, så du hurtigt føler 
-                        dig hjemme og tryg i det nye miljø. Du er aldrig alene på rejsen. 
-                        Vores erfarne mentorship følger dig tæt hele vejen, uanset om 
-                        du har brug for sparring om arbejdet, livet i landet eller bare en 
-                        god snak.</p>
-                </div>
-                <div class="column">
-                    <h3 class="subheading">☀️ Solrige & kultur</h3>
-                    <p>Et liv ved Middelhavet byder på mere end smukke omgivelser. 
-                        Sol, varme og den friske havluft giver dig ekstra energi, bedre 
-                        humør og øget velvære året rundt. Den afslappede livsrytme 
-                        skaber en sund balance, så du lettere nyder både arbejdet og 
-                        din fritid uden stress. Samtidig møder du spændende nye 
-                        kulturer, autentiske smage og åbne mennesker hver dag, 
-                        hvilket naturligt styrker din tilpasningsevne, dine 
-                        kommunikationsevner og din dybere kulturelle forståelse.</p>
-                </div>
-                <div class="column">
-                    <h3 class="subheading">🗣️ Høre det fra dem</h3>
-                    <div class="video-wrapper">
-                    <video 
-                        class="jobsun-video"
-                        autoplay 
-                        muted 
-                        loop 
-                        playsinline 
-                        controls
-                    >
-                        <source src="../assets/vid/Høre-det-fra-dem.mp4" type="video/mp4">
-                        Din browser understøtter ikke video.
-                    </video>
-                    </div>
-                </div>
+<!-- Why Us Section -->
+<section id="section-2">
+    <h1>Hvorfor Vælge Os?</h1>
+
+    <div class="columns">
+
+        <!-- VIDEO COLUMN (moved to first position) -->
+        <div class="column">
+            <h3 class="subheading">🗣️ Høre det fra dem</h3>
+            <div class="video-wrapper">
+                <video 
+                    class="jobsun-video"
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    controls
+                >
+                    <source src="../assets/vid/Høre-det-fra-dem.mp4" type="video/mp4">
+                    Din browser understøtter ikke video.
+                </video>
             </div>
-    </section>
+        </div>
 
-        <!-- Hero Section -->
-    <section id="section-1">
-        <div class="section-container">
+        <div class="column">
+            <h3 class="subheading">🔍 Mere end et job</h3>
+            <p>Det er et eventyr og en rigtig god mulighed for både faglig og 
+                personlig udvikling. Det er en investering i din fremtid, der giver 
+                dig langt mere end bare en lønseddel. Et nyt land åbner døren til 
+                helt nye oplevelser, udfordringer der former dig, værdifulde 
+                kompetencer du ikke får andre steder, og den unikke chance for 
+                at starte på at bygge en stærk international karriere. Du vokser 
+                både som menneske og professionel, mens du skaber et netværk 
+                på tværs af grænser og kulturer.</p>
+        </div>
+
+        <div class="column">    
+            <h3 class="subheading">🤝 Støtte hele vejen</h3>
+            <p>Vi hjælper dig med at finde det rigtige job, der passer til dine 
+                ambitioner og kompetencer. Vi assisterer med hele 
+                flytteprocessen, fra praktiske ting som bolig, papirarbejde og 
+                visum til de små detaljer, der gør forskellen. Når du er kommet 
+                frem, står vi klar med løbende hjælp og råd, så du hurtigt føler 
+                dig hjemme og tryg i det nye miljø. Du er aldrig alene på rejsen. 
+                Vores erfarne mentorship følger dig tæt hele vejen, uanset om 
+                du har brug for sparring om arbejdet, livet i landet eller bare en 
+                god snak.</p>
+        </div>
+
+        <div class="column">
+            <h3 class="subheading">☀️ Solrige & kultur</h3>
+            <p>Et liv ved Middelhavet byder på mere end smukke omgivelser. 
+                Sol, varme og den friske havluft giver dig ekstra energi, bedre 
+                humør og øget velvære året rundt. Den afslappede livsrytme 
+                skaber en sund balance, så du lettere nyder både arbejdet og 
+                din fritid uden stress. Samtidig møder du spændende nye 
+                kulturer, autentiske smage og åbne mennesker hver dag, 
+                hvilket naturligt styrker din tilpasningsevne, dine 
+                kommunikationsevner og din dybere kulturelle forståelse.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Hero Section -->
+<section id="section-1">
+    <div class="section-container">
         <img class="column-2" src="../assets/img/12.png" alt="happy friends laughing at the beach">
         <div class="column-1">
             <h1>Udfold Dit Potentiale!</h1>
@@ -112,18 +118,18 @@
                 Tag Kontakt
             </button>
         </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <div id="footer-container"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('../dk/footer-dk.html')
-                .then(response => response.text())
-                .then(data => document.getElementById('footer-container').innerHTML = data)
-                .catch(error => console.log("Error loading footer:", error));
-        });
-    </script> 
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('../dk/footer-dk.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script> 
 
 </body>
 </html>

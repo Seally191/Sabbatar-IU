@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Høre det fra dem</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/succeshistorier.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('../dk/header-dk.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+<section class="participants-section">
+
+    <div class="participants-hero">
+        <h1>Hør Det Fra Dem</h1>
+        <p>Mød nogle af vores succesfulde deltagere, der allerede har taget springet og nu lever deres drøm om en spændende karriere i udlandet.</p>
+    </div>
+
+ <div class="participants-grid">
+
+    <div class="video-card" data-video-id="wpE0QVQYAIA">
+        <div class="video-wrapper">
+            <div class="overlay">🇩🇰 Aia</div>
+            <img src="https://img.youtube.com/vi/wpE0QVQYAIA/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="PSoTdmuNsmk">
+        <div class="video-wrapper">
+            <div class="overlay">🇩🇰 Frida</div>
+            <img src="https://img.youtube.com/vi/PSoTdmuNsmk/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="-i9FziFarKk">
+        <div class="video-wrapper">
+            <div class="overlay">🇩🇰 Hannah</div>
+            <img src="https://img.youtube.com/vi/-i9FziFarKk/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="8dt0icBPmRY">
+        <div class="video-wrapper">
+            <div class="overlay">🇩🇰 Rebecca</div>
+            <img src="https://img.youtube.com/vi/8dt0icBPmRY/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="86ZgALNvjuo">
+        <div class="video-wrapper">
+            <div class="overlay">🇩🇰 William</div>
+            <img src="https://img.youtube.com/vi/86ZgALNvjuo/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="hTaTt69NWVY">
+        <div class="video-wrapper">
+            <div class="overlay">🇳🇴 Ella</div>
+            <img src="https://img.youtube.com/vi/hTaTt69NWVY/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="F-WuIlUkBwM">
+        <div class="video-wrapper">
+            <div class="overlay">🇳🇴 Ida</div>
+            <img src="https://img.youtube.com/vi/F-WuIlUkBwM/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="3kuTL8TLcGE">
+        <div class="video-wrapper">
+            <div class="overlay">🇳🇴 Sean</div>
+            <img src="https://img.youtube.com/vi/3kuTL8TLcGE/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="xrIVZquRQlg">
+        <div class="video-wrapper">
+            <div class="overlay">🇫🇮 Juha</div>
+            <img src="https://img.youtube.com/vi/xrIVZquRQlg/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+    <div class="video-card" data-video-id="lXEW3VThEsM">
+        <div class="video-wrapper">
+            <div class="overlay">🇫🇮 Maisa</div>
+            <img src="https://img.youtube.com/vi/lXEW3VThEsM/maxresdefault.jpg" class="thumbnail">
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<script>
+// Simple click-to-play with name hide + autoplay
+document.querySelectorAll('.video-card').forEach(item => {
+  item.addEventListener('click', () => {
+    if (item.classList.contains('played')) return;
+
+    const videoId = item.dataset.videoId;  // Assure-toi que c'est data-video-id dans HTML
+    const wrapper = item.querySelector('.video-wrapper');
+    const overlay = item.querySelector('.overlay');
+
+    // Cache l'overlay (nom disparaît)
+    overlay.classList.add('hidden');
+
+    // Crée l'iframe avec mute + autoplay forcé
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0&mute=0&rel=0&modestbranding=1&playsinline=1`;
+    iframe.allow = "autoplay; encrypted-media; fullscreen";  // Important ici !
+    iframe.allowFullscreen = true;
+    iframe.style.border = '0';
+
+    // Vide le wrapper et ajoute l'iframe
+    wrapper.innerHTML = '';
+    wrapper.appendChild(iframe);
+
+    item.classList.add('played');
+  });
+});
+
+</script>
+
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('../dk/footer-dk.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script> 
+
+</body>
+</html>

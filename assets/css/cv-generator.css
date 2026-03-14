@@ -1,3 +1,4 @@
+
 #cv-generator {
     padding: 5em 6em;
     display: flex;
@@ -173,6 +174,55 @@ input::placeholder {
     border-color: #4f94cd;
 }
 
+/* SKILLS GRID */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    width: 100%;
+}
+
+/* Skill buttons */
+
+.skills-grid .checkbox-option {
+    background: white;
+    border: 1px solid #d8e0ea;
+    padding: 0.7em 1em; /* bigger button */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;  
+    justify-content: center;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #12609d;
+}
+
+.skills-grid .checkbox-option {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* hide checkbox */
+
+.skills-grid input[type="checkbox"] {
+    display: none;
+}
+
+/* hover */
+
+.skills-grid .checkbox-option:hover {
+    border-color: #12609d;
+}
+
+/* selected */
+
+.skills-grid .checkbox-option:has(input:checked) {
+    background: #4f94cd;
+    color: white;
+    border-color: #4f94cd;
+}
+
 /* -------------------------------- */
 /* SMALLER CHECKBOX TEXT */
 /* -------------------------------- */
@@ -243,6 +293,17 @@ input::placeholder {
         padding: 0.9em 1em;
         font-size: 1rem;
     }
+
+    /* Skills grid adjustments for phones */
+
+.skills-grid {
+    gap: 0.4em;
+}
+
+.skills-grid .checkbox-option {
+    padding: 0.7em 0.1em;
+    font-size: 0.9rem;
+}
 
     /* Improve tap area for checkbox */
     .checkbox-option {

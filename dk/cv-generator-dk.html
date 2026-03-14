@@ -2,7 +2,7 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CV-bygger</title>
 
     <link rel="stylesheet" href="../assets/css/general.css">
@@ -97,29 +97,71 @@ fetch('../dk/header-dk.html')
                 <button type="button" class="btn-primary next-btn">Næste</button>
             </div>
 
-            <!-- STEP 3 -->
-            <div class="form-step">
-                <div class="mcq">
-                    <p>🇩🇰 Dansk sprogfærdighed</p>
+<!-- STEP 3 -->
+<div class="form-step">
 
-                    <label class="radio-option">
-                        <input type="radio" name="dansk" value="Grundlæggende" required>
-                        Grundlæggende
-                    </label>
+    <div class="mcq">
+        <p>🧠 Din kompetenceprofil<br>(Vælg venligst mindst én)</p>
 
-                    <label class="radio-option">
-                        <input type="radio" name="dansk" value="Middelgod">
-                        Middelgod
-                    </label>
+        <div class="skills-grid">
 
-                    <label class="radio-option">
-                        <input type="radio" name="dansk" value="Flydende">
-                        Flydende
-                    </label>
-                </div>
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Kommunikation">
+                Kommunikation
+            </label>
 
-                <button type="button" class="btn-primary next-btn">Næste</button>
-            </div>
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Teknisk forståelse">
+                Teknisk forståelse
+            </label>
+                    
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Tidsstyring">
+                Tidsstyring
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Sans for detaljer">
+                Sans for detaljer
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Kundefokus">
+                Kundefokus
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Samarbejde">
+                Samarbejdsevner
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Tålmodighed">
+                Tålmodighed
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Tilpasningsevne">
+                Tilpasningsevne
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Multitasking">
+                Multitasking
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Konflikthåndtering">
+                Konflikthåndtering
+            </label>
+
+        </div>
+
+    </div>
+
+    <button type="button" class="btn-primary next-btn">Næste</button>
+
+</div>
 
             <!-- STEP 4 -->
             <div class="form-step">
