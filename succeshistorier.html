@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Høre det fra dem</title>
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/succeshistorier.css">
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/succeshistorier.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
 </head>
 <body>
 
 <div id="header-container"></div>
-<script src="../assets/js/header.js"></script>
+<script src="assets/js/header.js"></script>
 <script>
-    fetch('../dk/header-dk.html')
+    fetch('header-dk.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
@@ -141,7 +141,7 @@ document.querySelectorAll('.video-card').forEach(item => {
 <div id="footer-container"></div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        fetch('../dk/footer-dk.html')
+        fetch('footer-dk.html')
             .then(response => response.text())
             .then(data => document.getElementById('footer-container').innerHTML = data)
             .catch(error => console.log("Error loading footer:", error));

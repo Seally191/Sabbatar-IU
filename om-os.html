@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Om Os</title>
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/about-us.css">
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/about-us.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
 </head>
 <body>
 
 <div id="header-container"></div>
-<script src="../assets/js/header.js"></script>
+<script src="assets/js/header.js"></script>
 <script>
-    fetch('../dk/header-dk.html')
+    fetch('header-dk.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
@@ -27,7 +27,7 @@
     <!-- About Us Section -->
     <section id="about-us">
         <div class="section-container">
-        <img class="about-image" src="../assets/img/15.png" alt="working team">
+        <img class="about-image" src="assets/img/15.png" alt="working team">
         <div class="about-text">
             <h1>Om Os</h1>
             <p>Hos Jobsun mener vi, at alle har potentialet til at trives i en spændende karriere i 
@@ -44,33 +44,33 @@
         <h1>Det Vi Står For</h1>
         <div class="pillars">
             <div class="pillar">
-                <img src="../assets/img/tailoredsupport.png" alt="tailored support">
+                <img src="assets/img/tailoredsupport.png" alt="tailored support">
                 <h3 class="subheading">Personlig støtte</h3>
                 <p>Vi forstår, at hver person har unikke behov. Derfor tilbyder vi personlig støtte, der 
                     hjælper dig med at nå dine karrieremål og håndtere udfordringerne ved at flytte 
                     til udlandet.</p>
             </div>
             <div class="pillar">
-                <img src="../assets/img/mentorship.png" alt="mentorship">
+                <img src="assets/img/mentorship.png" alt="mentorship">
                 <h3 class="subheading">Mentorordning</h3>
                 <p>Vores team er med dig hele vejen. Fra karriererådgivning til at falde til i et nyt land giver 
                     vi mentorstøtte, der hjælper dig med at udvikle dig både professionelt og personligt.</p>
             </div>
             <div class="pillar">
-                <img src="../assets/img/transparency.png" alt="transparency">
+                <img src="assets/img/transparency.png" alt="transparency">
                 <h3 class="subheading">Gennemsigtighed</h3>
                 <p>Vi tror på klar og ærlig kommunikation. Hos os ved du altid, hvor du står i 
                     ansøgningsprocessen, og hvad du kan forvente, når du flytter til udlandet.</p>
             </div>
             <div class="pillar">
-                <img src="../assets/img/community.png" alt="community">
+                <img src="assets/img/community.png" alt="community">
                 <h3 class="subheading">Fællesskab</h3>
                 <p>At blive en del af Jobsun betyder at blive en del af et globalt fællesskab. Vi forbinder 
                     talentfulde mennesker og skaber et miljø med gensidig støtte og opmuntring blandt 
                     vores kandidater og team.</p>
             </div>
             <div class="pillar">
-                <img src="../assets/img/growth.png" alt="growth">
+                <img src="assets/img/growth.png" alt="growth">
                 <h3 class="subheading">Udvikling</h3>
                 <p>Vi fokuserer på din langsigtede succes. Uanset om det gælder din karriere, personlige 
                     udvikling eller tilpasning til en ny kultur, er vi her for at hjælpe dig med at vokse og udfolde 
@@ -86,19 +86,19 @@
             <!-- Team Member 1 -->
             <div class="team-member">
                 <a href="mailto:alexander@jobsun.dk">
-                    <img src="../assets/img/AP-dk.png" alt="Alexander Psyllos" class="team-photo">
+                    <img src="assets/img/AP-dk.png" alt="Alexander Psyllos" class="team-photo">
                 </a>
             </div>
             <!-- Team Member 2 -->
             <div class="team-member">
                 <a href="mailto:christoffer@jobsun.dk">
-                    <img src="../assets/img/CM-dk.png" alt="Christoffer Mallios" class="team-photo">
+                    <img src="assets/img/CM-dk.png" alt="Christoffer Mallios" class="team-photo">
                 </a>
             </div>    
             <!-- Team Member 3 -->
             <div class="team-member">
                 <a href="mailto:panagiotis.dorizas@jobsun.gr">
-                    <img src="../assets/img/PD-dk.png" alt="Panagiotis Dorizas" class="team-photo">
+                    <img src="assets/img/PD-dk.png" alt="Panagiotis Dorizas" class="team-photo">
                 </a>
             </div>     
         </div>
@@ -107,7 +107,7 @@
     <div id="footer-container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('../dk/footer-dk.html')
+            fetch('footer-dk.html')
                 .then(response => response.text())
                 .then(data => document.getElementById('footer-container').innerHTML = data)
                 .catch(error => console.log("Error loading footer:", error));

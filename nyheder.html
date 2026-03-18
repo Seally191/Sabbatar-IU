@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Udlandsblog</title>
 
-<link rel="stylesheet" href="../assets/css/general.css">
-<link rel="stylesheet" href="../assets/css/blog.css">
+<link rel="stylesheet" href="assets/css/general.css">
+<link rel="stylesheet" href="assets/css/blog.css">
 
-<link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-<link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-<link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+<link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
+<link rel="apple-touch-icon" href="assets/img/favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
 
 <meta name="description" content="Læs vores artikler om at bo og arbejde i udlandet. Få relocation tips, inspiration til sabbatår og råd om international arbejdserfaring.">
 </head>
@@ -19,9 +19,9 @@
 
 <div id="header-container"></div>
 
-<script src="../assets/js/header.js"></script>
+<script src="assets/js/header.js"></script>
 <script>
-fetch('../dk/header-dk.html')
+fetch('header-dk.html')
 .then(response=>response.text())
 .then(data=>{
 document.getElementById('header-container').innerHTML=data;
@@ -45,8 +45,8 @@ document.dispatchEvent(new Event('header-loaded'));
     <div class="blog-grid">
 
         <article class="blog-card">
-            <a href="../dk/articles/referral-dk.html">
-            <img src="../assets/img/article1.png" loading="lazy" alt="Et par står på en balkon med udsigt over havet på en græsk ø">
+            <a href="artikler/referral-dk.html">
+            <img src="assets/img/article1.png" loading="lazy" alt="Et par står på en balkon med udsigt over havet på en græsk ø">
             </a>
 
             <div class="blog-content">
@@ -54,15 +54,15 @@ document.dispatchEvent(new Event('header-loaded'));
             <p>
             At flytte til udlandet kan virke skræmmende alene. Læs hvordan et sabbatår eller et job i udlandet sammen med en ven kan skabe støtte, fælles oplevelser og personlig udvikling.
             </p>
-            <button type="button" class="read-more-btn" onclick="window.location.href='../dk/articles/referral-dk.html'">
+            <button type="button" class="read-more-btn" onclick="window.location.href='artikler/referral-dk.html'">
             Læs Artiklen →
             </button>
             </div>
         </article>
 
         <article class="blog-card">
-            <a href="../dk/articles/relocation-tips-dk.html">
-            <img src="../assets/img/article2.png" loading="lazy" alt="En blå åben dør, der leder ud til udsigt over det Ægæiske Hav">
+            <a href="artikler/relocation-tips-dk.html">
+            <img src="assets/img/article2.png" loading="lazy" alt="En blå åben dør, der leder ud til udsigt over det Ægæiske Hav">
             </a>
 
             <div class="blog-content">
@@ -70,15 +70,15 @@ document.dispatchEvent(new Event('header-loaded'));
             <p>
             Planlægger du at flytte til udlandet? Disse fem relocation tips hjælper dig med økonomi, dokumenter, bolig og netværk, så du kan starte dit internationale eventyr trygt.
             </p>
-            <button type="button" class="read-more-btn" onclick="window.location.href='../dk/articles/relocation-tips-dk.html'">
+            <button type="button" class="read-more-btn" onclick="window.location.href='artikler/relocation-tips-dk.html'">
             Læs Artiklen →
             </button>
             </div>
         </article>
 
         <article class="blog-card">
-            <a href="../dk/articles/benefits-abroad-dk.html">
-            <img src="../assets/img/article3.png" loading="lazy" alt="Et bord fyldt med farverig middelhavsmad med friske ingredienser og retter">
+            <a href="artikler/benefits-abroad-dk.html">
+            <img src="assets/img/article3.png" loading="lazy" alt="Et bord fyldt med farverig middelhavsmad med friske ingredienser og retter">
             </a>
 
             <div class="blog-content">
@@ -86,7 +86,7 @@ document.dispatchEvent(new Event('header-loaded'));
             <p>
             At bo i udlandet giver mere end bare rejser. Oplev hvordan international erfaring kan styrke din karriere, øge din kulturelle forståelse og skabe personlig udvikling.
             </p>
-            <button type="button" class="read-more-btn" onclick="window.location.href='../dk/articles/benefits-abroad-dk.html'">
+            <button type="button" class="read-more-btn" onclick="window.location.href='artikler/benefits-abroad-dk.html'">
             Læs Artiklen →
             </button>
             </div>
@@ -101,7 +101,7 @@ document.dispatchEvent(new Event('header-loaded'));
 
 <script>
 document.addEventListener("DOMContentLoaded",function(){
-fetch('../dk/footer-dk.html')
+fetch('footer-dk.html')
 .then(response=>response.text())
 .then(data=>document.getElementById('footer-container').innerHTML=data)
 .catch(error=>console.log("Error loading footer:",error));
