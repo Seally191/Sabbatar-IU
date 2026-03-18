@@ -47,6 +47,11 @@
     display: none;
 }
 
+.file-upload-box.has-file {
+    border-color: #28a745;
+    background: #eafaf1;
+}
+
 .file-upload-box {
     border: 2px dashed #4f94cd;
     border-radius: 12px;
@@ -84,9 +89,19 @@
     color: #12609d;
 }
 
-.file-upload-box.has-file {
-    border-color: #28a745;
-    background: #eafaf1;
+.remove-file {
+    display: none;
+    margin-top: 0.5em;
+    background: none;
+    border: none;
+    color: #cc50bd;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.remove-file:hover {
+    text-decoration: underline;
 }
 
 /* ===== FORM POLISH ===== */
