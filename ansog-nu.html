@@ -79,6 +79,38 @@ Vi tager over derfra og kontakter dig med de bedste muligheder i udlandet. Foret
     </div>
 </section>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.getElementById("fileInput");
+    const fileNameDisplay = document.getElementById("fileName");
+    const uploadBox = document.querySelector(".file-upload-box");
+
+    fileInput.addEventListener("change", function () {
+        const files = this.files;
+
+        if (!files || files.length === 0) {
+            fileNameDisplay.textContent = "";
+            uploadBox.classList.remove("has-file");
+            return;
+        }
+
+        // Show file names
+        if (files.length === 1) {
+            fileNameDisplay.textContent = files[0].name;
+        } else {
+            let names = [];
+            for (let i = 0; i < files.length; i++) {
+                names.push(files[i].name);
+            }
+            fileNameDisplay.textContent = names.join(", ");
+        }
+
+        // Add visual state
+        uploadBox.classList.add("has-file");
+    });
+});
+</script>
+
     <div id="footer-container"></div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
