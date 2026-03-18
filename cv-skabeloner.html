@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CV-bygger</title>
 
-    <link rel="stylesheet" href="../assets/css/general.css">
-    <link rel="stylesheet" href="../assets/css/cv-generator.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/cv-generator.css">
 
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
-    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
-    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
 </head>
 
 <body>
 
 <div id="header-container"></div>
 
-<script src="../assets/js/header.js"></script>
+<script src="assets/js/header.js"></script>
 <script>
-fetch('../dk/header-dk.html')
+fetch('header-dk.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;
@@ -44,7 +44,7 @@ fetch('../dk/header-dk.html')
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              action="/dk/thank-dk.html">
+              action="tak">
 
             <input type="hidden" name="form-name" value="cv-generator">
 
@@ -211,7 +211,7 @@ fetch('../dk/header-dk.html')
                         <input type="checkbox" name="gdpr-consent" required>
                         <span>
                             Ved at krydse af i denne boks accepterer du, at dine oplysninger indsamles af vores virksomhed og deles med relevante parter for at igangsætte rekrutteringsprocessen.
-                            Læs mere i vores <a href="../dk/privacy-dk.html" target="_blank">privatlivspolitik</a>.
+                            Læs mere i vores <a href="privatlivspolitik" target="_blank">privatlivspolitik</a>.
                         </span>
                     </label>
 
@@ -222,7 +222,7 @@ fetch('../dk/header-dk.html')
     </div>
 </section>
 
-<script src="../assets/js/cv-generator.js"></script>
+<script src="assets/js/cv-generator.js"></script>
 
 </body>
 </html>
