@@ -49,7 +49,6 @@
                         <p class="upload-main">Drag & drop filer her<br>eller klik for at vælge</p>
                         <p class="upload-info">Tilladte filer: .pdf, .doc, .jpg, .png (maks 5MB)</p>
                         <p class="file-name" id="fileName"></p>
-                        <p class="file-name" id="fileName"></p>
                         <button type="button" class="remove-file" id="removeFileBtn">❌ Fjern fil</button>
                     </div>
                 </label>
@@ -97,22 +96,21 @@ document.addEventListener("DOMContentLoaded", function () {
         "image/png"
     ];
 
-    fileInput.addEventListener("change", function () {
-        const file = this.files[0];
-
+    // =========================
+    // FILE VALIDATION FUNCTION
+    // =========================
+    function handleFile(file) {
         if (!file) {
             resetUI();
             return;
         }
 
-        // ❌ Wrong type
         if (!allowedTypes.includes(file.type)) {
             alert("Kun PDF, Word eller billedfiler (JPG, PNG) er tilladt.");
             resetInput();
             return;
         }
 
-        // ❌ Too big
         const maxSize = 5 * 1024 * 1024;
         if (file.size > maxSize) {
             alert("Filen er for stor. Maks 5MB.");
@@ -120,14 +118,48 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // ✅ Success
         fileNameDisplay.textContent = file.name;
         uploadBox.classList.add("has-file");
         uploadText.textContent = "Fil valgt ✅";
         removeBtn.style.display = "inline";
+    }
+
+    // =========================
+    // INPUT CHANGE
+    // =========================
+    fileInput.addEventListener("change", function () {
+        handleFile(this.files[0]);
     });
 
-    // Remove file button
+    // =========================
+    // DRAG & DROP
+    // =========================
+    uploadBox.addEventListener("dragover", function (e) {
+        e.preventDefault();
+        uploadBox.classList.add("drag-over");
+    });
+
+    uploadBox.addEventListener("dragleave", function () {
+        uploadBox.classList.remove("drag-over");
+    });
+
+    uploadBox.addEventListener("drop", function (e) {
+        e.preventDefault();
+        uploadBox.classList.remove("drag-over");
+
+        const file = e.dataTransfer.files[0];
+
+        // Inject file into input (important for Netlify)
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        fileInput.files = dataTransfer.files;
+
+        handleFile(file);
+    });
+
+    // =========================
+    // REMOVE FILE
+    // =========================
     removeBtn.addEventListener("click", function () {
         resetInput();
     });
@@ -139,22 +171,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function resetUI() {
         fileNameDisplay.textContent = "";
-        uploadBox.classList.remove("has-file");
+        uploadBox.classList.remove("has-file", "drag-over");
         uploadText.textContent = "Drag & drop filer her eller klik for at vælge";
         removeBtn.style.display = "none";
     }
 });
 </script>
-
-    <div id="footer-container"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('footer-dk.html')
-                .then(response => response.text())
-                .then(data => document.getElementById('footer-container').innerHTML = data)
-                .catch(error => console.log("Error loading footer:", error));
-        });
-    </script> 
 
 </body>
 </html>

@@ -104,6 +104,12 @@
     text-decoration: underline;
 }
 
+.file-upload-box.drag-over {
+    border-color: #cc50bd;
+    background: #fdf0fb;
+    transform: scale(1.02);
+}
+
 /* ===== FORM POLISH ===== */
 
 #apply-CV form {
