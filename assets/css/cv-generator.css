@@ -33,7 +33,7 @@
 
 .progress-text {
     margin-top: 0.7em;
-    font-size: 0.9rem;
+    font-size: 0.9em;
     color: #12609d;
 }
 
@@ -58,7 +58,7 @@ input[type="tel"] {
     padding: 0.7em;
     border-radius: 8px;
     border: 1px solid #d8e0ea;
-    font-size: 1rem;
+    font-size: 1em;
     margin-bottom: 1em;
     width: 100%;
     box-sizing: border-box;
@@ -69,7 +69,7 @@ input[type="tel"] {
     display: flex;
     align-items: center;
     gap: 0.6em;
-    font-size: 0.95rem;
+    font-size: 0.95em;
 }
 
 /* Button */
@@ -79,7 +79,7 @@ input[type="tel"] {
     border: none;
     padding: 0.7em 1.4em;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     cursor: pointer;
     transition: all 0.25s ease;
     align-self: center;
@@ -96,7 +96,7 @@ input::placeholder {
     color: #4f94cd;      
     opacity: 0.7;           
     font-family: 'Montserrat', sans-serif; 
-    font-size: 0.95rem;    
+    font-size: 0.95em;    
 }
 
 /* -------------------------------- */
@@ -124,7 +124,7 @@ input::placeholder {
 }
 
 .form-disclaimer {
-    font-size: 0.8rem;
+    font-size: 0.8em;
     color: #4f94cd;
     text-align: center;
     margin-left: auto;
@@ -195,7 +195,7 @@ input::placeholder {
     transition: all 0.2s ease;  
     justify-content: center;
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 0.95em;
     color: #12609d;
 }
 
@@ -232,7 +232,7 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     color: #4f94cd;
     text-align: center;
     margin-left: 0;
@@ -292,7 +292,7 @@ input::placeholder {
         min-width: unset;
         text-align: center;
         padding: 0.9em 1em;
-        font-size: 1rem;
+        font-size: 1em;
     }
 
     /* Skills grid adjustments for phones */
@@ -303,12 +303,12 @@ input::placeholder {
 
 .skills-grid .checkbox-option {
     padding: 0.7em 0.1em;
-    font-size: 0.9rem;
+    font-size: 0.9em;
 }
 
     /* Improve tap area for checkbox */
     .checkbox-option {
-        font-size: 0.85rem;
+        font-size: 0.85em;
         text-align: justify;
         max-width: 100%;
     }
@@ -317,14 +317,14 @@ input::placeholder {
     #cv-generator .btn-primary {
         width: 50%;
         padding: 1em;
-        font-size: 1.1rem;
+        font-size: 1.1em;
     }
 
     /* Slightly larger inputs for thumbs */
     input[type="text"],
     input[type="email"],
     input[type="tel"] {
-        font-size: 1rem;
+        font-size: 1em;
         padding: 0.9em;
     }
 

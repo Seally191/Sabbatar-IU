@@ -46,7 +46,7 @@
     border-radius: 8px;
     border: 1px solid #d9e3f0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.95em;
     color: #12609d;
 }
 
@@ -67,7 +67,7 @@
 
     gap: 0.6em;
     align-items: start;
-    font-size: 0.85rem;
+    font-size: 0.85em;
     text-align: left;
 }
 
@@ -94,7 +94,7 @@
     border: none;
     padding: 0.7em 1.4em;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     cursor: pointer;
     transition: all 0.25s ease;
     width: fit-content;

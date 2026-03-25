@@ -78,13 +78,13 @@
 
 /* Info text */
 .upload-info {
-    font-size: 0.8rem;
+    font-size: 0.8em;
     opacity: 0.6;
 }
 
 /* Selected file name */
 .file-name {
-    font-size: 0.85rem;
+    font-size: 0.85em;
     font-weight: 600;
     color: #12609d;
 }
@@ -97,7 +97,7 @@
     color: #cc50bd;
     font-weight: 600;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.85em;
 }
 
 .remove-file:hover {
@@ -125,7 +125,7 @@
     padding: 0.8em 1em;
     border-radius: 8px;
     border: 1px solid #d9e3f0;
-    font-size: 0.95rem;
+    font-size: 0.95em;
     transition: all 0.2s ease;
 }
 
@@ -139,7 +139,7 @@
 
 /* Checkbox */
 .checkbox {
-    font-size: 0.85rem;
+    font-size: 0.85em;
     text-align: left;
     width: 100%;
 }
@@ -151,7 +151,7 @@
     border: none;
     padding: 0.7em 1.4em;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     cursor: pointer;
     transition: all 0.25s ease;
     align-self: flex-start;
@@ -221,7 +221,7 @@
     border: none;
     padding: 0.7em 1.4em;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     cursor: pointer;
     transition: all 0.25s ease;
     align-self: center;
@@ -254,8 +254,12 @@
 
     .apply-container {
         flex-direction: column;
-        gap: 2.5em;
+        gap: 1.8em;
     }
+
+    .apply-text {
+    text-align: center;
+}
 
     .form-row,
     .last-row {
@@ -274,16 +278,16 @@
     .btn-primary,
     #quick-application .btn-secondary {
         padding: 0.9em 1em;
-        font-size: 1.1rem;
+        font-size: 1.1em;
         align-self: center;        
     }
 
     .upload-main {
-        font-size: 1rem;
+        font-size: 1em;
     }
 
     .upload-info {
-        font-size: 0.75rem;
+        font-size: 0.75em;
     }
 }
 

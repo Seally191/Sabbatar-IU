@@ -39,7 +39,7 @@ form label {
 form input,
 form textarea {
     padding: 0.8em 1em;
-    font-size: 0.95rem;
+    font-size: 0.95em;
     border-radius: 8px;
     border: 1px solid #d9e3f0;
     margin-top: 5px;
@@ -66,7 +66,7 @@ form textarea {
     border: none;
     padding: 0.7em 1.4em;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.1em;
     cursor: pointer;
     transition: all 0.25s ease;
     align-self: center;
@@ -93,7 +93,7 @@ form textarea {
 }
 
 #phone-contacts p {
-    font-size: 0.95rem;
+    font-size: 0.95em;
     margin-bottom: 20px;
     color: #12609d;
 }
@@ -115,19 +115,19 @@ form textarea {
 }
 
 .contact-card h3 {
-    font-size: 0.95rem;
+    font-size: 0.95em;
     color: #12609d;
     margin: 5px 0 15px 0; /* Reduced margin-top, consistent with the bottom margin of the call button */
 }
 
 .contact-card p {
-    font-size: 0.85rem;
+    font-size: 0.85em;
     color: #0b385e;
     margin-bottom: 20px;
 }
 
 .call-btn {
-    font-size: 1rem;
+    font-size: 1em;
     color: #12609d;
     text-decoration: none;
     font-weight: bold;

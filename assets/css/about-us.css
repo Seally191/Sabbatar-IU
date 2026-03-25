@@ -192,3 +192,11 @@
         max-width: 420px;
     }
 }
+
+@media (min-width: 1920px) {
+
+        .team-members {
+        max-width: 1520px;
+    }
+
+}
