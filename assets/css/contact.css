@@ -71,6 +71,7 @@ form textarea {
     transition: all 0.25s ease;
     align-self: center;
     margin-top: 1.2em;
+    font-weight: 400;
 }
 
 .btn-primary:hover {

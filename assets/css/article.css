@@ -83,6 +83,7 @@
   cursor:pointer;
   transition:all 0.25s ease;
   align-self:center;
+  font-weight:400;
 }
 
 .all-articles-btn:hover{

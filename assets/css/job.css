@@ -24,6 +24,7 @@
     border-radius: 5px;
     transition: all 0.3s ease;
     margin-top: -2em;
+    font-weight: 400;
 }
 
 .btn-primary:hover {
@@ -264,6 +265,7 @@ cursor:pointer;
 transition:all 0.25s ease;
 margin-top:auto;
 align-self:center;
+font-weight: 400;
 }
 
 .read-more-btn:hover{

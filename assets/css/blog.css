@@ -70,6 +70,7 @@ cursor:pointer;
 transition:all 0.25s ease;
 margin-top:auto;
 align-self:center;
+font-weight: 400;
 }
 
 .read-more-btn:hover{

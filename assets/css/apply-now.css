@@ -155,6 +155,7 @@
     cursor: pointer;
     transition: all 0.25s ease;
     align-self: flex-start;
+    font-weight: 400;
 }
 
 .btn-primary:hover {
@@ -224,6 +225,7 @@
     cursor: pointer;
     transition: all 0.25s ease;
     align-self: center;
+    font-weight: 400;
 }
 
 #quick-application .btn-secondary:hover {

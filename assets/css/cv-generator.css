@@ -84,6 +84,7 @@ input[type="tel"] {
     transition: all 0.25s ease;
     align-self: center;
     margin-top: 0.5em;
+    font-weight: 400;
 }
 
 #cv-generator .btn-primary:hover {
