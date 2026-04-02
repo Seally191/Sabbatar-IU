@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/apply-now.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('/en/header-en.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+
+<!-- ================= CV UPLOAD ================= -->
+
+<section id="apply-CV">
+    <div class="apply-container">
+
+        <img class="about-image" src="../assets/img/17.png" alt="working man">
+
+        <div class="apply-text">
+            <h1>Upload Your CV</h1>
+
+            <form name="cv-upload" method="POST" data-netlify="true" enctype="multipart/form-data" action="/en/tak">
+                
+                <label class="file-upload">
+                    <input type="file" name="cv" id="fileInput" required 
+       accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+
+                    <div class="file-upload-box">
+                        <p class="upload-main">Drag & drop files here<br>or click to select</p>
+                        <p class="upload-info">Allowed files: .pdf, .doc, .jpg, .png (max 5MB)</p>
+                        <p class="file-name" id="fileName"></p>
+                        <button type="button" class="remove-file" id="removeFileBtn">❌ Remove file</button>
+                    </div>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="terms" required>
+                    Your information will be used to contact you and shared with our partners to start the recruitment process.
+                    Check our <a href="/en/privatlivspolitik.html" target="_blank">privacy policy</a> to see how we protect your data.
+                </label>
+
+                <button type="submit" class="btn-primary">Apply</button>
+            </form>
+        </div>
+    </div>
+</section>  
+
+<!-- ================= CV-GENERATOR ================= -->
+
+<section id="cv-generator">
+    <div class="generator-container">
+
+        <h1>Don't Have a CV?</h1>
+        <p>
+        Use our CV generator and create a sharp, professional CV in just 5 simple steps, taking less than 3 minutes. 
+        Once you're done, your CV is sent directly to our recruitment team: no extra upload, no emails, no hassle.
+
+        We take it from there and contact you with the best opportunities abroad. Prefer to speak with us first? 
+        Then visit our <a href="/en/kontakt.html">contact page</a>.
+        <br><br>Simple, fast and efficient.
+        </p>
+
+        <button type="button" class="btn-secondary" onclick="window.location.href='/en/cv-skabeloner.html'">
+                Create CV
+        </button>
+
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.getElementById("fileInput");
+    const fileNameDisplay = document.getElementById("fileName");
+    const uploadBox = document.querySelector(".file-upload-box");
+    const uploadText = document.querySelector(".upload-main");
+    const removeBtn = document.getElementById("removeFileBtn");
+
+    const allowedTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "image/jpeg",
+        "image/png"
+    ];
+
+    function handleFile(file) {
+        if (!file) {
+            resetUI();
+            return;
+        }
+
+        if (!allowedTypes.includes(file.type)) {
+            alert("Only PDF, Word or image files (JPG, PNG) are allowed.");
+            resetInput();
+            return;
+        }
+
+        const maxSize = 5 * 1024 * 1024;
+        if (file.size > maxSize) {
+            alert("File is too large. Max 5MB.");
+            resetInput();
+            return;
+        }
+
+        fileNameDisplay.textContent = file.name;
+        uploadBox.classList.add("has-file");
+        uploadText.textContent = "File selected ✅";
+        removeBtn.style.display = "inline";
+    }
+
+    fileInput.addEventListener("change", function () {
+        handleFile(this.files[0]);
+    });
+
+    uploadBox.addEventListener("dragover", function (e) {
+        e.preventDefault();
+        uploadBox.classList.add("drag-over");
+    });
+
+    uploadBox.addEventListener("dragleave", function () {
+        uploadBox.classList.remove("drag-over");
+    });
+
+    uploadBox.addEventListener("drop", function (e) {
+        e.preventDefault();
+        uploadBox.classList.remove("drag-over");
+
+        const file = e.dataTransfer.files[0];
+
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        fileInput.files = dataTransfer.files;
+
+        handleFile(file);
+    });
+
+    removeBtn.addEventListener("click", function () {
+        resetInput();
+    });
+
+    function resetInput() {
+        fileInput.value = "";
+        resetUI();
+    }
+
+    function resetUI() {
+        fileNameDisplay.textContent = "";
+        uploadBox.classList.remove("has-file", "drag-over");
+        uploadText.textContent = "Drag & drop files here or click to select";
+        removeBtn.style.display = "none";
+    }
+});
+</script>
+
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/en/footer-en.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script>
+
+</body>
+</html>

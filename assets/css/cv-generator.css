@@ -147,6 +147,7 @@ input::placeholder {
 
 .mcq p {
     margin-bottom: 0.8em;
+    text-align: center;
 }
 
 .radio-option {

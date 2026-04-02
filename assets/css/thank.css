@@ -16,6 +16,15 @@
     gap: 4em;
 }
 
+.thank-container h1 {
+    text-wrap: balance;
+    line-height: 1em;
+}
+
+.thank-container p {
+    text-wrap: balance;
+}
+
 .btn-secondary {
     background: #fad02c;
     color: white;
@@ -48,5 +57,9 @@
         text-wrap: balance;
         max-width: 27ch;
     }
+
+    .btn-secondary {
+    padding: 0.7em 1em;
+}
 
 }

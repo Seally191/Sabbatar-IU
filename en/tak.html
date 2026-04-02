@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Application</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/thank.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+fetch('/en/header-en.html')
+.then(res => res.text())
+.then(data => {
+    document.getElementById('header-container').innerHTML = data;
+    document.dispatchEvent(new Event('header-loaded'));
+});
+</script>
+
+<section class="thank-you">
+    <div class="thank-container">
+        <h1>Thank You for Your Application 🎉</h1>
+
+        <p>
+        We have received your information and will get back to you within 2 business days.
+        <br>You are one step closer to your adventure abroad.
+        </p>
+
+        <button class="btn-secondary" onclick="goBack()">
+        ← Back to Previous Page
+        </button>
+
+        <script>
+        function goBack() {
+            if (document.referrer && window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '/en/index.html';
+            }
+        }
+        </script>
+    </div>
+</section>
+
+</body>
+</html>

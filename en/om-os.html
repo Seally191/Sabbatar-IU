@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/about-us.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('/en/header-en.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+<!-- About Us Section -->
+<section id="about-us">
+    <div class="section-container">
+        <img class="about-image" src="../assets/img/15.png" alt="working team">
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p>
+                At Jobsun, we believe that everyone has the potential to thrive in an exciting international career. 
+                Our mission is to provide tailored support, personal mentorship, and full transparency throughout 
+                the entire process. <br><br>
+                We do more than just recruitment. We are your dedicated partner, guiding and supporting you step by 
+                step in building a successful, meaningful, and long-term international career.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Our Pillars Section -->
+<section id="pillars">
+    <h1>What We Stand For</h1>
+    <div class="pillars">
+        <div class="pillar">
+            <img src="../assets/img/tailoredsupport.png" alt="tailored support">
+            <h3 class="subheading">Personal Support</h3>
+            <p>
+                We understand that everyone has unique needs. That’s why we offer personalized support to help 
+                you achieve your career goals and navigate the challenges of moving abroad.
+            </p>
+        </div>
+
+        <div class="pillar">
+            <img src="../assets/img/mentorship.png" alt="mentorship">
+            <h3 class="subheading">Mentorship</h3>
+            <p>
+                Our team is with you every step of the way. From career guidance to settling into a new country, 
+                we provide mentorship that helps you grow both professionally and personally.
+            </p>
+        </div>
+
+        <div class="pillar">
+            <img src="../assets/img/transparency.png" alt="transparency">
+            <h3 class="subheading">Transparency</h3>
+            <p>
+                We believe in clear and honest communication. With us, you always know where you stand in the 
+                application process and what to expect when moving abroad.
+            </p>
+        </div>
+
+        <div class="pillar">
+            <img src="../assets/img/community.png" alt="community">
+            <h3 class="subheading">Community</h3>
+            <p>
+                Becoming part of Jobsun means joining a global community. We connect talented individuals and 
+                create an environment of mutual support and encouragement among our candidates and team.
+            </p>
+        </div>
+
+        <div class="pillar">
+            <img src="../assets/img/growth.png" alt="growth">
+            <h3 class="subheading">Growth</h3>
+            <p>
+                We focus on your long-term success. Whether it’s your career, personal development, or adapting 
+                to a new culture, we are here to help you grow and unlock your full potential.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team">
+    <h1>Meet Our Scandinavian Team</h1>
+    <div class="team-members">
+        <div class="team-member">
+            <a href="mailto:alexander@jobsun.dk">
+                <img src="../assets/img/AP.png" alt="Alexander Psyllos" class="team-photo">
+            </a>
+        </div>
+
+        <div class="team-member">
+            <a href="mailto:christoffer@jobsun.dk">
+                <img src="../assets/img/CM.png" alt="Christoffer Mallios" class="team-photo">
+            </a>
+        </div>    
+
+        <div class="team-member">
+            <a href="mailto:panagiotis.dorizas@jobsun.gr">
+                <img src="../assets/img/PD.png" alt="Panagiotis Dorizas" class="team-photo">
+            </a>
+        </div>     
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/en/footer-en.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script> 
+
+</body>
+</html>

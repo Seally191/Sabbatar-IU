@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('/en/header-en.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+<section id="contact">
+    <h1>Contact Us</h1>
+
+    <!-- Netlify Contact Form -->
+    <form name="contact" method="POST" data-netlify="true" action="/en/tak">
+        <input type="hidden" name="form-name" value="contact">
+
+        <div class="contact-row">
+            <div class="contact-field">
+                <label for="email">Your email:</label>
+                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+            </div>
+
+            <div class="contact-field">
+                <label for="phone">Your phone number:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+45 30 12 34 56">
+            </div>
+        </div>
+
+        <label for="message">Your message:</label>
+        <textarea id="message" name="message">
+Hi Jobsun team,
+
+I’m interested in learning more about your job opportunities abroad. I would love to hear how I can apply and whether there are any open positions that match my profile.
+
+I look forward to hearing from you!
+        </textarea>
+
+        <button class="btn-primary" type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Phone Contact Section -->
+<section id="phone-contacts">
+    <h1>Prefer to Call?</h1>
+    <p>Our team is ready to assist you in multiple languages.</p>
+
+    <div class="contacts">
+
+        <div class="contact-card">
+            <h3 class="subheading">Alexander</h3>
+            <p>Speaks: 🇩🇰🇬🇷🇬🇧</p>
+            <a href="tel:+4542523737" class="call-btn">📞 Call +45 42 52 37 37</a>
+        </div>
+
+        <div class="contact-card">
+            <h3 class="subheading">Christoffer</h3>
+            <p>Speaks: 🇩🇰🇳🇴🇬🇧</p>
+            <a href="tel:+4581988163" class="call-btn">📞 Call +45 81 98 81 63</a>
+        </div>
+
+        <div class="contact-card">
+            <h3 class="subheading">Panagiotis</h3>
+            <p>Speaks: 🇸🇪🇬🇷🇬🇧</p>
+            <a href="tel:+4581957047" class="call-btn">📞 Call +45 81 95 70 47</a>
+        </div>
+
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/en/footer-en.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script> 
+
+</body>
+</html>
