@@ -74,45 +74,13 @@ button {
     margin-left: auto;
 }
 
-/* LANGUAGE DROPDOWN */
-.language-dropdown {
-    position: relative;
-}
-
-.dropbtn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 110%;
-    background: white;
-    min-width: 120px;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 8px 12px;
-    color: #12609d;
+.language-switcher a {
     text-decoration: none;
-    font-size: 14px;
+    font-size: 1.15rem;
 }
 
-.dropdown-content a:hover {
-    background: #f1f1f1;
-}
-
-.dropdown-content.show {
-    display: block;
+.language-switcher a:hover {
+    transform: scale(1.2);
 }
 
 /* Sidebar positioning fix */

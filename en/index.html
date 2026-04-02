@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embrace your potential!</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('en/header-en.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+<!-- Hero Section -->
+<section id="section-1">
+    <div class="section-container">
+        <div class="column-1">
+            <h1>Find Your Next Job Abroad</h1>
+            <p>We believe everyone has unique potential, and we are here to help you unlock it. Whether you 
+                want to take the next step in your career or embark on an exciting adventure abroad, 
+                we are committed to supporting you every step of the way. Your future is full of opportunities, 
+                and it starts right here.</p>
+            <button type="button" class="btn-1" onclick="window.location.href='jobtilbud'">
+                Explore Opportunities
+            </button>        
+        </div>
+        <img class="column-2" src="../assets/img/1.png" alt="happy woman at the beach">
+    </div>
+</section>
+
+<!-- Why Us Section -->
+<section id="section-2">
+    <h1>Why Choose Us?</h1>
+
+    <div class="columns">
+
+        <!-- VIDEO COLUMN -->
+        <div class="column">
+            <h3 class="subheading">🗣️ Hear it from them</h3>
+            <div class="video-wrapper">
+                <video 
+                    class="jobsun-video"
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    controls
+                >
+                    <source src="../assets/vid/Høre-det-fra-dem.mp4" type="video/mp4">
+                    Your browser does not support the video.
+                </video>
+            </div>
+        </div>
+
+        <div class="column">
+            <h3 class="subheading">🔍 More than just a job</h3>
+            <p>It’s an adventure and a great opportunity for both professional and 
+                personal growth. It’s an investment in your future that offers 
+                far more than just a paycheck. A new country opens the door to 
+                completely new experiences, challenges that shape you, valuable 
+                skills you won’t gain elsewhere, and the unique chance to begin 
+                building a strong international career. You grow both as a person 
+                and as a professional while creating a network across borders 
+                and cultures.</p>
+        </div>
+
+        <div class="column">    
+            <h3 class="subheading">🤝 Support all the way</h3>
+            <p>We help you find the right job that matches your ambitions 
+                and skills. We assist with the entire relocation process, 
+                from practical matters like housing, paperwork, and visas 
+                to the small details that make a difference. Once you arrive, 
+                we provide ongoing support and guidance so you quickly feel 
+                at home and comfortable in your new environment. You are never 
+                alone on your journey. Our experienced mentorship stays with 
+                you every step of the way, whether you need advice about work, 
+                life abroad, or simply someone to talk to.</p>
+        </div>
+
+        <div class="column">
+            <h3 class="subheading">☀️ Sun & culture</h3>
+            <p>Life by the Mediterranean offers more than just beautiful surroundings. 
+                Sunshine, warmth, and fresh sea air give you more energy, a better 
+                mood, and improved well-being all year round. The relaxed pace of life 
+                creates a healthy balance, allowing you to enjoy both work and your 
+                free time without stress. At the same time, you experience exciting new 
+                cultures, authentic flavors, and open-minded people every day, naturally 
+                strengthening your adaptability, communication skills, and deeper 
+                cultural understanding.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Hero Section -->
+<section id="section-1">
+    <div class="section-container">
+        <img class="column-2" src="../assets/img/12.png" alt="happy friends laughing at the beach">
+        <div class="column-1">
+            <h1>Unlock Your Potential!</h1>
+            <p>We would love to hear more about your career goals and help you find the perfect job 
+                abroad. Get in touch now to learn more about our exciting opportunities, and let us 
+                know when you are available for a meeting!</p>
+            <button type="button" class="btn-2" onclick="window.location.href='kontakt'">
+                Get in Touch
+            </button>
+        </div>
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('en/footer-en.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script> 
+
+</body>
+</html>

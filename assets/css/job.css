@@ -142,6 +142,10 @@
     background: #f4f8fc;
 }
 
+#job-description3 .text {
+    flex: 1;
+}
+
 #job-description3 h1 {
     color: #12609d;
     margin-bottom: 0.7em;
