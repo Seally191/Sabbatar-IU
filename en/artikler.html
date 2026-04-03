@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living & Working Abroad</title>
+
+<link rel="stylesheet" href="../assets/css/general.css">
+<link rel="stylesheet" href="../assets/css/blog.css">
+
+<link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+<link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+
+<meta name="description" content="Read our articles about living and working abroad. Get relocation tips, gap year inspiration, and advice on international work experience.">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+
+<script src="../assets/js/header.js"></script>
+<script>
+fetch('/en/header-en.html')
+.then(response=>response.text())
+.then(data=>{
+document.getElementById('header-container').innerHTML=data;
+document.dispatchEvent(new Event('header-loaded'));
+})
+.catch(err=>console.error("Header load failed:",err));
+</script>
+
+<main>
+
+    <section class="blog-section">
+
+        <div class="hero">
+            <h1>Abroad Blog</h1>
+            <p>
+            Get inspiration, practical relocation tips, and insights into life abroad.
+            Learn how to work abroad, take a gap year, and build international experience.
+            </p>
+        </div>
+
+    <div class="blog-grid">
+
+        <article class="blog-card">
+            <a href="/en/artikle/henvisning.html">
+            <img src="../assets/img/article1.png" loading="lazy" alt="A couple standing on a balcony overlooking the sea on a Greek island">
+            </a>
+
+            <div class="blog-content">
+            <h2 class="subheading">Bring a friend abroad</h2>
+            <p>
+            Moving abroad alone can feel overwhelming. Learn how taking a gap year or working abroad with a friend can create support, shared experiences, and personal growth.
+            </p>
+            <button type="button" class="read-more-btn" onclick="window.location.href='/en/artikle/henvisning.html'">
+            Read Article →
+            </button>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <a href="/en/artikle/flytning-tips.html">
+            <img src="../assets/img/article2.png" loading="lazy" alt="A blue open door leading to a view of the Aegean Sea">
+            </a>
+
+            <div class="blog-content">
+            <h2 class="subheading">5 relocation tips</h2>
+            <p>
+            Planning to move abroad? These five relocation tips will help you with finances, documents, housing, and networking so you can start your international adventure with confidence.
+            </p>
+            <button type="button" class="read-more-btn" onclick="window.location.href='/en/artikle/flytning-tips.html'">
+            Read Article →
+            </button>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <a href="/en/artikle/fordele-i-udlandet.html">
+            <img src="../assets/img/article3.png" loading="lazy" alt="A table filled with colorful Mediterranean food with fresh ingredients and dishes">
+            </a>
+
+            <div class="blog-content">
+            <h2 class="subheading">The benefits of living abroad</h2>
+            <p>
+            Living abroad offers more than just travel. Discover how international experience can boost your career, increase cultural understanding, and support personal growth.
+            </p>
+            <button type="button" class="read-more-btn" onclick="window.location.href='/en/artikle/fordele-i-udlandet.html'">
+            Read Article →
+            </button>
+            </div>
+        </article>
+
+    </div>
+    </section>
+
+</main>
+
+<div id="footer-container"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+fetch('/en/footer-en.html')
+.then(response=>response.text())
+.then(data=>document.getElementById('footer-container').innerHTML=data)
+.catch(error=>console.log("Error loading footer:",error));
+});
+</script>
+
+</body>
+</html>

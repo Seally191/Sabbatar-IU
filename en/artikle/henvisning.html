@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bring a Friend With You | Live and Work Abroad</title>
+
+    <meta
+      name="description"
+      content="Thinking about living and working abroad? Discover why taking a gap year abroad with a friend can make the experience easier, safer, and more memorable."
+    />
+
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <link rel="stylesheet" href="../../assets/css/article.css" />
+
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../../assets/img/favicon_io/site.webmanifest">
+  </head>
+
+  <body>
+    <div id="header-container"></div>
+
+    <script src="../../assets/js/header.js"></script>
+    <script>
+      fetch("/en/header-en.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+          document.dispatchEvent(new Event("header-loaded"));
+        })
+        .catch((err) => console.error("Header load failed:", err));
+    </script>
+
+    <main class="article-wrapper">
+      <article class="article">
+
+        <h1>Bring a Friend With You</h1>
+
+        <section class="article-content">
+          <img
+            src="../../assets/img/2.png"
+            alt="Two girls laughing together on a beach"
+            class="article-image-1"
+          />
+
+          <p>
+            Living and working abroad is a dream for many. But taking that step alone can feel overwhelming. Choosing to spend a gap year abroad with a friend can make the experience both more comfortable and far more memorable.
+          </p>
+
+          <p>
+            For some people, the idea of living abroad has been a dream for years. Discovering a new country, meeting new people, and building international work experience can be incredibly exciting. For many others, however, the biggest challenge is not the move itself, but the idea of doing it alone.
+          </p>
+
+          <p>
+            That’s why more and more people choose to take this step with someone they trust. Moving abroad with a friend can completely change the experience. Instead of feeling uncertain, you gain the comfort of sharing the journey with someone going through the same transition.
+          </p>
+
+          <p>
+            Planning a job abroad with a friend is often easier than people think. In most cases, each person simply submits their own job application while coordinating the timing of the move. This way, both can follow their own professional path while still planning the adventure together.
+          </p>
+
+          <p>
+            Even if the applications are separate, preparing for the move together makes the entire process more motivating and enjoyable. You can support each other while handling paperwork, preparing for interviews, or organizing travel plans.
+          </p>
+
+          <p>
+            It’s also important to remember that moving abroad together doesn’t mean sharing every aspect of the experience. Friends don’t need to work at the same company or have identical schedules. In fact, having different roles can make the experience even richer.
+          </p>
+
+          <p>
+            Each person brings different stories, insights, and perspectives from their daily life. When you meet after work or on weekends, you can share what you’ve experienced and learned. This balance between independence and togetherness often makes international experience even more valuable.
+          </p>
+
+          <p>
+            One of the biggest advantages of starting this journey with a friend is the opportunity to explore a new country together. Living abroad offers countless new experiences, from discovering local culture to visiting places you’ve only seen in photos before.
+          </p>
+
+          <img
+            src="../../assets/img/32.png"
+            alt="A couple watching the sunset from the Acropolis in Athens"
+            class="article-image-2"
+          />
+
+          <p>
+            Weekend trips, new restaurants, cultural events, or even simple walks through unfamiliar streets turn into shared memories that last long after the experience is over.
+          </p>
+
+          <p>
+            Another key benefit is the emotional support that comes with having someone familiar nearby. Moving abroad can involve moments of uncertainty, especially in the first few weeks.
+          </p>
+
+          <p>
+            When you go through this process with a friend, you always have someone who understands exactly what you’re experiencing. Small challenges feel easier to handle, and successes feel even better when you can celebrate them together.
+          </p>
+
+          <p>
+            Taking a gap year abroad with a friend also creates the opportunity to build lifelong memories. Shared adventures often leave a stronger impression than experiences you go through alone.
+          </p>
+
+          <p>
+            At the same time, the experience still allows for individual growth. Even if you start the journey together, you will meet different people, discover new interests, and develop new skills along the way.
+          </p>
+
+          <p>
+            Living abroad naturally pushes you outside your comfort zone, and that personal growth is one of the most valuable parts of the experience.
+          </p>
+
+          <p>
+            Taking a job abroad together can therefore be a powerful way to turn a personal dream into a shared adventure. It allows you to explore the world, gain valuable international experience, and create memories that last for years.
+          </p>
+
+          <button type="button" class="all-articles-btn" onclick="window.location.href='/en/artikler'">
+            View All Articles
+          </button>
+        </section>
+      </article>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/en/footer-en.html")
+          .then((response) => response.text())
+          .then((data) => (document.getElementById("footer-container").innerHTML = data))
+          .catch((error) => console.log("Error loading footer:", error));
+      });
+    </script>
+  </body>
+</html>
