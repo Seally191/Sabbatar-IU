@@ -19,7 +19,6 @@ function initHeader() {
             sidebar.style.display = "none";
         });
 
-        // Close when clicking outside
         document.addEventListener("click", function (e) {
             if (sidebar.style.display !== "flex") return;
             if (!sidebar.contains(e.target) && !newOpenBtn.contains(e.target)) {
@@ -28,38 +27,40 @@ function initHeader() {
         });
     }
 
-    // ──────────────── Language Switcher (NEW) ────────────────
+    // ──────────────── Language Switcher (FIXED) ────────────────
     const langLinks = document.querySelectorAll(".language-switcher a");
 
     langLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
 
-            const targetLang = this.getAttribute("lang"); // da / en / no
+            const targetLang = this.getAttribute("lang");
             let path = window.location.pathname;
 
-            // Remove existing language prefix if present
-            path = path.replace(/^\/(en|no)\//, "/");
+            path = path.replace(/\/index\.html$/, "");
+            path = path.replace(/\.html$/, "");
 
-            // Special case: root "/"
+            path = path.replace(/^\/(en|no)(\/|$)/, "/");
+
+            if (!path.startsWith("/")) path = "/" + path;
+
             if (path === "/") path = "/index";
 
-            // Build new path
             let newPath;
 
             if (targetLang === "da") {
-                newPath = path; // Danish = no prefix
+                newPath = path;
             } else {
                 newPath = `/${targetLang}${path}`;
             }
+
+            newPath += ".html";
 
             window.location.href = newPath;
         });
     });
 }
 
-// Run once immediately
+// 
 initHeader();
-
-// Re-run after header is injected
 document.addEventListener("header-loaded", initHeader);
