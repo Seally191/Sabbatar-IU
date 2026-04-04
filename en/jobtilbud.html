@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Opportunities</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/offers.css">
+
+    <!-- Bootstrap Icons for location icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+fetch('/en/header-en.html')
+.then(response=>response.text())
+.then(data=>{
+document.getElementById('header-container').innerHTML=data;
+document.dispatchEvent(new Event('header-loaded'));
+})
+.catch(err=>console.error("Header load failed:",err));
+</script>
+
+<section id="jobs-hero">
+    <h1>Explore Job Opportunities</h1>
+    <p>Join our team on a journey and embark on an exciting career adventure
+    in amazing Mediterranean locations!</p>
+</section>
+
+<!-- Filters -->
+<section id="filters">
+
+  <!-- Location -->
+  <div class="filter-group">
+    <p class="subheading" class="filter-title">Location</p>
+    <div class="filter-buttons" data-filter="location">
+      <button class="active" data-value="all">All</button>
+      <button data-value="athens">Athens (GR)</button>
+      <button data-value="essen">Essen (DE)</button>
+      <button data-value="crete">Crete (GR)</button>
+      <button data-value="remote">Remote (GR)</button>
+      <button data-value="sofia">Sofia (BG)</button>
+      <button data-value="thessaloniki">Thessaloniki (GR)</button>
+    </div>
+  </div>
+
+  <!-- Role -->
+  <div class="filter-group">
+    <p class="subheading" class="filter-title">Role</p>
+    <div class="filter-buttons" data-filter="role">
+      <button class="active" data-value="all">All</button>
+      <button data-value="ai-prompt-evaluator">AI Prompt Evaluator</button>
+      <button data-value="sales-b2b">B2B Sales</button>
+      <button data-value="content-moderation">Content Moderation</button>
+      <button data-value="customer-service">Customer Service</button>
+      <button data-value="technical-support">Technical Support</button>
+    </div>
+  </div>
+
+    <!-- Language -->
+  <div class="filter-group">
+    <p class="subheading">Language</p>
+    <div class="filter-buttons" data-filter="language">
+      <button class="active" data-value="all">All</button>
+      <button data-value="danish">Danish</button>
+      <button data-value="norwegian">Norwegian</button>
+    </div>
+  </div>
+
+</section>
+
+<section id="jobs">
+  <div class="job-list">
+
+<!-- ATHENS -->
+<a href="tilbud/athen-content-moderator" class="job-link">
+  <div class="job-card" data-location="athens" data-role="content-moderation" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/28.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Content Moderator</h3>
+      <p class="description">Start a new adventure as a content moderator in Athens.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Athens, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/athen-kundeservice" class="job-link">
+  <div class="job-card" data-location="athens" data-role="customer-service" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/30.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Customer Service Representative</h3>
+      <p class="description">Help customers while enjoying sunny days in Athens.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Athens, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/athen-b2b" class="job-link">
+  <div class="job-card" data-location="athens" data-role="sales-b2b" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/31.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">B2B Sales Representative</h3>
+      <p class="description">Ambitious B2B sales role with exciting career in Athens.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Athens, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/athen-teknisk-support" class="job-link">
+  <div class="job-card" data-location="athens" data-role="technical-support" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/26.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Technical Support Specialist</h3>
+      <p class="description">Technical support role with global opportunities in Athens.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Athens, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!-- ESSEN -->
+<a href="tilbud/essen-ai-prompt-evaluator" class="job-link">
+  <div class="job-card" data-location="essen" data-role="ai-prompt-evaluator" data-language="danish">
+    <div class="job-image"><img src="../assets/img/36.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">AI Prompt Evaluator</h3>
+      <p class="description">Kickstart your AI career in dynamic Essen with energy and green spaces.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Essen, Germany</span>
+      </div>
+      <div class="job-actions">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!-- CRETE -->
+<a href="tilbud/kreta-kundeservice" class="job-link">
+  <div class="job-card" data-location="crete" data-role="customer-service" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/29.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Customer Service Representative</h3>
+      <p class="description">Start a new life in the sun with customer service and housing in Crete.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Crete, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="accommodation-btn">Free accommodation</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/kreta-teknisk-support" class="job-link">
+  <div class="job-card" data-location="crete" data-role="technical-support" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/24.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Technical Support Specialist</h3>
+      <p class="description">Work with technology while living on sunny Crete.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Crete, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="accommodation-btn">Free accommodation</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!-- THESSALONIKI -->
+<a href="tilbud/thessaloniki-kundeservice" class="job-link">
+  <div class="job-card" data-location="thessaloniki" data-role="customer-service" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/23.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Customer Service Representative</h3>
+      <p class="description">Sun, beach, and city life combined with a stable job abroad.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Thessaloniki, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/thessaloniki-teknisk-support" class="job-link">
+  <div class="job-card" data-location="thessaloniki" data-role="technical-support" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/25.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Technical Support Specialist</h3>
+      <p class="description">International tech role in Greece with high quality of life.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Thessaloniki, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!-- REMOTE -->
+<a href="tilbud/remote-gr-kundeservice" class="job-link">
+  <div class="job-card" data-location="remote" data-role="customer-service" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/33.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Customer Service Representative</h3>
+      <p class="description">Freedom, flexibility, and customer service while living in Greece.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Remote, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/remote-gr-teknisk-support" class="job-link">
+  <div class="job-card" data-location="remote" data-role="technical-support" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/27.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Technical Support Specialist</h3>
+      <p class="description">Technical support career with flexibility and Greek lifestyle.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Remote, Greece</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!-- SOFIA -->
+<a href="tilbud/sofia-content-moderator" class="job-link">
+  <div class="job-card" data-location="sofia" data-role="content-moderation" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/20.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Content Moderator</h3>
+      <p class="description">Start an international career as a content moderator in Sofia.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Sofia, Bulgaria</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/sofia-kundeservice" class="job-link">
+  <div class="job-card" data-location="sofia" data-role="customer-service" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/19.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Customer Service Representative</h3>
+      <p class="description">Start a new life and career opportunity in modern Sofia.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Sofia, Bulgaria</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="tilbud/sofia-teknisk-support" class="job-link">
+  <div class="job-card" data-location="sofia" data-role="technical-support" data-language="danish,norwegian">
+    <div class="job-image"><img src="../assets/img/35.png" alt=""></div>
+    <div class="job-content">
+      <h3 class="subheading">Technical Support Specialist</h3>
+      <p class="description">Start your international career in the heart of Europe’s growing hub.</p>
+      <div class="job-details">
+        <span><i class="bi bi-geo-alt"></i> Sofia, Bulgaria</span>
+      </div>
+      <div class="job-actions-en">
+        <span class="relocation-btn">Relocation package</span>
+        <span class="flight-btn">Flight included</span>
+        <span class="DK-btn">DK</span>
+        <span class="NO-btn">NO</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+  </div>
+</section>
+
+<div id="footer-container"></div>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+fetch('/en/footer-en.html')
+.then(response=>response.text())
+.then(data=>document.getElementById('footer-container').innerHTML=data)
+.catch(error=>console.log("Error loading footer:",error));
+});
+</script>
+
+<script src="../assets/js/offers.js"></script>
+
+</body>
+</html>

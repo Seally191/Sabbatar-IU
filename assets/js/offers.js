@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const activeFilters = {
     location: new Set(["all"]),
-    role: new Set(["all"])
+    role: new Set(["all"]),
+    language: new Set(["all"]) // ✅ NEW
   };
 
   filterGroups.forEach(group => {
@@ -15,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
       button.addEventListener("click", () => {
         const value = button.dataset.value;
 
-        // If "All" clicked → reset group
         if (value === "all") {
           activeFilters[filterType].clear();
           activeFilters[filterType].add("all");
@@ -24,16 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
           button.classList.add("active");
 
         } else {
-          // Remove "All" if selecting specific filter
           activeFilters[filterType].delete("all");
           group.querySelector('[data-value="all"]').classList.remove("active");
 
-          // Toggle selection
           if (activeFilters[filterType].has(value)) {
             activeFilters[filterType].delete(value);
             button.classList.remove("active");
 
-            // If none selected → fallback to "All"
             if (activeFilters[filterType].size === 0) {
               activeFilters[filterType].add("all");
               group.querySelector('[data-value="all"]').classList.add("active");
@@ -54,6 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
     jobCards.forEach(card => {
       const cardLocation = card.dataset.location;
       const cardRole = card.dataset.role;
+      const cardLanguages = card.dataset.language
+        ? card.dataset.language.split(",")
+        : [];
 
       const locationMatch =
         activeFilters.location.has("all") ||
@@ -63,7 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
         activeFilters.role.has("all") ||
         activeFilters.role.has(cardRole);
 
-      if (locationMatch && roleMatch) {
+      const languageMatch =
+        activeFilters.language.has("all") ||
+        cardLanguages.some(lang => activeFilters.language.has(lang));
+
+      if (locationMatch && roleMatch && languageMatch) {
         card.parentElement.style.display = "block";
       } else {
         card.parentElement.style.display = "none";
