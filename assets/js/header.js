@@ -1,12 +1,12 @@
-// header.js - Fixed for GitHub Pages (Sabbatar-IU)
+// header.js - Robust version for GitHub Pages
 
 function initHeader() {
-    const fullPath = window.location.pathname;
+    const path = window.location.pathname;
 
     // Detect current language
     let currentLang = 'da';
-    if (fullPath.includes('/en/')) currentLang = 'en';
-    if (fullPath.includes('/no/')) currentLang = 'no';
+    if (path.includes('/en/')) currentLang = 'en';
+    if (path.includes('/no/')) currentLang = 'no';
 
     // ──────────────── Sidebar ────────────────
     const sidebar = document.querySelector(".sidebar");
@@ -63,22 +63,25 @@ function initHeader() {
 function switchToLanguage(targetLang) {
     let path = window.location.pathname;
 
-    // 1. Remove any existing language folder (/en/ or /no/)
+    // Remove existing language folder
     path = path.replace(/^\/(en|no)\//, '/');
 
-    // 2. Make sure we keep the repo name (Sabbatar-IU)
-    const repoName = '/Sabbatar-IU';
+    // Get the repo name dynamically (e.g. /Sabbatar-IU)
+    const parts = path.split('/').filter(Boolean);
+    const repoName = parts[0] ? '/' + parts[0] : '';
 
     if (targetLang === 'da') {
-        // Going back to Danish (root)
-        window.location.href = repoName + path;
+        // Danish version = root
+        window.location.href = repoName + (path.replace(repoName, '') || '/');
     } else {
-        // Going to English or Norwegian
-        const cleanPath = (path === '/' || path === '') ? '/index.html' : path;
+        // English or Norwegian
+        let cleanPath = path.replace(repoName, '');
+        if (!cleanPath || cleanPath === '/') cleanPath = '/index.html';
+
         window.location.href = `${repoName}/${targetLang}${cleanPath}`;
     }
 }
 
-// Run on page load and after dynamic header injection
+// Run the script
 window.addEventListener('load', initHeader);
 document.addEventListener('header-loaded', initHeader);
