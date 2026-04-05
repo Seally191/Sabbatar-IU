@@ -1,12 +1,12 @@
-// header.js - Fixed for GitHub Pages + multiple languages
+// header.js - Fixed for GitHub Pages (Sabbatar-IU)
 
 function initHeader() {
-    const currentPath = window.location.pathname;
+    const fullPath = window.location.pathname;
 
     // Detect current language
     let currentLang = 'da';
-    if (currentPath.includes('/en/')) currentLang = 'en';
-    if (currentPath.includes('/no/')) currentLang = 'no';
+    if (fullPath.includes('/en/')) currentLang = 'en';
+    if (fullPath.includes('/no/')) currentLang = 'no';
 
     // ──────────────── Sidebar ────────────────
     const sidebar = document.querySelector(".sidebar");
@@ -42,7 +42,7 @@ function initHeader() {
         ];
 
         flags.forEach(flag => {
-            if (flag.lang === currentLang) return; // don't show current language
+            if (flag.lang === currentLang) return;
 
             const a = document.createElement('a');
             a.href = "#";
@@ -63,25 +63,22 @@ function initHeader() {
 function switchToLanguage(targetLang) {
     let path = window.location.pathname;
 
-    // Remove existing language folder (/en/ or /no/)
+    // 1. Remove any existing language folder (/en/ or /no/)
     path = path.replace(/^\/(en|no)\//, '/');
 
-    // Remove repo name if it's duplicated (GitHub Pages issue)
+    // 2. Make sure we keep the repo name (Sabbatar-IU)
     const repoName = '/Sabbatar-IU';
-    if (path.startsWith(repoName + repoName)) {
-        path = path.replace(repoName + repoName, repoName);
-    }
 
     if (targetLang === 'da') {
-        // Danish = root
-        window.location.href = path || '/';
+        // Going back to Danish (root)
+        window.location.href = repoName + path;
     } else {
-        // English or Norwegian
-        const cleanPath = path === '/' || path === '' ? '/index.html' : path;
-        window.location.href = `/${targetLang}${cleanPath}`;
+        // Going to English or Norwegian
+        const cleanPath = (path === '/' || path === '') ? '/index.html' : path;
+        window.location.href = `${repoName}/${targetLang}${cleanPath}`;
     }
 }
 
-// Run header logic
+// Run on page load and after dynamic header injection
 window.addEventListener('load', initHeader);
 document.addEventListener('header-loaded', initHeader);
