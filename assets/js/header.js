@@ -30,56 +30,33 @@ function initHeader() {
     }
 
     // ──────────────── Language Switcher ────────────────
-    const switchers = document.querySelectorAll(".language-switcher");
+    const langLinks = document.querySelectorAll(".language-switcher a");
 
-    switchers.forEach(switcher => {
-        switcher.innerHTML = "";
+langLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
 
-        const flags = [
-            { lang: 'da', emoji: '🇩🇰', title: 'Dansk' },
-            { lang: 'en', emoji: '🇬🇧', title: 'English' },
-            { lang: 'no', emoji: '🇳🇴', title: 'Norsk' }
-        ];
+        const targetLang = this.getAttribute("lang");
+        let path = window.location.pathname;
 
-        flags.forEach(flag => {
-            if (flag.lang === currentLang) return;
+        // Extract project root (important for GitHub Pages)
+        const match = path.match(/^\/([^\/]+)(\/.*)?$/);
+        const project = match[1];              // "Sabbatar-IU"
+        let rest = match[2] || "/";            // rest of path
 
-            const a = document.createElement('a');
-            a.href = "#";
-            a.title = flag.title;
-            a.innerHTML = flag.emoji;
-            a.setAttribute('lang', flag.lang);
+        // Remove existing language inside project
+        rest = rest.replace(/^\/(en|no)(\/|$)/, "/");
 
-            a.addEventListener("click", (e) => {
-                e.preventDefault();
-                switchToLanguage(flag.lang);
-            });
+        // Add new language (except default)
+        if (targetLang !== "da") {
+            rest = `/${targetLang}${rest}`;
+        }
 
-            switcher.appendChild(a);
-        });
+        const newPath = `/${project}${rest}`;
+
+        window.location.href = newPath + window.location.search + window.location.hash;
     });
-}
-
-function switchToLanguage(targetLang) {
-    let path = window.location.pathname;
-
-    // Remove existing language folder
-    path = path.replace(/^\/(en|no)\//, '/');
-
-    // Get the repo name dynamically (e.g. /Sabbatar-IU)
-    const parts = path.split('/').filter(Boolean);
-    const repoName = parts[0] ? '/' + parts[0] : '';
-
-    if (targetLang === 'da') {
-        // Danish version = root
-        window.location.href = repoName + (path.replace(repoName, '') || '/');
-    } else {
-        // English or Norwegian
-        let cleanPath = path.replace(repoName, '');
-        if (!cleanPath || cleanPath === '/') cleanPath = '/index.html';
-
-        window.location.href = `${repoName}/${targetLang}${cleanPath}`;
-    }
+});
 }
 
 // Run the script
