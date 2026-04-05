@@ -1,66 +1,87 @@
-// header.js
-function initHeader() {
+// header.js - Fixed for GitHub Pages + multiple languages
 
-    // ──────────────── Sidebar (burger menu) ────────────────
+function initHeader() {
+    const currentPath = window.location.pathname;
+
+    // Detect current language
+    let currentLang = 'da';
+    if (currentPath.includes('/en/')) currentLang = 'en';
+    if (currentPath.includes('/no/')) currentLang = 'no';
+
+    // ──────────────── Sidebar ────────────────
     const sidebar = document.querySelector(".sidebar");
     const openBtn = document.getElementById("openSidebar");
     const closeBtn = document.getElementById("closeSidebar");
 
     if (sidebar && openBtn && closeBtn) {
-
-        // Prevent duplicate listeners
         const newOpenBtn = openBtn.cloneNode(true);
         openBtn.parentNode.replaceChild(newOpenBtn, openBtn);
 
-        newOpenBtn.addEventListener("click", () => {
-            sidebar.style.display = "flex";
-        });
+        newOpenBtn.addEventListener("click", () => sidebar.style.display = "flex");
+        closeBtn.addEventListener("click", () => sidebar.style.display = "none");
 
-        closeBtn.addEventListener("click", () => {
-            sidebar.style.display = "none";
-        });
-
-        document.addEventListener("click", function (e) {
-            if (sidebar.style.display !== "flex") return;
-
-            if (!sidebar.contains(e.target) && !newOpenBtn.contains(e.target)) {
+        document.addEventListener("click", (e) => {
+            if (sidebar.style.display === "flex" && 
+                !sidebar.contains(e.target) && 
+                !newOpenBtn.contains(e.target)) {
                 sidebar.style.display = "none";
             }
         });
     }
 
-    // ──────────────── Language Switcher (FIXED) ────────────────
-    const langLinks = document.querySelectorAll(".language-switcher a");
+    // ──────────────── Language Switcher ────────────────
+    const switchers = document.querySelectorAll(".language-switcher");
 
-    langLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
+    switchers.forEach(switcher => {
+        switcher.innerHTML = "";
 
-            const targetLang = this.getAttribute("lang");
-            let path = window.location.pathname;
+        const flags = [
+            { lang: 'da', emoji: '🇩🇰', title: 'Dansk' },
+            { lang: 'en', emoji: '🇬🇧', title: 'English' },
+            { lang: 'no', emoji: '🇳🇴', title: 'Norsk' }
+        ];
 
-            // Remove existing language prefix (/en/ or /no/)
-            path = path.replace(/^\/(en|no)\//, "/");
+        flags.forEach(flag => {
+            if (flag.lang === currentLang) return; // don't show current language
 
-            // Handle edge case: "/en" or "/no"
-            path = path.replace(/^\/(en|no)$/, "/");
+            const a = document.createElement('a');
+            a.href = "#";
+            a.title = flag.title;
+            a.innerHTML = flag.emoji;
+            a.setAttribute('lang', flag.lang);
 
-            // Add new language (except default "da")
-            if (targetLang !== "da") {
-                path = `/${targetLang}${path}`;
-            }
+            a.addEventListener("click", (e) => {
+                e.preventDefault();
+                switchToLanguage(flag.lang);
+            });
 
-            // Preserve query string and hash (important!)
-            const query = window.location.search;
-            const hash = window.location.hash;
-
-            window.location.href = path + query + hash;
+            switcher.appendChild(a);
         });
     });
 }
 
-// Init on load
-initHeader();
+function switchToLanguage(targetLang) {
+    let path = window.location.pathname;
 
-// Re-init if header is dynamically reloaded
-document.addEventListener("header-loaded", initHeader);
+    // Remove existing language folder (/en/ or /no/)
+    path = path.replace(/^\/(en|no)\//, '/');
+
+    // Remove repo name if it's duplicated (GitHub Pages issue)
+    const repoName = '/Sabbatar-IU';
+    if (path.startsWith(repoName + repoName)) {
+        path = path.replace(repoName + repoName, repoName);
+    }
+
+    if (targetLang === 'da') {
+        // Danish = root
+        window.location.href = path || '/';
+    } else {
+        // English or Norwegian
+        const cleanPath = path === '/' || path === '' ? '/index.html' : path;
+        window.location.href = `/${targetLang}${cleanPath}`;
+    }
+}
+
+// Run header logic
+window.addEventListener('load', initHeader);
+document.addEventListener('header-loaded', initHeader);
