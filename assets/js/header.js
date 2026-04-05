@@ -30,7 +30,7 @@ function initHeader() {
     }
 
     // ──────────────── Language Switcher ────────────────
-    const langLinks = document.querySelectorAll(".language-switcher a");
+const langLinks = document.querySelectorAll(".language-switcher a");
 
 langLinks.forEach(link => {
     link.addEventListener("click", function (e) {
@@ -39,15 +39,20 @@ langLinks.forEach(link => {
         const targetLang = this.getAttribute("lang");
         let path = window.location.pathname;
 
-        // Extract project root (important for GitHub Pages)
+        // Extract project root
         const match = path.match(/^\/([^\/]+)(\/.*)?$/);
-        const project = match[1];              // "Sabbatar-IU"
-        let rest = match[2] || "/";            // rest of path
+        const project = match[1];
+        let rest = match[2] || "/";
 
-        // Remove existing language inside project
+        // Remove existing language
         rest = rest.replace(/^\/(en|no)(\/|$)/, "/");
 
-        // Add new language (except default)
+        // Default to index.html if empty
+        if (rest === "/") {
+            rest = "/index.html";
+        }
+
+        // Add new language
         if (targetLang !== "da") {
             rest = `/${targetLang}${rest}`;
         }
