@@ -7,6 +7,7 @@ function initHeader() {
     const closeBtn = document.getElementById("closeSidebar");
 
     if (sidebar && openBtn && closeBtn) {
+
         // Prevent duplicate listeners
         const newOpenBtn = openBtn.cloneNode(true);
         openBtn.parentNode.replaceChild(newOpenBtn, openBtn);
@@ -21,6 +22,7 @@ function initHeader() {
 
         document.addEventListener("click", function (e) {
             if (sidebar.style.display !== "flex") return;
+
             if (!sidebar.contains(e.target) && !newOpenBtn.contains(e.target)) {
                 sidebar.style.display = "none";
             }
@@ -37,30 +39,28 @@ function initHeader() {
             const targetLang = this.getAttribute("lang");
             let path = window.location.pathname;
 
-            path = path.replace(/\/index\.html$/, "");
-            path = path.replace(/\.html$/, "");
+            // Remove existing language prefix (/en/ or /no/)
+            path = path.replace(/^\/(en|no)\//, "/");
 
-            path = path.replace(/^\/(en|no)(\/|$)/, "/");
+            // Handle edge case: "/en" or "/no"
+            path = path.replace(/^\/(en|no)$/, "/");
 
-            if (!path.startsWith("/")) path = "/" + path;
-
-            if (path === "/") path = "/index";
-
-            let newPath;
-
-            if (targetLang === "da") {
-                newPath = path;
-            } else {
-                newPath = `/${targetLang}${path}`;
+            // Add new language (except default "da")
+            if (targetLang !== "da") {
+                path = `/${targetLang}${path}`;
             }
 
-            newPath += ".html";
+            // Preserve query string and hash (important!)
+            const query = window.location.search;
+            const hash = window.location.hash;
 
-            window.location.href = newPath;
+            window.location.href = path + query + hash;
         });
     });
 }
 
-// 
+// Init on load
 initHeader();
+
+// Re-init if header is dynamically reloaded
 document.addEventListener("header-loaded", initHeader);
