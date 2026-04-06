@@ -1,14 +1,8 @@
-// header.js - Robust version for GitHub Pages
+// header.js - Clean & Reliable for GitHub Pages
 
 function initHeader() {
-    const path = window.location.pathname;
 
-    // Detect current language
-    let currentLang = 'da';
-    if (path.includes('/en/')) currentLang = 'en';
-    if (path.includes('/no/')) currentLang = 'no';
-
-    // ──────────────── Sidebar ────────────────
+    // ──────────────── Sidebar (Burger Menu) ────────────────
     const sidebar = document.querySelector(".sidebar");
     const openBtn = document.getElementById("openSidebar");
     const closeBtn = document.getElementById("closeSidebar");
@@ -36,74 +30,28 @@ function initHeader() {
         link.addEventListener("click", function (e) {
             e.preventDefault();
 
-            const targetLang = this.getAttribute("lang");
+            const targetLang = this.getAttribute("lang");   // "en" or "no"
             let path = window.location.pathname;
 
-            const match = path.match(/^\/([^\/]+)(\/.*)?$/);
-            const project = match[1];
-            let rest = match[2] || "/";
+            // 1. Remove any existing language folder (/en/ or /no/)
+            path = path.replace(/^\/(en|no)\//, "/");
 
-            // Remove existing language
-            rest = rest.replace(/^\/(en|no)(\/|$)/, "/");
-
-            // Default page
-            if (rest === "/") {
-                rest = "/index.html";
-            }
-
-            // Add language
+            // 2. Add the new language (except for Danish)
             if (targetLang !== "da") {
-                rest = `/${targetLang}${rest}`;
+                path = `/${targetLang}${path}`;
             }
 
-            const newPath = `/${project}${rest}`;
-            window.location.href = newPath + window.location.search + window.location.hash;
-        });
-    });
-
-    // ──────────────── Fix menu links (KEEP Sabbatar-IU + lang) ────────────────
-    const menuLinks = document.querySelectorAll(".main-menu a, .sidebar a");
-
-    menuLinks.forEach(link => {
-        // Skip language switcher
-        if (link.closest(".language-switcher")) return;
-
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const href = this.getAttribute("href");
-            if (!href) return;
-
-            let path = window.location.pathname;
-
-            const match = path.match(/^\/([^\/]+)(\/.*)?$/);
-            const project = match[1];
-            let rest = match[2] || "/";
-
-            // Detect current language
-            let lang = "";
-            const langMatch = rest.match(/^\/(en|no)(\/|$)/);
-            if (langMatch) {
-                lang = langMatch[1];
+            // 3. Make sure /Sabbatar-IU is always present
+            if (!path.startsWith('/Sabbatar-IU')) {
+                path = '/Sabbatar-IU' + (path === '/' ? '' : path);
             }
 
-            // Clean href
-            let target = href.replace(/^\/+/, "");
-
-            // Build URL
-            let newPath = `/${project}`;
-
-            if (lang) {
-                newPath += `/${lang}`;
-            }
-
-            newPath += `/${target}`;
-
-            window.location.href = newPath;
+            // Final redirect
+            window.location.href = path + window.location.search + window.location.hash;
         });
     });
 }
 
-// Run the script
+// Run on load + after header is injected
 window.addEventListener('load', initHeader);
 document.addEventListener('header-loaded', initHeader);
