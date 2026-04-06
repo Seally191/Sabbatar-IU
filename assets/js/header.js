@@ -1,8 +1,8 @@
-// header.js - Clean & Reliable for GitHub Pages
+// header.js — ONLY handles sidebar + language flags
 
 function initHeader() {
 
-    // ──────────────── Sidebar (Burger Menu) ────────────────
+    // ──────────────── Sidebar ────────────────
     const sidebar = document.querySelector(".sidebar");
     const openBtn = document.getElementById("openSidebar");
     const closeBtn = document.getElementById("closeSidebar");
@@ -11,47 +11,58 @@ function initHeader() {
         const newOpenBtn = openBtn.cloneNode(true);
         openBtn.parentNode.replaceChild(newOpenBtn, openBtn);
 
-        newOpenBtn.addEventListener("click", () => sidebar.style.display = "flex");
-        closeBtn.addEventListener("click", () => sidebar.style.display = "none");
+        newOpenBtn.addEventListener("click", () => {
+            sidebar.style.display = "flex";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.style.display = "none";
+        });
 
         document.addEventListener("click", (e) => {
-            if (sidebar.style.display === "flex" && 
-                !sidebar.contains(e.target) && 
-                !newOpenBtn.contains(e.target)) {
+            if (
+                sidebar.style.display === "flex" &&
+                !sidebar.contains(e.target) &&
+                !newOpenBtn.contains(e.target)
+            ) {
                 sidebar.style.display = "none";
             }
         });
     }
 
-    // ──────────────── Language Switcher ────────────────
+    // ──────────────── Language Switcher (FLAGS ONLY) ────────────────
     const langLinks = document.querySelectorAll(".language-switcher a");
 
     langLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
 
-            const targetLang = this.getAttribute("lang");   // "en" or "no"
+            const targetLang = this.getAttribute("lang"); // "da", "en", "no"
             let path = window.location.pathname;
 
-            // 1. Remove any existing language folder (/en/ or /no/)
-            path = path.replace(/^\/(en|no)\//, "/");
+            // Get project root (/Sabbatar-IU)
+            const match = path.match(/^\/([^\/]+)(\/.*)?$/);
+            const project = match[1];
+            let rest = match[2] || "/";
 
-            // 2. Add the new language (except for Danish)
-            if (targetLang !== "da") {
-                path = `/${targetLang}${path}`;
+            // Remove existing language (/en or /no)
+            rest = rest.replace(/^\/(en|no)(?=\/|$)/, "");
+
+            // Ensure valid path
+            if (rest === "/") rest = "/index.html";
+
+            // Add language only if en or no
+            if (targetLang === "en" || targetLang === "no") {
+                rest = `/${targetLang}${rest}`;
             }
 
-            // 3. Make sure /Sabbatar-IU is always present
-            if (!path.startsWith('/Sabbatar-IU')) {
-                path = '/Sabbatar-IU' + (path === '/' ? '' : path);
-            }
+            const newPath = `/${project}${rest}`;
 
-            // Final redirect
-            window.location.href = path + window.location.search + window.location.hash;
+            window.location.href = newPath;
         });
     });
 }
 
-// Run on load + after header is injected
-window.addEventListener('load', initHeader);
-document.addEventListener('header-loaded', initHeader);
+// Run
+window.addEventListener("load", initHeader);
+document.addEventListener("header-loaded", initHeader);
