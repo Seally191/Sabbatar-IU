@@ -2,33 +2,32 @@
 
 function initHeader() {
 
-    // ──────────────── Sidebar ────────────────
-    const sidebar = document.querySelector(".sidebar");
-    const openBtn = document.getElementById("openSidebar");
-    const closeBtn = document.getElementById("closeSidebar");
+// ──────────────── Sidebar ────────────────
+const sidebar = document.querySelector(".sidebar");
+const openBtn = document.getElementById("openSidebar");
+const closeBtn = document.getElementById("closeSidebar");
 
-    if (sidebar && openBtn && closeBtn) {
-        const newOpenBtn = openBtn.cloneNode(true);
-        openBtn.parentNode.replaceChild(newOpenBtn, openBtn);
+if (sidebar && openBtn && closeBtn) {
 
-        newOpenBtn.addEventListener("click", () => {
-            sidebar.style.display = "flex";
-        });
+    openBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        sidebar.style.display = "flex";
+    });
 
-        closeBtn.addEventListener("click", () => {
+    closeBtn.addEventListener("click", () => {
+        sidebar.style.display = "none";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (
+            sidebar.style.display === "flex" &&
+            !sidebar.contains(e.target) &&
+            !openBtn.contains(e.target)
+        ) {
             sidebar.style.display = "none";
-        });
-
-        document.addEventListener("click", (e) => {
-            if (
-                sidebar.style.display === "flex" &&
-                !sidebar.contains(e.target) &&
-                !newOpenBtn.contains(e.target)
-            ) {
-                sidebar.style.display = "none";
-            }
-        });
-    }
+        }
+    });
+}
 
     // ──────────────── Language Switcher (FLAGS ONLY) ────────────────
     const langLinks = document.querySelectorAll(".language-switcher a");
