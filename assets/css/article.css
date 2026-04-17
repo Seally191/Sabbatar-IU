@@ -106,29 +106,16 @@
 
 
 /* ======================= */
-/* SMALL TABLET */
+/* SMALL TABLET & MOBILE */
 /* ======================= */
 
 @media (max-width:900px){
-
-  .article-wrapper{
-    padding:3em 4em;
-  }
 
   .article h1{
     font-size:2em;
   }
 
-}
-
-
-/* ======================= */
-/* MOBILE */
-/* ======================= */
-
-@media (max-width:900px){
-
-  .article-wrapper{
+    .article-wrapper{
     padding:2em 2.5em;
   }
 
