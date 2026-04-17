@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om oss</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/about-us.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('header-no.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <div class="section-container">
+        <img class="about-image" src="../assets/img/15.png" alt="arbeidende team">
+        <div class="about-text">
+            <h1>Om Oss</h1>
+            <p>Hos Jobsun mener vi at alle har potensialet til å lykkes i en spennende karriere i 
+                utlandet. Vår misjon er å gi skreddersydd støtte, personlig mentorordning og 
+                full åpenhet gjennom hele prosessen. <br><br>Vi gjør mer enn å rekruttere. 
+                Vi er din dedikerte partner som veileder og hjelper deg med å bygge en vellykket, 
+                meningsfull og langsiktig internasjonal karriere steg for steg.</p>
+        </div>
+        </div>
+    </section>
+
+    <!-- Our Pillars Section -->
+    <section id="pillars">
+        <h1>Dette Står Vi For</h1>
+        <div class="pillars">
+            <div class="pillar">
+                <img src="../assets/img/tailoredsupport.png" alt="skreddersydd støtte">
+                <h3 class="subheading">Personlig støtte</h3>
+                <p>Vi forstår at hver person har unike behov. Derfor tilbyr vi personlig støtte som 
+                    hjelper deg med å nå dine karrieremål og håndtere utfordringene ved å flytte 
+                    til utlandet.</p>
+            </div>
+            <div class="pillar">
+                <img src="../assets/img/mentorship.png" alt="mentorordning">
+                <h3 class="subheading">Mentorordning</h3>
+                <p>Vårt team er med deg hele veien. Fra karriererådgivning til å finne seg til rette i et nytt land gir 
+                    vi mentorstøtte som hjelper deg med å utvikle deg både profesjonelt og personlig.</p>
+            </div>
+            <div class="pillar">
+                <img src="../assets/img/transparency.png" alt="åpenhet">
+                <h3 class="subheading">Åpenhet</h3>
+                <p>Vi tror på klar og ærlig kommunikasjon. Hos oss vet du alltid hvor du står i 
+                    søknadsprosessen, og hva du kan forvente når du flytter til utlandet.</p>
+            </div>
+            <div class="pillar">
+                <img src="../assets/img/community.png" alt="fellesskap">
+                <h3 class="subheading">Fellesskap</h3>
+                <p>Å bli en del av Jobsun betyr å bli en del av et globalt fellesskap. Vi kobler 
+                    talentfulle mennesker og skaper et miljø med gjensidig støtte og oppmuntring blant 
+                    våre kandidater og team.</p>
+            </div>
+            <div class="pillar">
+                <img src="../assets/img/growth.png" alt="utvikling">
+                <h3 class="subheading">Utvikling</h3>
+                <p>Vi fokuserer på din langsiktige suksess. Enten det gjelder karrieren din, personlig 
+                    utvikling eller tilpasning til en ny kultur, er vi her for å hjelpe deg med å vokse og 
+                    realisere ditt fulle potensial.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <h1>Møt Vårt Skandinaviske Team</h1>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <a href="mailto:alexander@jobsun.dk">
+                    <img src="../assets/img/AP-no.png" alt="Alexander Psyllos" class="team-photo">
+                </a>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <a href="mailto:christoffer@jobsun.dk">
+                    <img src="../assets/img/CM-no.png" alt="Christoffer Mallios" class="team-photo">
+                </a>
+            </div>    
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <a href="mailto:panagiotis.dorizas@jobsun.gr">
+                    <img src="../assets/img/PD-no.png" alt="Panagiotis Dorizas" class="team-photo">
+                </a>
+            </div>     
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer-no.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+    
+</body>
+</html>

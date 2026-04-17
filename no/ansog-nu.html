@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Søk nå</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/apply-now.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('header-no.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+
+<!-- ================= CV UPPLASTING ================= -->
+
+<section id="apply-CV">
+    <div class="apply-container">
+
+        <img class="about-image" src="../assets/img/17.png" alt="arbeidende mann">
+
+        <div class="apply-text">
+            <h1>Last Opp Din CV</h1>
+
+            <form name="cv-upload" method="POST" data-netlify="true" enctype="multipart/form-data" action="/tak">
+                
+                <label class="file-upload">
+                    <input type="file" name="cv" id="fileInput" required 
+       accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+
+                    <div class="file-upload-box">
+                        <p class="upload-main">Dra og slipp filer her<br>eller klikk for å velge</p>
+                        <p class="upload-info">Tillatte filer: .pdf, .doc, .jpg, .png (maks 5MB)</p>
+                        <p class="file-name" id="fileName"></p>
+                        <button type="button" class="remove-file" id="removeFileBtn">❌ Fjern fil</button>
+                    </div>
+                </label>
+
+                <label class="checkbox">
+                    <input type="checkbox" name="terms" required>
+                    Opplysningene dine brukes for å kontakte deg og deles med våre partnere for å starte rekrutteringsprosessen.
+                    Se vår <a href="personvernerklæring" target="_blank">personvernerklæring</a> for hvordan vi beskytter dine data.
+                </label>
+
+                <button type="submit" class="btn-primary">Søk</button>
+            </form>
+        </div>
+    </div>
+</section>  
+
+<!-- ================= CV-GENERATOR ================= -->
+
+<section id="cv-generator">
+    <div class="generator-container">
+
+        <h1>Har Du Ikke En CV?</h1>
+        <p>Bruk vår CV-generator og lag en skarp, profesjonell CV på kun 5 enkle steg – det tar mindre enn 3 minutter. Når du er ferdig, sendes CV-en din direkte til vårt rekrutteringsteam: ingen ekstra opplasting, ingen e-poster, ingen stress.
+Vi tar det videre derfra og kontakter deg med de beste mulighetene i utlandet. Foretrekker du å snakke med oss først? Besøk vår <a href="kontakt">kontaktside</a>. <br><br>Enkelt, raskt og effektivt.</p>
+        <button type="button" class="btn-secondary" onclick="window.location.href='cv-skabeloner'">
+                Opprett CV
+        </button>
+
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.getElementById("fileInput");
+    const fileNameDisplay = document.getElementById("fileName");
+    const uploadBox = document.querySelector(".file-upload-box");
+    const uploadText = document.querySelector(".upload-main");
+    const removeBtn = document.getElementById("removeFileBtn");
+
+    const allowedTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "image/jpeg",
+        "image/png"
+    ];
+
+    // =========================
+    // FILE VALIDATION FUNCTION
+    // =========================
+    function handleFile(file) {
+        if (!file) {
+            resetUI();
+            return;
+        }
+
+        if (!allowedTypes.includes(file.type)) {
+            alert("Kun PDF-, Word- eller bildefiler (JPG, PNG) er tillatt.");
+            resetInput();
+            return;
+        }
+
+        const maxSize = 5 * 1024 * 1024;
+        if (file.size > maxSize) {
+            alert("Filen er for stor. Maks 5MB.");
+            resetInput();
+            return;
+        }
+
+        fileNameDisplay.textContent = file.name;
+        uploadBox.classList.add("has-file");
+        uploadText.textContent = "Fil valgt ✅";
+        removeBtn.style.display = "inline";
+    }
+
+    // =========================
+    // INPUT CHANGE
+    // =========================
+    fileInput.addEventListener("change", function () {
+        handleFile(this.files[0]);
+    });
+
+    // =========================
+    // DRAG & DROP
+    // =========================
+    uploadBox.addEventListener("dragover", function (e) {
+        e.preventDefault();
+        uploadBox.classList.add("drag-over");
+    });
+
+    uploadBox.addEventListener("dragleave", function () {
+        uploadBox.classList.remove("drag-over");
+    });
+
+    uploadBox.addEventListener("drop", function (e) {
+        e.preventDefault();
+        uploadBox.classList.remove("drag-over");
+
+        const file = e.dataTransfer.files[0];
+
+        // Inject file into input (important for Netlify)
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        fileInput.files = dataTransfer.files;
+
+        handleFile(file);
+    });
+
+    // =========================
+    // REMOVE FILE
+    // =========================
+    removeBtn.addEventListener("click", function () {
+        resetInput();
+    });
+
+    function resetInput() {
+        fileInput.value = "";
+        resetUI();
+    }
+
+    function resetUI() {
+        fileNameDisplay.textContent = "";
+        uploadBox.classList.remove("has-file", "drag-over");
+        uploadText.textContent = "Dra og slipp filer her eller klikk for å velge";
+        removeBtn.style.display = "none";
+    }
+});
+</script>
+
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('footer-no.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script>
+
+</body>
+</html>

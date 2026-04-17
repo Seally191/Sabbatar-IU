@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takk for søknaden din</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/thank.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+fetch('header-no.html')
+.then(res => res.text())
+.then(data => {
+    document.getElementById('header-container').innerHTML = data;
+    document.dispatchEvent(new Event('header-loaded'));
+});
+</script>
+
+
+<section class="thank-you">
+    <div class="thank-container">
+        <h1>Takk for søknaden din 🎉</h1>
+
+        <p>
+        Vi har mottatt opplysningene dine og vil komme tilbake til deg innen 2 virkedager.
+        <br>Du er ett steg nærmere ditt eventyr i utlandet.
+        </p>
+
+        <button class="btn-secondary" onclick="goBack()">
+        ←  Tilbake Til Forrige Side
+        </button>
+
+        <script>
+        function goBack() {
+            if (document.referrer && window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index';
+            }
+        }
+        </script>
+    </div>
+</section>
+
+</body>
+</html>

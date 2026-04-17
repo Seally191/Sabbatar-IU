@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embrace your potential!</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+<div id="header-container"></div>
+<script src="../assets/js/header.js"></script>
+<script>
+    fetch('header-no.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            
+            document.dispatchEvent(new Event('header-loaded'));
+        })
+        .catch(err => console.error("Header load failed:", err));
+</script>
+
+<!-- Hero Section -->
+<section id="section-1">
+    <div class="section-container">
+        <div class="column-1">
+            <h1>Din Neste Jobb i Utlandet</h1>
+            <p>Vi mener at alle har et unikt potensial, og vi er her for å hjelpe deg med å frigjøre det. Enten du 
+                ønsker å ta neste steg i karrieren din eller begi deg ut på et spennende eventyr i utlandet, 
+                er vi dedikerte til å støtte deg hele veien. Fremtiden din er full av muligheter, og den begynner her.</p>
+            <button type="button" class="btn-1" onclick="window.location.href='jobtilbud'">
+                Utforsk Muligheter
+            </button>        
+        </div>
+        <img class="column-2" src="../assets/img/1.png" alt="glad kvinne på stranden">
+    </div>
+</section>
+
+<!-- Why Us Section -->
+<section id="section-2">
+    <h1>Hvorfor Velge Oss?</h1>
+
+    <div class="columns">
+
+        <!-- VIDEO COLUMN -->
+        <div class="column">
+            <h3 class="subheading">🗣️ Hør det fra dem</h3>
+            <div class="video-wrapper">
+                <video 
+                    class="jobsun-video"
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    controls
+                >
+                    <source src="../assets/vid/Høre-det-fra-dem.mp4" type="video/mp4">
+                    Nettleseren din støtter ikke video.
+                </video>
+            </div>
+        </div>
+
+        <div class="column">
+            <h3 class="subheading">🔍 Mer enn en jobb</h3>
+            <p>Det er et eventyr og en veldig god mulighet for både faglig og 
+                personlig utvikling. Det er en investering i fremtiden din som gir 
+                deg langt mer enn bare en lønnsslipp. Et nytt land åpner døren til 
+                helt nye opplevelser, utfordringer som former deg, verdifulle 
+                ferdigheter du ikke får andre steder, og den unike muligheten til 
+                å begynne å bygge en sterk internasjonal karriere. Du utvikler deg 
+                både som menneske og profesjonell, samtidig som du bygger et 
+                nettverk på tvers av grenser og kulturer.</p>
+        </div>
+
+        <div class="column">    
+            <h3 class="subheading">🤝 Støtte hele veien</h3>
+            <p>Vi hjelper deg med å finne den rette jobben som passer dine 
+                ambisjoner og ferdigheter. Vi bistår gjennom hele 
+                flytteprosessen, fra praktiske ting som bolig, papirarbeid og 
+                visum til de små detaljene som utgjør forskjellen. Når du har 
+                ankommet, står vi klare med kontinuerlig støtte og råd, slik at du 
+                raskt føler deg hjemme og trygg i det nye miljøet. Du er aldri 
+                alene på reisen. Vår erfarne mentorordning følger deg tett hele 
+                veien, enten du trenger sparring om jobb, livet i landet eller bare 
+                en god prat.</p>
+        </div>
+
+        <div class="column">
+            <h3 class="subheading">☀️ Sol og kultur</h3>
+            <p>Et liv ved Middelhavet byr på mer enn vakre omgivelser. 
+                Sol, varme og den friske havluften gir deg ekstra energi, bedre 
+                humør og økt velvære året rundt. Den avslappede livsrytmen 
+                skaper en sunn balanse, slik at du lettere kan nyte både arbeid 
+                og fritid uten stress. Samtidig møter du spennende nye kulturer, 
+                autentiske smaker og åpne mennesker hver dag, noe som 
+                naturlig styrker din tilpasningsevne, dine 
+                kommunikasjonsevner og din kulturelle forståelse.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Final Section -->
+<section id="section-1">
+    <div class="section-container">
+        <img class="column-2" src="../assets/img/12.png" alt="glade venner som ler på stranden">
+        <div class="column-1">
+            <h1>Utfold Ditt Potensial!</h1>
+            <p>Vi vil gjerne høre mer om dine karrieremål og hjelpe deg med å finne den perfekte jobben i 
+                utlandet. Kontakt oss nå for å høre mer om våre spennende muligheter, og fortell oss når 
+                du har anledning til et møte!</p>
+            <button type="button" class="btn-2" onclick="window.location.href='kontakt'">
+                Ta Kontakt
+            </button>
+        </div>
+    </div>
+</section>
+
+<div id="footer-container"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('footer-no.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(error => console.log("Error loading footer:", error));
+    });
+</script> 
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CV-bygger</title>
+
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/cv-generator.css">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+
+<script src="../assets/js/header.js"></script>
+<script>
+fetch('header-no.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        document.dispatchEvent(new Event('header-loaded'));
+    })
+    .catch(err => console.error("Header load failed:", err));
+</script>
+
+
+<section id="cv-generator">
+    <div class="generator-container">
+
+        <div class="progress-wrapper">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">1 / 5</p>
+        </div>
+
+        <form class="cv-form"
+              name="cv-generator"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="tak-for-nu">
+
+            <input type="hidden" name="form-name" value="cv-generator">
+
+            <p hidden>
+                <label>Ikke fyll ut dette hvis du er et menneske: <input name="bot-field"></label>
+            </p>
+
+            <!-- STEP 1 -->
+            <div class="form-step active">
+                <label>👤 Navn</label>
+                <input type="text" name="navn" placeholder="Ditt fulle navn" required>
+
+                <label>📱 Telefonnummer</label>
+                <input type="tel" name="telefon" placeholder="30123456" required>
+
+                <label>✉️ E-post</label>
+                <input type="email" name="email" placeholder="din.epost@example.no" required>
+
+                <button type="button" class="btn-primary next-btn">Neste</button>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="form-step">
+                <div class="semi-question">
+                    <div class="Q1">
+                        <label>🎓 Høyeste utdanning</label>
+                        <input type="text" name="uddannelse" placeholder="f.eks. Bachelor i IT, Universitetet i Oslo" required>
+                    </div>
+                    <div class="Q2">
+                        <label>📅 År</label>
+                        <input type="text" name="uddannelse_aar" placeholder="f.eks. 2023" required>
+                    </div>
+                </div>
+
+                <div class="semi-question">
+                    <div class="Q1">
+                        <label>💼 Siste jobb</label>
+                        <input type="text" name="arbejde" placeholder="f.eks. Barista hos Espresso House, Oslo" required>
+                    </div>
+                    <div class="Q2">
+                        <label>📅 År</label>
+                        <input type="text" name="arbejde_aar" placeholder="f.eks. 2025" required>
+                    </div>
+                </div>
+
+                <p class="form-disclaimer">
+                Hvis det ikke er relevant for profilen din, skriv det i feltet og "N/A" i årsfeltet.
+                </p>
+
+                <button type="button" class="btn-primary next-btn">Neste</button>
+            </div>
+
+<!-- STEP 3 -->
+<div class="form-step">
+
+    <div class="mcq">
+        <p>🧠 Din kompetanseprofil<br>(Velg minst én)</p>
+
+        <div class="skills-grid">
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Kommunikasjon">
+                Kommunikasjon
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Teknisk forståelse">
+                Teknisk forståelse
+            </label>
+                    
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Tidsstyring">
+                Tidsstyring
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Sans for detaljer">
+                Sans for detaljer
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Kundefokus">
+                Kundefokus
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Samarbeid">
+                Samarbeidsevner
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Tålmodighet">
+                Tålmodighet
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Tilpasningsevne">
+                Tilpasningsevne
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Multitasking">
+                Multitasking
+            </label>
+
+            <label class="checkbox-option">
+                <input type="checkbox" name="skills[]" value="Konflikthåndtering">
+                Konflikthåndtering
+            </label>
+
+        </div>
+
+    </div>
+
+    <button type="button" class="btn-primary next-btn">Neste</button>
+
+</div>
+
+            <!-- STEP 4 -->
+            <div class="form-step">
+                <div class="mcq">
+                    <p>🇬🇧 Engelskkunnskaper</p>
+
+                    <label class="radio-option">
+                        <input type="radio" name="engelsk" value="Grunnleggende" required>
+                        Grunnleggende
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="engelsk" value="Middels">
+                        Middels
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="engelsk" value="Flytende">
+                        Flytende
+                    </label>
+                </div>
+
+                <button type="button" class="btn-primary next-btn">Neste</button>
+            </div>
+
+            <!-- STEP 5 -->
+            <div class="form-step">
+                <div class="mcq">
+                    <p>✈️ Når kan du starte i en ny jobb?</p>
+
+                    <label class="radio-option">
+                        <input type="radio" name="start" value="Straks" required>
+                        Straks
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="start" value="Om 1–3 måneder">
+                        Om 1–3 måneder
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="start" value="Om mer enn 3 måneder">
+                        Om mer enn 3 måneder
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="gdpr-consent" required>
+                        <span>
+                            Ved å krysse av i denne boksen samtykker du til at opplysningene dine samles inn av vårt selskap og deles med relevante parter for å starte rekrutteringsprosessen.
+                            Les mer i vår <a href="personvernerklæring" target="_blank">personvernerklæring</a>.
+                        </span>
+                    </label>
+
+                <button type="submit" class="btn-primary next-btn">Opprett CV</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<script src="../assets/js/cv-generator-no.js"></script>
+
+</body>
+</html>

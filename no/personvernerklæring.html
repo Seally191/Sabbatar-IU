@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personvernerklæring</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/privacy.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <script src="../assets/js/header.js"></script>
+    <script>
+        fetch('header-no.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                document.dispatchEvent(new Event('header-loaded'));
+            })
+            .catch(err => console.error("Header load failed:", err));
+    </script>
+
+<section id="privacy">
+    <div class="container">
+
+    <h1>Personvernerklæring og bruksvilkår</h1>
+    <p class="last-updated">Sist oppdatert: 19/02/2026</p>
+
+    <h3 class="subheading">1. Introduksjon</h3>
+    <p>Denne siden forklarer hvordan Jobsun ApS samler inn, bruker og beskytter personopplysninger, samt vilkårene for bruk av vår nettside. Ved å bruke nettsiden godtar du disse vilkårene.</p>
+
+    <h3 class="subheading">2. Hvem vi er</h3>
+    <p>
+    Jobsun ApS<br>
+    Hvorupvej 4, 9400 Nørresundby, Danmark<br>
+    E-post: <a href="mailto:kontakt@jobsun.dk">kontakt@jobsun.dk</a><br>
+    Telefon: +45 42523737
+    </p>
+
+    <h3 class="subheading">3. Hvilke data vi samler inn</h3>
+    <ul>
+    <li>Navn</li>
+    <li>E-postadresse</li>
+    <li>Telefonnummer</li>
+    <li>Opplysninger sendt via kontakt eller søknad</li>
+    <li>Jobbrelaterte opplysninger og preferanser</li>
+    </ul>
+
+    <h3 class="subheading">4. Formål med behandlingen</h3>
+    <ul>
+    <li>Besvare henvendelser</li>
+    <li>Behandle jobbsøknader</li>
+    <li>Formidle jobbmuligheter</li>
+    <li>Kommunikasjon om relevante stillinger</li>
+    <li>Forbedring av våre tjenester</li>
+    </ul>
+
+    <h3 class="subheading">5. Lagring av data</h3>
+    <p>Personopplysninger lagres kun så lenge det er nødvendig for formålet eller påkrevd ved lov.</p>
+
+    <h3 class="subheading">6. Deling av opplysninger</h3>
+    <p>Vi selger ikke personopplysninger. Opplysninger deles kun når det er nødvendig for å levere en tjeneste eller når det kreves ved lov.</p>
+
+    <h3 class="subheading">7. Datasikkerhet</h3>
+    <p>Vi beskytter data under overføring via sikre internettforbindelser (HTTPS). Vi iverksetter rimelige tiltak for å beskytte opplysninger mot uautorisert tilgang, endring eller tap.</p>
+
+    <h3 class="subheading">8. Dine rettigheter</h3>
+    <ul>
+    <li>Innsyn i dine data</li>
+    <li>Rettelse eller sletting</li>
+    <li>Tilbaketrekking av samtykke</li>
+    <li>Protestere mot behandling</li>
+    <li>Dataportabilitet</li>
+    <li>Klage til Datatilsynet</li>
+    </ul>
+
+    <h3 class="subheading">9. Bruk av nettsiden</h3>
+    <p>Nettsiden må kun brukes lovlig. Innhold må ikke kopieres eller gjenbrukes uten tillatelse.</p>
+
+    <h3 class="subheading">10. Alderskrav</h3>
+    <p>Du må være minst 18 år for å søke jobb eller bruke våre tjenester.</p>
+
+    <h3 class="subheading">11. Henvisningsordning</h3>
+    <p>Hvis du henviser en kandidat til Jobsun, gjelder vilkårene for vår henvisningsordning. Eventuell henvisningsbonus utbetales kun dersom kandidaten blir ansatt og fullfører minimum 3 måneders ansettelse.</p>
+
+    <h3 class="subheading">12. Ansvarsbegrensning</h3>
+    <p>Nettsiden leveres «som den er». Jobsun ApS er ikke ansvarlig for indirekte tap eller skader.</p>
+
+    <h3 class="subheading">13. Eksterne lenker</h3>
+    <p>Vi er ikke ansvarlige for innhold eller praksis på tredjeparts nettsider.</p>
+
+    <h3 class="subheading">14. Endringer</h3>
+    <p>Vi kan oppdatere denne erklæringen ved behov. Den nyeste versjonen vil alltid være tilgjengelig på nettsiden.</p>
+
+    <h3 class="subheading">15. Kontakt</h3>
+    <p>Hvis du har spørsmål om denne personvernerklæringen, kan du kontakte oss på 
+    <a href="mailto:kontakt@jobsun.dk">kontakt@jobsun.dk</a>.</p>
+
+    </div>
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer-no.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+    
+</body>
+</html>
