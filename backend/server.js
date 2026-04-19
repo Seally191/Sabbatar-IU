@@ -21,7 +21,7 @@ app.post("/send-email", async (req, res) => {
 
         await transporter.sendMail({
             from: email,
-            to: "your@email.com",
+            to: "jobsun.donotreply@gmail.com",
             subject: "New contact form message",
             text: `
 Email: ${email}
