@@ -29,8 +29,7 @@
     <h1>Kontakt Os</h1>
 
     <!-- Netlify Contact Form -->
-    <form name="contact" method="POST" data-netlify="true" action="tak">
-        <input type="hidden" name="form-name" value="contact">
+    <form id="contactForm">
 
         <div class="contact-row">
             <div class="contact-field">
@@ -94,6 +93,38 @@ Jeg ser frem til at høre fra jer!
                 .catch(error => console.log("Error loading footer:", error));
         });
     </script> 
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = {
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        message: document.getElementById("message").value
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            window.location.href = "tak";
+        } else {
+            alert("Something went wrong");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("Error sending message");
+    }
+});
+</script>
 
 </body>
 </html>
