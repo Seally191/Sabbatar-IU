@@ -94,3 +94,44 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgress();
 
 });
+
+const form = document.getElementById("cvForm");
+
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Collect all form data
+    const formData = new FormData(form);
+
+    // Convert to clean object
+    const data = {};
+
+    formData.forEach((value, key) => {
+        if (key === "skills[]") {
+            if (!data.skills) data.skills = [];
+            data.skills.push(value);
+        } else {
+            data[key] = value;
+        }
+    });
+
+    try {
+        const response = await fetch("https://contact-worker.contact-api.workers.dev", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            window.location.href = "tak-for-nu";
+        } else {
+            alert("Oops! Something went wrong.");
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("An error occurred while sending.");
+    }
+});

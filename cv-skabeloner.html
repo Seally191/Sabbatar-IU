@@ -39,18 +39,7 @@ fetch('header-dk.html')
             <p class="progress-text">1 / 5</p>
         </div>
 
-        <form class="cv-form"
-              name="cv-generator"
-              method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
-              action="tak-for-nu">
-
-            <input type="hidden" name="form-name" value="cv-generator">
-
-            <p hidden>
-                <label>Do not fill this out if you're human: <input name="bot-field"></label>
-            </p>
+        <form id="cvForm">
 
             <!-- STEP 1 -->
             <div class="form-step active">
