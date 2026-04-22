@@ -168,6 +168,36 @@ document.addEventListener("DOMContentLoaded", function () {
         uploadText.textContent = "Drag & drop files here or click to select";
         removeBtn.style.display = "none";
     }
+
+    // ========= SUBMIT =========
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const file = fileInput.files[0];
+    const terms = document.getElementById("terms").checked;
+
+    if (!file || !terms) {
+        alert("Upload fil og accepter vilkår");
+        return;
+    }
+
+    try {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        await fetch("https://contact-worker.contact-api.workers.dev", {
+            method: "POST",
+            body: formData
+        });
+
+        window.location.href = "tak";
+
+    } catch (err) {
+        console.error(err);
+        alert("Something went wrong.");
+    }
+});
+
 });
 </script>
 
