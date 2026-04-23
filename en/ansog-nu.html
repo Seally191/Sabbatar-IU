@@ -53,7 +53,7 @@
                 </label>
 
                 <label class="checkbox">
-                    <input type="checkbox" name="terms" required>
+                    <input type="checkbox" name="terms" id="terms" required>
                     Your information will be used to contact you and shared with our partners to start the recruitment process.
                     Check our <a href="privacy-policy" target="_blank">privacy policy</a> to see how we protect your data.
                 </label>
@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const uploadBox = document.querySelector(".file-upload-box");
     const uploadText = document.querySelector(".upload-main");
     const removeBtn = document.getElementById("removeFileBtn");
+    const form = document.getElementById("cvUploadForm");
 
     const allowedTypes = [
         "application/pdf",
@@ -177,7 +178,7 @@ form.addEventListener("submit", async (e) => {
     const terms = document.getElementById("terms").checked;
 
     if (!file || !terms) {
-        alert("Upload fil og accepter vilkår");
+        alert("Upload file and accept terms");
         return;
     }
 
