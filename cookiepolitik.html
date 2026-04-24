@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privatlivspolitik</title>
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/privacy.css">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <script src="assets/js/header.js"></script>
+    <script>
+        fetch('header-dk.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // ── This is the only extra line you need ──
+                document.dispatchEvent(new Event('header-loaded'));
+            })
+            .catch(err => console.error("Header load failed:", err));
+    </script>
+
+<section id="privacy">
+  <div class="container">
+
+    <h1>Cookiepolitik</h1>
+    <p class="last-updated">Sidst opdateret: 19/02/2026</p>
+
+    <p>
+      Denne hjemmeside bruger cookies og lignende teknologier for at sikre korrekt funktion og for at vise indhold fra tredjepart.
+      Du kan til enhver tid ændre dine cookieindstillinger ved at 
+      <a href="#" onclick="openCookieBanner(); return false;">klikke her</a>.
+    </p>
+
+    <h3 class="subheading">1. Hvad er cookies?</h3>
+    <p>
+      Cookies er små tekstfiler, der gemmes på din enhed, når du besøger en hjemmeside. 
+      De bruges til at få hjemmesiden til at fungere korrekt samt til at forbedre brugeroplevelsen.
+    </p>
+
+    <h3 class="subheading">2. Hvilke cookies bruger vi?</h3>
+    <p>
+      Vi bruger kun nødvendige og tredjeparts cookies:
+    </p>
+    <ul>
+      <li><strong>Nødvendige cookies:</strong> Sikrer at hjemmesiden fungerer korrekt.</li>
+      <li><strong>Tredjeparts cookies:</strong> YouTube-videoer kan sætte cookies, når de afspilles.</li>
+    </ul>
+
+    <h3 class="subheading">3. YouTube</h3>
+    <p>
+      Vores hjemmeside indeholder indlejrede videoer fra YouTube. Disse videoer indlæses kun, hvis du accepterer cookies.
+      Når du afspiller en video, kan YouTube placere cookies og indsamle data i henhold til deres egen privatlivspolitik.
+    </p>
+
+    <h3 class="subheading">4. Samtykke</h3>
+    <p>
+      Når du besøger hjemmesiden første gang, bliver du bedt om at acceptere eller afvise cookies.
+      Dit valg gemmes i din browser.
+    </p>
+
+    <h3 class="subheading">5. Ændring eller tilbagetrækning af samtykke</h3>
+    <p>
+      Du kan til enhver tid ændre eller trække dit samtykke tilbage ved at 
+      <a href="#" onclick="openCookieBanner(); return false;">åbne cookieindstillingerne igen</a>.
+    </p>
+
+    <h3 class="subheading">6. Opbevaring</h3>
+    <p>
+      Vi gemmer dit cookievalg i din browser (localStorage). Der anvendes ikke tracking cookies fra vores side.
+    </p>
+
+    <h3 class="subheading">7. Kontakt</h3>
+    <p>
+      Hvis du har spørgsmål om vores brug af cookies, kan du kontakte os på 
+      <a href="mailto:kontakt@jobsun.dk">kontakt@jobsun.dk</a>.
+    </p>
+
+  </div>
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer-dk.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+    
+<script src="assets/js/cookies.js"></script>
+</body>
+</html>
