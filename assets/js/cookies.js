@@ -6,17 +6,17 @@ window.addEventListener("load", () => {
   // --- Translations ---
   const translations = {
     en: {
-      text: "We use third-party services that may set cookies.",
+      text: "We use third-party services that may set cookies. <a href='cookie-policy'>See cookie policy.</a>",
       accept: "Accept",
       reject: "Reject"
     },
     da: {
-      text: "Vi bruger tredjepartstjenester, der kan sætte cookies. <a href='../cookiepolitik'>Se cookiepolitik.</a>",
+      text: "Vi bruger tredjepartstjenester, der kan sætte cookies. <a href='cookiepolitik'>Se cookiepolitik.</a>",
       accept: "Acceptér",
       reject: "Afvis"
     },
     no: {
-      text: "Vi bruker tredjepartstjenester som kan sette cookies.",
+      text: "Vi bruker tredjepartstjenester som kan sette cookies. <a href='cookiepolicy'>Se cookiepolicy.</a>",
       accept: "Godta",
       reject: "Avslå"
     }

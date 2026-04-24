@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookiepolicy</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/privacy.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <script src="../assets/js/header.js"></script>
+    <script>
+        fetch('header-no.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                document.dispatchEvent(new Event('header-loaded'));
+            })
+            .catch(err => console.error("Header load failed:", err));
+    </script>
+
+<section id="privacy">
+    <div class="container">
+
+<h1>Cookiepolicy</h1>
+<p class="last-updated">Sist oppdatert: 19/02/2026</p>
+
+<p>
+Denne nettsiden bruker cookies og tredjepartstjenester. Du kan når som helst endre innstillingene dine ved å 
+<a href="#" onclick="openCookieBanner(); return false;">klikke her</a>.
+</p>
+
+<h3 class="subheading">1. Hva er cookies?</h3>
+<p>Cookies er små tekstfiler som lagres på enheten din når du besøker en nettside.</p>
+
+<h3 class="subheading">2. Hvilke cookies bruker vi?</h3>
+<ul>
+<li>Nødvendige cookies (for grunnleggende funksjonalitet)</li>
+<li>Tredjeparts cookies (YouTube-videoer)</li>
+</ul>
+
+<h3 class="subheading">3. YouTube</h3>
+<p>
+Nettsiden inneholder innebygde videoer fra YouTube. Disse lastes kun etter samtykke.
+YouTube kan sette cookies og samle inn data i henhold til deres egne retningslinjer.
+</p>
+
+<h3 class="subheading">4. Samtykke</h3>
+<p>
+Når du besøker nettsiden første gang, kan du godta eller avslå cookies. Valget ditt lagres i nettleseren.
+</p>
+
+<h3 class="subheading">5. Endre eller trekke tilbake samtykke</h3>
+<p>
+Du kan når som helst endre valget ditt ved å 
+<a href="#" onclick="openCookieBanner(); return false;">åpne cookieinnstillinger</a>.
+</p>
+
+<h3 class="subheading">6. Lagring</h3>
+<p>
+Vi lagrer valget ditt i nettleseren (localStorage). Vi bruker ikke egne sporingscookies.
+</p>
+
+<h3 class="subheading">7. Kontakt</h3>
+<p>
+Har du spørsmål, kontakt oss på 
+<a href="mailto:kontakt@jobsun.dk">kontakt@jobsun.dk</a>.
+</p>
+
+    </div>
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer-no.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+    
+<script src="../assets/js/cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="stylesheet" href="../assets/css/privacy.css">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/img/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/img/favicon_io/site.webmanifest">
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <script src="../assets/js/header.js"></script>
+    <script>
+        fetch('header-en.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                
+                // ── This is the only extra line you need ──
+                document.dispatchEvent(new Event('header-loaded'));
+            })
+            .catch(err => console.error("Header load failed:", err));
+    </script>
+
+<section id="privacy">
+    <div class="container">
+
+ <h1>Cookie Policy</h1>
+<p class="last-updated">Last updated: 19/02/2026</p>
+
+<p>
+This website uses cookies and third-party services. You can change your preferences at any time by 
+<a href="#" onclick="openCookieBanner(); return false;">clicking here</a>.
+</p>
+
+<h3 class="subheading">1. What are cookies?</h3>
+<p>Cookies are small text files stored on your device when visiting a website.</p>
+
+<h3 class="subheading">2. What cookies do we use?</h3>
+<ul>
+<li>Necessary cookies (for basic functionality)</li>
+<li>Third-party cookies (YouTube videos)</li>
+</ul>
+
+<h3 class="subheading">3. YouTube</h3>
+<p>
+Our website embeds videos from YouTube. These are only loaded after you give consent. 
+YouTube may set cookies and collect data according to their own privacy policy.
+</p>
+
+<h3 class="subheading">4. Consent</h3>
+<p>
+When you first visit the website, you can accept or reject cookies. Your choice is stored in your browser.
+</p>
+
+<h3 class="subheading">5. Changing or withdrawing consent</h3>
+<p>
+You can change your preferences at any time by 
+<a href="#" onclick="openCookieBanner(); return false;">opening cookie settings</a>.
+</p>
+
+<h3 class="subheading">6. Storage</h3>
+<p>
+We store your choice in your browser (localStorage). We do not use tracking cookies ourselves.
+</p>
+
+<h3 class="subheading">7. Contact</h3>
+<p>
+If you have questions, contact us at 
+<a href="mailto:kontakt@jobsun.dk">kontakt@jobsun.dk</a>.
+</p>
+
+    </div>
+</section>
+
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('footer-en.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer-container').innerHTML = data)
+                .catch(error => console.log("Error loading footer:", error));
+        });
+    </script> 
+    
+<script src="../assets/js/cookies.js"></script>
+</body>
+</html>
