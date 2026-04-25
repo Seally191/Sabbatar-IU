@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   // --- Translations ---
   const translations = {
     en: {
-      text: "We use third-party services that may set cookies. <a href='cookie-policy'>See cookie policy.</a>",
+      text: "We use third-party services that may set cookies. <a href='cookiepolitik'>See cookie policy.</a>",
       accept: "Accept",
       reject: "Reject"
     },
@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
       reject: "Afvis"
     },
     no: {
-      text: "Vi bruker tredjepartstjenester som kan sette cookies. <a href='cookiepolicy'>Se cookiepolicy.</a>",
+      text: "Vi bruker tredjepartstjenester som kan sette cookies. <a href='cookiepolitik'>Se cookiepolicy.</a>",
       accept: "Godta",
       reject: "Avslå"
     }
