@@ -109,29 +109,39 @@
 </section>
 
 <script>
-// Simple click-to-play with name hide + autoplay
-document.querySelectorAll('.video-card').forEach(item => {
-  item.addEventListener('click', () => {
-    if (item.classList.contains('played')) return;
+function initCustomShorts() {
+  document.querySelectorAll('.video-card').forEach(item => {
 
-    const videoId = item.dataset.videoId;
-    const wrapper = item.querySelector('.video-wrapper');
-    const overlay = item.querySelector('.overlay');
+    item.addEventListener('click', () => {
 
-    overlay.classList.add('hidden');
+      // 🚨 BLOCK if no consent
+      const consent = localStorage.getItem("cookieConsent");
+      if (consent !== "accepted") return;
 
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0&mute=0&rel=0&modestbranding=1&playsinline=1`;
-    iframe.allow = "autoplay; encrypted-media; fullscreen";
-    iframe.allowFullscreen = true;
-    iframe.style.border = '0';
+      if (item.classList.contains('played')) return;
 
-    wrapper.innerHTML = '';
-    wrapper.appendChild(iframe);
+      const videoId = item.dataset.videoId;
+      const wrapper = item.querySelector('.video-wrapper');
+      const overlay = item.querySelector('.overlay');
 
-    item.classList.add('played');
+      if (overlay) overlay.classList.add('hidden');
+
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=0&rel=0&modestbranding=1&playsinline=1`;
+      iframe.allow = "autoplay; encrypted-media; fullscreen";
+      iframe.allowFullscreen = true;
+      iframe.style.border = '0';
+
+      wrapper.innerHTML = '';
+      wrapper.appendChild(iframe);
+
+      item.classList.add('played');
+    });
   });
-});
+}
+
+// Run after DOM ready
+document.addEventListener("DOMContentLoaded", initCustomShorts);
 </script>
 
 <div id="footer-container"></div>
