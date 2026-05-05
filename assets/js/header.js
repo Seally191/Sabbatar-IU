@@ -30,36 +30,31 @@ if (sidebar && openBtn && closeBtn) {
 }
 
     // ──────────────── Language Switcher (FLAGS ONLY) ────────────────
-    const langLinks = document.querySelectorAll(".language-switcher a");
+const langLinks = document.querySelectorAll(".language-switcher a");
 
-    langLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
+langLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
 
-            const targetLang = this.getAttribute("lang"); // "da", "en", "no"
-            let path = window.location.pathname;
+        const targetLang = this.getAttribute("lang"); // "en" or "no"
+        let path = window.location.pathname;
 
-            // Get project root (/Sabbatar-IU)
-            const match = path.match(/^\/([^\/]+)(\/.*)?$/);
-            const project = match[1];
-            let rest = match[2] || "/";
+        // Remove existing language prefix
+        path = path.replace(/^\/(en|no)(?=\/|$)/, "");
 
-            // Remove existing language (/en or /no)
-            rest = rest.replace(/^\/(en|no)(?=\/|$)/, "");
+        // If root, go to index.html
+        if (path === "/" || path === "") {
+            path = "/index.html";
+        }
 
-            // Ensure valid path
-            if (rest === "/") rest = "/index.html";
+        // Add language if needed
+        if (targetLang === "en" || targetLang === "no") {
+            path = `/${targetLang}${path}`;
+        }
 
-            // Add language only if en or no
-            if (targetLang === "en" || targetLang === "no") {
-                rest = `/${targetLang}${rest}`;
-            }
-
-            const newPath = `/${project}${rest}`;
-
-            window.location.href = newPath;
-        });
+        window.location.href = path;
     });
+});
 }
 
 // Run
