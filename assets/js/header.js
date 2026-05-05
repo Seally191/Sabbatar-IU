@@ -36,26 +36,37 @@ langLinks.forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
 
-        const targetLang = this.getAttribute("lang");
+        const targetLang = this.getAttribute("lang"); // "en", "no", or "da"
         let path = window.location.pathname;
 
-        // Normalize "/index" or "/index.html" → "/"
+        // Normalize index → root
         if (path === "/index" || path === "/index.html") {
             path = "/";
         }
 
-        // Remove existing language prefix
-        path = path.replace(/^\/(en|no)(?=\/|$)/, "");
+        // Extract current language if present
+        const langMatch = path.match(/^\/(en|no)(\/|$)/);
+        let currentLang = langMatch ? langMatch[1] : null;
 
-        // Add language
-        if (targetLang === "en" || targetLang === "no") {
-            path = `/${targetLang}${path}`;
+        // Remove current language from path
+        if (currentLang) {
+            path = path.replace(`/${currentLang}`, "") || "/";
         }
 
-        // Clean double slashes
-        path = path.replace(/\/+/g, "/");
+        // Normalize again
+        if (path === "") path = "/";
 
-        window.location.href = path;
+        // Build new path
+        let newPath;
+
+        if (targetLang === "da") {
+            // Danish = no prefix
+            newPath = path;
+        } else {
+            newPath = `/${targetLang}${path}`;
+        }
+
+        window.location.href = newPath;
     });
 });
 }
