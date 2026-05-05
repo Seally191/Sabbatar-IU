@@ -36,21 +36,24 @@ langLinks.forEach(link => {
     link.addEventListener("click", function (e) {
         e.preventDefault();
 
-        const targetLang = this.getAttribute("lang"); // "en" or "no"
+        const targetLang = this.getAttribute("lang");
         let path = window.location.pathname;
+
+        // Normalize "/index" or "/index.html" → "/"
+        if (path === "/index" || path === "/index.html") {
+            path = "/";
+        }
 
         // Remove existing language prefix
         path = path.replace(/^\/(en|no)(?=\/|$)/, "");
 
-        // If root, go to index.html
-        if (path === "/" || path === "") {
-            path = "/index.html";
-        }
-
-        // Add language if needed
+        // Add language
         if (targetLang === "en" || targetLang === "no") {
             path = `/${targetLang}${path}`;
         }
+
+        // Clean double slashes
+        path = path.replace(/\/+/g, "/");
 
         window.location.href = path;
     });

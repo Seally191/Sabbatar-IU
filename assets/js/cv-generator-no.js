@@ -125,7 +125,7 @@ form.addEventListener("submit", async function (e) {
         });
 
         if (response.ok) {
-            window.location.href = "tak";
+            window.location.href = "tak-for-nu";
         } else {
             alert("Ups! Noe gikk galt.");
         }
