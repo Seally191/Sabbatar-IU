@@ -14,21 +14,77 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://xn--sabbatriudlandet-iob.dk/" />
     </url>
 
-    <!-- ==================== MAIN DANISH PAGES ==================== -->
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/ansog-nu.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/jobtilbud.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/artikler.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/om-os.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/kontakt.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/succeshistorier.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/cv-skabeloner.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <!-- ==================== DANISH MAIN PAGES ==================== -->
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/ansog-nu.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.95</priority>
+    </url>
 
-    <!-- ==================== IMPORTANT ARTICLES (Danish) ==================== -->
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/artikle/flytning-tips.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/artikle/fordele-i-udlandet.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/artikle/henvisning.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/jobtilbud.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
 
-    <!-- ==================== JOB OFFERS (Danish) ==================== -->
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/artikler.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/om-os.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/kontakt.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/succeshistorier.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/cv-skabeloner.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- Danish Articles -->
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/artikle/flytning-tips.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/artikle/fordele-i-udlandet.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.78</priority>
+    </url>
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/artikle/henvisning.html</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- ==================== JOB OFFERS (Danish - High Priority) ==================== -->
     <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/athen-b2b.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
     <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/athen-kundeservice.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
     <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/athen-teknisk-support.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
@@ -39,16 +95,51 @@
     <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/sofia-teknisk-support.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
     <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/thessaloniki-kundeservice.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
     <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/thessaloniki-teknisk-support.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/essen-ai-prompt-evaluator.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/remote-gr-kundeservice.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/remote-gr-teknisk-support.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/essen-ai-prompt-evaluator.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
+    <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/remote-gr-kundeservice.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
+    <url><loc>https://xn--sabbatriudlandet-iob.dk/tilbud/remote-gr-teknisk-support.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.82</priority></url>
 
-    <!-- ==================== ENGLISH & NORWEGIAN ==================== -->
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/en/</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/no/</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <!-- ==================== ENGLISH VERSION ==================== -->
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/en/</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+        <xhtml:link rel="alternate" hreflang="da" href="https://xn--sabbatriudlandet-iob.dk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://xn--sabbatriudlandet-iob.dk/en/" />
+        <xhtml:link rel="alternate" hreflang="no" href="https://xn--sabbatriudlandet-iob.dk/no/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://xn--sabbatriudlandet-iob.dk/" />
+    </url>
 
-    <!-- Legal -->
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/privatlivspolitik.html</loc><lastmod>2026-05-11</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-    <url><loc>https://xn--sabbatriudlandet-iob.dk/cookiepolitik.html</loc><lastmod>2026-05-11</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+    <url><loc>https://xn--sabbatriudlandet-iob.dk/en/ansog-nu.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://xn--sabbatriudlandet-iob.dk/en/jobtilbud.html</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+    <url><loc>https://xn--sabbatriudlandet-iob.dk/en/om-os.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://xn--sabbatriudlandet-iob.dk/en/kontakt.html</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+
+    <!-- ==================== NORWEGIAN VERSION ==================== -->
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/no/</loc>
+        <lastmod>2026-05-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+        <xhtml:link rel="alternate" hreflang="da" href="https://xn--sabbatriudlandet-iob.dk/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://xn--sabbatriudlandet-iob.dk/en/" />
+        <xhtml:link rel="alternate" hreflang="no" href="https://xn--sabbatriudlandet-iob.dk/no/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://xn--sabbatriudlandet-iob.dk/" />
+    </url>
+
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/privatlivspolitik.html</loc>
+        <lastmod>2026-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+    <url>
+        <loc>https://xn--sabbatriudlandet-iob.dk/cookiepolitik.html</loc>
+        <lastmod>2026-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
 
 </urlset>

@@ -1,0 +1,4 @@
+# Redirect old domain / HTTP to new domain
+http://sabbatáriudlandet.dk/*    https://xn--sabbatriudlandet-iob.dk/:splat    301!
+http://xn--sabbatriudlandet-iob.dk/*    https://xn--sabbatriudlandet-iob.dk/:splat    301!
+https://sabbatáriudlandet.dk/*    https://xn--sabbatriudlandet-iob.dk/:splat    301!
